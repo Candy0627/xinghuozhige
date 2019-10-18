@@ -1,0 +1,1 @@
+export default helloWorld1 = 'helloWorld';

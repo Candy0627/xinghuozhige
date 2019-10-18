@@ -1,0 +1,101 @@
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#fullpage em {
+  display: inline-block;
+}
+#fullpage .one {
+  position: relative;
+  height: 1080px;
+  background: url(../../images/index_01.jpg) no-repeat;
+  background-size: cover;
+}
+#fullpage .one .logo {
+  position: absolute;
+  top: 37px;
+  right: 39px;
+  width: 290px;
+  height: 126px;
+  background: url(../../images/logo.png) no-repeat;
+  background-size: 100% 100%;
+}
+#fullpage .one .download {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 100%;
+  height: 127px;
+  background: url(../../images/download-bg.png) no-repeat;
+  background-size: 100% 100%;
+}
+#fullpage .one .download .d_in {
+  width: 750px;
+  position: relative;
+  left: 50%;
+  bottom: -29px;
+  margin-left: -375px;
+}
+#fullpage .one .download .d_in em {
+  display: block;
+  position: absolute;
+  top: -25px;
+  right: 0;
+  width: 20px;
+  height: 85px;
+  background: url(../../images/arrow.png) no-repeat;
+  background-size: 100% 100%;
+}
+#fullpage .one .download .d_in a {
+  display: inline-block;
+  position: absolute;
+  width: 165px;
+  height: 51px;
+}
+#fullpage .one .download .d_in a:nth-of-type(1) {
+  left: 0;
+  background: url(../../images/btn-ios.png) no-repeat;
+  background-size: 100% 100%;
+}
+#fullpage .one .download .d_in a:nth-of-type(2) {
+  left: 179px;
+  background: url(../../images/btn-gp.png) no-repeat;
+  background-size: 100% 100%;
+}
+#fullpage .one .download .d_in a:nth-of-type(3) {
+  left: 358px;
+  background: url(../../images/btn-fb.png) no-repeat;
+  background-size: 100% 100%;
+}
+#fullpage .one .download .d_in a:nth-of-type(4) {
+  top: -38px;
+  left: 558px;
+  width: 105px;
+  height: 123px;
+  background: url(../../images/btn-appoint.png) no-repeat;
+  background-size: 100% 100%;
+}
+#fullpage .two {
+  position: relative;
+  height: 1080px;
+  background: url(../../images/index_02.jpg) no-repeat;
+  background-size: cover;
+}
+#fullpage .three {
+  position: relative;
+  height: 1080px;
+  background: url(../../images/index_03.jpg) no-repeat;
+  background-size: cover;
+}
+#fullpage .four {
+  position: relative;
+  height: 1080px;
+  background: url(../../images/index_04.jpg) no-repeat;
+  background-size: cover;
+}
+#fullpage .last {
+  position: relative;
+  height: 1080px;
+  background: url(../../images/index_05.jpg) no-repeat;
+  background-size: 100% 100%;
+}
