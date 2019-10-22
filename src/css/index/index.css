@@ -1,12 +1,4 @@
-body{
-    display: flex;
-    transition: all 1s;
-    transform: translate(50%) rotate(30deg);
-    user-select: none;
-}
-.bgAdd{
-    width: 180px;
-    height: 100px;
-    /* background: url(../../images/dezhou.jpg);
-    background-size:100% 100%;  */
+.factions-link-1:hover:after,.factions-link-2:hover:after,.factions-link-3:hover:after{
+    opacity: 1;
+    margin-left:10%
 }
