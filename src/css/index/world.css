@@ -1,0 +1,164 @@
+.four ul {
+  width: 12rem;
+  height: 8.26rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -6rem;
+  margin-top: -4.13rem;
+}
+.four ul li {
+  position: absolute;
+  width: 2.02rem;
+  height: 2.88rem;
+  text-align: center;
+  background: url(../../images/world-bg.jpg) no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.four ul li:nth-child(1) {
+  top: 1rem;
+}
+.four ul li:nth-child(2) {
+  top: 0;
+  left: 4.94rem;
+}
+.four ul li:nth-child(3) {
+  top: 0.9rem;
+  right: 0;
+}
+.four ul li:nth-child(4) {
+  top: 4.52rem;
+  left: 2.65rem;
+}
+.four ul li:nth-child(5) {
+  top: 5.37rem;
+  left: 7.89rem;
+}
+.four ul li .pic {
+  width: 1.09rem;
+  height: 1.33rem;
+  position: absolute;
+  top: 0.45rem;
+  left: 50%;
+  margin-left: -0.55rem;
+}
+.four ul li .txt {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  margin-left: -0.55rem;
+}
+.four ul li span {
+  display: block;
+}
+.four ul li .name {
+  font-size: 0.26rem;
+  color: #f0f0f0;
+}
+.four ul li .eng {
+  font-size: 0.14rem;
+  color: #9c2624;
+}
+.five .last_con {
+  width: 17.3rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -8.65rem;
+  top: 50%;
+  height: 8.08rem;
+  margin-top: -4.04rem;
+}
+.five .last_con em {
+  display: block;
+  position: absolute;
+  width: 3.89rem;
+  height: 3.07rem;
+}
+.five .last_con em:nth-child(1) {
+  text-align: center;
+  background: url(../../images/z-l.png) no-repeat;
+  background-size: 100% 100%;
+  left: 0;
+  top: 0;
+}
+.five .last_con em:nth-child(2) {
+  text-align: center;
+  background: url(../../images/z-r.png) no-repeat;
+  background-size: 100% 100%;
+  right: 0;
+  top: 5rem;
+}
+.five .last_con ul {
+  width: 16.4rem;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0.28rem;
+  margin-left: -8.2rem;
+}
+.five .last_con ul li {
+  position: absolute;
+  width: 50%;
+  height: 2.88rem;
+  text-align: center;
+  background-size: 100% 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+.five .last_con ul li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.five .last_con ul li:nth-child(1) {
+  width: 8.1rem;
+  height: 5rem;
+  top: 0;
+}
+.five .last_con ul li:nth-child(1) img {
+  width: 100%;
+  height: 5rem;
+}
+.five .last_con ul li:nth-child(2) {
+  width: 8.32rem;
+  height: 3rem;
+  top: 0;
+  left: 8.08rem;
+}
+.five .last_con ul li:nth-child(2) img {
+  width: 100%;
+  height: 3rem;
+}
+.five .last_con ul li:nth-child(3) {
+  width: 8.32rem;
+  height: 2.34rem;
+  top: 3rem;
+  left: 8.08rem;
+}
+.five .last_con ul li:nth-child(3) img {
+  width: 100%;
+  height: 2.34rem;
+}
+.five .last_con ul li:nth-child(4) {
+  width: 8.08rem;
+  height: 2.04rem;
+  top: 5rem;
+}
+.five .last_con ul li:nth-child(5) {
+  width: 4.04rem;
+  height: 1.7rem;
+  left: 8.1rem;
+  top: 5.35rem;
+}
+.five .last_con ul li:nth-child(6) {
+  width: 4.28rem;
+  height: 1.7rem;
+  top: 5.35rem;
+  right: 0;
+}
+.last {
+  position: relative;
+  width: 100%;
+  height: 0.98rem;
+}

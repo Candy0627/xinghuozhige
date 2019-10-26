@@ -132,7 +132,8 @@ const webpackconfig = {
         contentBase: '/dist', // 服务的内容目录
         port: 8088, // 搭建在本地的服务的端口号
         compress: true, // 服务开启gzip压缩
-        open: true // 自动打开本地浏览器
+        open: true, // 自动打开本地浏览器
+        overlay: true,
     }
 }
 

@@ -12,12 +12,13 @@
     <div id="fullpage">
         <div class="section one">
             <div class="one-title-background">
-                <video class="one-background-video" autoplay="autoplay" loop="loop" muted="muted" poster="../images/index_01.jpg">
+                <video id="video" width="100%" height="100%" class="one-background-video" data-autoplay autoplay loop
+                    muted poster="../images/index_01.jpg">
                     <source src="../video/video.mp4">
                 </video>
             </div>
             <div class="one-title-button">
-                <a href="javascript:" class="one-title-button-play">
+                <a href="javascript:" class="one-title-button-play play">
                     <span class="title-button-play-title">PV 001</span>
                 </a>
             </div>
@@ -36,86 +37,218 @@
             </div>
         </div>
         <div class="section two">
-            <div class="two_num">
-                <img src="../images/1.png" alt="">
-                <img src="../images/0.png" alt="">
-                <img src="../images/3.png" alt="">
-                <img src="../images/6.png" alt="">
-                <img src="../images/7.png" alt="">
-                <img src="../images/8.png" alt="">
-            </div>
-            <ul>
-                <li>
-                    <div class="two_title"><em class="on">1</em><div class="circle circle1"></div><div class="circle circle2"></div></div>
-                    <span>10,000<i></i></span>
-                    <img src="../images/c1.png" alt="" style="display: none;">
-                    <img src="../images/u1.png" alt="">
-                </li>
-                <li>
-                    <div class="two_title"><em>2</em></div>
-                    <span>20,000<i></i></span>
-                    <img src="../images/c2.png" alt="">
-                </li>
-                <li>
-                    <div class="two_title"><em>3</em></div>
-                    <span>50,000<i></i></span>
-                    <img src="../images/c3.png" alt="">
-                </li>
-                <li>
-                    <div class="two_title"><em>4</em></div>
-                    <span>10,000,0<i></i></span>
-                    <img src="../images/c4.png" alt="">
-                </li>
-            </ul>
-            <a href="#" class="two_btn_appoint"></a>
-            <div class="two_text">
-                <p>活動规则：</p>
-                <p>1.活動時間：2019年XX月XX日至2019年XX月XX日結束。</p>
-                <p>2.參與活動請務必填寫正確的行動電話號碼，確認提交后不可再次修改，避免遺漏訊息。</p>
-                <p>3.活動結束后，獎勵將以簡訊的方式統一發送到您預留的行動電話上，請注意查收。</p>
-                <p>4.虛寶碼有效期至XX月XX日截止，虛寶碼僅限兌換一次。</p>
-                <p>5.預約成就解鎖獎勵為全服發放 ，遊戲伺服器開放前X天安裝註冊即可在遊戲中領取。獎勵檔次將按照最高</p>
-                <p>觸發檔位進行發放（例最終預約人數達到10萬，即發放10萬一檔獎勵，不累計發放）。</p>
-                <p>6.活動最終解釋權歸MoreFun Game所有。</p>
-            </div>
-        </div>
-        <div class="section three">
-            <div class="characters" id="characters">
-                <div id="char_pc" class="characters-wrapper">
-                    <div class="factions">
-                        <div class="factions-container">
-                            <ul class="factions-list">
-                                <li class="factions-item">
-                                    <a href="javascript:" title="攻擊" class="factions-link factions-link-1"></a>
-                                </li>
-                                <li class="factions-item">
-                                    <a href="javascript:" title="防禦" class="factions-link factions-link-2"></a>
-                                </li>
-                                <li class="factions-item">
-                                    <a href="javascript:" title="輔助" class="factions-link factions-link-3"></a>
-                                </li>
-                            </ul>
-                        </div>
+            <div class="two_l"></div>
+            <div class="two_r"></div>
+            <div class="two_l_b"></div>
+            <div class="two_r_t"></div>
+            <div class="two_r_b"></div>
+            <div class="two_con">
+                <div class="two_num_bg">
+                    <div class="two_num">
+                        <img src="../images/1.png" alt="">
+                        <img src="../images/0.png" alt="">
+                        <img src="../images/3.png" alt="">
+                        <img src="../images/6.png" alt="">
+                        <img src="../images/7.png" alt="">
+                        <img src="../images/8.png" alt="">
                     </div>
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
+                </div>
+
+                <div class="two_pos_chilun"></div>
+                <div class="two_pos"></div>
+                <ul>
+                    <li>
+                        <div class="two_title">
+                            <em class="on">1</em>
+                            <div class="circle circle1"></div>
+                            <div class="circle circle2"></div>
+                        </div>
+                        <span>10,000<i></i></span>
+                        <div class="two_pic_img">
+
+                            <img src="../images/c1.png" alt="" class="none">
+                            <img src="../images/u1.png" alt="">
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="two_title">
+                            <em class="on">2</em>
+                            <div class="circle circle1"></div>
+                            <div class="circle circle2"></div>
+                        </div>
+                        <span>20,000<i></i></span>
+                        <div class="two_pic_img">
+                            <img src="../images/c2.png" alt="" class="none">
+                            <img src="../images/u2.png" alt="">
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="two_title"><em>3</em></div>
+                        <span>50,000<i></i></span>
+                        <div class="two_pic_img">
+                            <div class="corner"><i></i></div>
+                            <img src="../images/c3.png" alt="">
+                            <img src="../images/u3.png" alt="" class="none">
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="two_title"><em>4</em></div>
+                        <span>10,000,0<i></i></span>
+                        <div class="two_pic_img">
+                            <div class="corner"><i></i></div>
+                            <img src="../images/c4.png" alt="">
+                            <img src="../images/u4.png" alt="" class="none">
+                        </div>
+
+                    </li>
+                </ul>
+                <a href="#" class="two_btn_appoint"></a>
+                <div class="two_text">
+                    <p>活動规则：</p>
+                    <p>1.活動時間：2019年XX月XX日至2019年XX月XX日結束。</p>
+                    <p>2.參與活動請務必填寫正確的行動電話號碼，確認提交后不可再次修改，避免遺漏訊息。</p>
+                    <p>3.活動結束后，獎勵將以簡訊的方式統一發送到您預留的行動電話上，請注意查收。</p>
+                    <p>4.虛寶碼有效期至XX月XX日截止，虛寶碼僅限兌換一次。</p>
+                    <p>5.預約成就解鎖獎勵為全服發放 ，遊戲伺服器開放前X天安裝註冊即可在遊戲中領取。獎勵檔次將按照最高</p>
+                    <p>觸發檔位進行發放（例最終預約人數達到10萬，即發放10萬一檔獎勵，不累計發放）。</p>
+                    <p>6.活動最終解釋權歸MoreFun Game所有。</p>
                 </div>
             </div>
         </div>
-        <div class="section four">4</div>
-        <div class="section last">5</div>
+        <div class="section three">
+            <ul>
+                <li>
+                    <img src="../images/a1.png" alt="">
+                    <img src="../images/l1.png" alt="" class="none">
+                    <p>攻擊<i></i></p>
+                </li>
+                <li>
+                    <img src="../images/a2.png" alt="">
+                    <img src="../images/l2.png" alt="" class="none">
+                    <p>防禦<i></i></p>
+                </li>
+                <li>
+                    <img src="../images/a3.png" alt="">
+                    <img src="../images/l3.png" alt="" class="none">
+                    <p>輔助<i></i></p>
+                </li>
+            </ul>
+        </div>
+        <div class="section four pageone">
+            <ul>
+                <li class="page-role">
+                    <div class="pic">
+                        <img src="../images/s1.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <span class="name">月源石</span>
+                        <span class="eng">- xiushi yingw -</span>
+                    </div>
+                </li>
+                <li class="page-role">
+                    <div class="pic">
+                        <img src="../images/s2.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <span class="name">種火計劃</span>
+                        <span class="eng">- xiushi yingw -</span>
+                    </div>
+                </li>
+                <li class="page-role">
+                    <div class="pic">
+                        <img src="../images/s3.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <span class="name">神啟公司</span>
+                        <span class="eng">- xiushi yingw -</span>
+                    </div>
+                </li>
+                <li class="page-role">
+                    <div class="pic">
+                        <img src="../images/s4.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <span class="name">喪尸</span>
+                        <span class="eng">- xiushi yingw -</span>
+                    </div>
+                </li>
+                <li class="page-role">
+                    <div class="pic">
+                        <img src="../images/s5.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <span class="name">安全區</span>
+                        <span class="eng">- xiushi yingw -</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="section five">
+            <div class="last_con">
+                <em></em>
+                <em></em>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../images/z1.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/z2.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/z3.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/z4.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/z5.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/z6.jpg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-        <ul id="myMenu">
-            <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First section</a></li>
-            <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
-            <li data-menuanchor="thirdPage"><a href="#thirdPage">Third section</a></li>
-            <li data-menuanchor="fourthPage"><a href="#fourthPage">Fourth section</a></li>
-            <li data-menuanchor="lastPage"><a href="#lastPage">Fourth section</a></li>
-        </ul>
+        <!-- <ul id="myMenu">
+            <li data-menuanchor="firstPage" class="active"><a href="#firstPage">首頁</a></li>
+            <li data-menuanchor="secondPage"><a href="#secondPage">預約</a></li>
+            <li data-menuanchor="thirdPage"><a href="#thirdPage">種火</a></li>
+            <li data-menuanchor="fourthPage"><a href="#fourthPage">世界</a></li>
+            <li data-menuanchor="lastPage"><a href="#lastPage">資料</a></li>
+        </ul> -->
+        <div class="section footer last fp-auto-height">
+            <img src="../images/footer.jpg" alt="">
+            <div class="footer_in">
+                <a href="http://www.gamemorefun.com/front/introduce" class="intr">公司介绍</a>
+                <a href="http://www.gamemorefun.com/front/relation" class="concat">联系我们</a>
+                <a href="javascript:;" class="service">服务条款</a>
+                <a href="http://www.gamemorefun.com/front/policy" class="private">隐私政策</a>
+            </div>
+        </div>
+    </div>
 
+    <div class="mask">
+    </div>
+    <!-- 视频弹框 -->
+    <div class="video">
+        <i>X</i>
+        <iframe src="../video/video.mp4"> </iframe>
     </div>
 </body>
 

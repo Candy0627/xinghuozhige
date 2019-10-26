@@ -1,4 +1,5 @@
 import "@babel/polyfill";
+import '../../css/index/pc.css';
 // import '../../css/index/index.css'
 // import helloWorld1 from './list1.js'
 
@@ -11,6 +12,12 @@ import "@babel/polyfill";
 // arr.map(item => {
 //     console.log(item);
 // })
+
+setTimeout(function(){
+    location.href="index.html"
+},1000)
+
+
 /*
  * func: 实现页面滚动到顶部的效果，
  * 离顶部越近滚动速度越慢
