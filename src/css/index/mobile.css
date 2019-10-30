@@ -32,8 +32,8 @@ html,body{
 
 .video i {
     position: absolute;
-    right: -32px;
-    top: -32px;
+    right: -.3rem;
+    top: -.3rem;
     z-index: 2;
     height: 60px;
     width: 60px;

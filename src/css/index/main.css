@@ -87,9 +87,9 @@ html {
     -ms-transform: translate(-48%, -50%);
     transform: translate(-48%, -50%);
     background: url('../../images/btn-video.png') no-repeat;
-    -webkit-background-size:1.28rem 1.08rem;
-    -moz-background-size:1.28rem 1.08rem;
-    background-size:1.28rem 1.08rem;
+    -webkit-background-size: 1.28rem 1.08rem;
+    -moz-background-size: 1.28rem 1.08rem;
+    background-size: 1.28rem 1.08rem;
     background-position: center;
     text-indent: 101%;
     white-space: nowrap;
@@ -111,16 +111,16 @@ html {
     position: absolute;
     top: .37rem;
     right: .39rem;
-    width: 2.9rem;
-    height: 1.26rem;
-    background: url(../../images/logo.png) no-repeat;
-    background-size: 100% 100%;
+    width: 3.37rem;
+    height: 1.62rem;
+    /* background: url(../../images/logo.png) no-repeat;
+    background-size: 100% 100%; */
 }
 
 #fullpage .one .one_download {
     position: absolute;
     left: 0;
-    bottom: .4rem;
+    bottom: -1rem;
     width: 100%;
     height: 1.27rem;
     background: url(../../images/download-bg.png) no-repeat;
@@ -226,12 +226,15 @@ html {
 
 #fullpage .one .one_download .one_con a:nth-of-type(4) i.video_in {
     position: absolute;
-    width: .81rem;
+    width: .6rem;
     height: .79rem;
-    top: .26rem;
-    left: .2rem;
-    background: url(../../images/vbtn2.png) no-repeat;
-    background-size: 100% 100%;
+    top: .288rem;
+    left: .35rem;
+    font-size: .2637rem;
+    color: #ffffff;
+    font-style: normal;
+    /* background: url(../../images/vbtn2.png) no-repeat; */
+    /* background-size: 100% 100%; */
 }
 
 #fullpage .two {
@@ -243,12 +246,8 @@ html {
 
 #fullpage .two .two_num_bg {
     position: absolute;
-    top: .56rem;
+    /* top: .56rem; */
     left: 1.08rem;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     width: 3.45rem;
     height: 2.25rem;
     color: #e5e5e5;
@@ -258,6 +257,7 @@ html {
     background-size: 100% 100%;
 
 }
+
 #fullpage .two ul li .two_pic_img {
     width: 2.56rem;
     height: 1.62rem;
@@ -266,36 +266,45 @@ html {
     cursor: pointer;
 }
 
-#fullpage .two ul li .corner{
+#fullpage .two ul li .corner {
     position: absolute;
     width: 2.56rem;
     height: 1.62rem;
     top: 0;
     background:
-            linear-gradient(135deg, transparent 16px,rgba(30,30,30,.75) 0)
-            top left,
-            linear-gradient(-135deg, transparent 16px, rgba(30,30,30,.75) 0)
-            top right,
-            linear-gradient(-45deg, transparent 16px, rgba(30,30,30,.75) 0)
-            bottom right,
-            linear-gradient(45deg, transparent 16px, rgba(30,30,30,.75) 0)
-            bottom left;
+        linear-gradient(135deg, transparent 16px, rgba(30, 30, 30, .75) 0) top left,
+        linear-gradient(-135deg, transparent 16px, rgba(30, 30, 30, .75) 0) top right,
+        linear-gradient(-45deg, transparent 16px, rgba(30, 30, 30, .75) 0) bottom right,
+        linear-gradient(45deg, transparent 16px, rgba(30, 30, 30, .75) 0) bottom left;
     background-size: 50.1% 50.1%;
     background-repeat: no-repeat;
     cursor: pointer;
+    transition: all 1s;
 }
 
-#fullpage .two ul li .corner i{
+#fullpage .two ul li .two_pic_img:hover .corner {
+    transition: all 1s;
+    width: 0;
+}
+
+#fullpage .two ul li .two_pic_img:hover .corner i {
+    opacity: 0;
+    transition: all .2s;
+}
+
+#fullpage .two ul li .corner i {
     position: absolute;
     width: .51rem;
     height: .49rem;
-    top:50%;
+    top: 50%;
     left: 50%;
-    margin-left:-.255rem;
-    margin-top:-.245rem;
+    margin-left: -.255rem;
+    margin-top: -.245rem;
     background: url(../../images/lock.png) no-repeat;
-    background-size: 100% 100%; 
+    background-size: 100% 100%;
+    transition: all .2s;
 }
+
 #fullpage .two .two_pos {
     position: absolute;
     top: .71rem;
@@ -308,9 +317,10 @@ html {
     background: url(../../images/pos.png) no-repeat;
     background-size: 100% 100%;
 }
+
 #fullpage .two .two_pos_chilun {
     position: absolute;
-    top: .2rem;
+    /* top: .2rem; */
     left: 5.12rem;
     width: 4.54rem;
     height: 3.35rem;
@@ -377,13 +387,33 @@ html {
 #fullpage .two .two_num {
     position: absolute;
     top: .64rem;
-    left: .2rem;
-    display: flex;
+    /* left: .2rem; */
+    right:.4rem;
+    display: block;
     width: 2.85rem;
-    color: #e5e5e5;
-    font-size: .82rem;
-    text-align: center;
+    color: #ffffff;
+    font-size: .935rem;
+    text-align: right;
+    /*border-bottom: 0.15rem solid #333;
+    -webkit-border-image: url(../../images/note.png) 25 repeat;
+    -o-border-image: url(../../images/note.png) 25 repeat;
+    border-image: url(../../images/note.png) 25 repeat; */
 }
+ #fullpage .two .two_num_bg i{
+    display: inline-block;
+    /* width:1.505rem; */
+    height: .12rem;
+    background: url(../../images/note.png) repeat;
+    background-size:100% 100%;
+    transition: 1s all cubic-bezier(.46, 1, .23, 1.52);
+    border: 1px solid #161718;
+    background-color: #161718; 
+    padding: .1rem .2rem;
+    box-sizing: border-box;
+    margin-top: 1.65rem;
+}
+
+
 
 #fullpage .two .two_num img {
     margin: 0 .06rem;
@@ -396,7 +426,6 @@ html {
     width: 12.08rem;
     height: 4.51rem;
     position: absolute;
-    top: 1.6rem;
     left: 50%;
     margin-left: -6.04rem;
     background: url(../../images/x3.png) no-repeat;
@@ -510,6 +539,8 @@ html {
     background-size: 100% 100%;
     line-height: .74rem;
     padding-left: .1rem;
+    border-radius: 100%;
+    animation: faguang 1.2s infinite;
 }
 
 #fullpage .two ul li span {
@@ -539,7 +570,7 @@ html {
     height: .68rem;
     left: 50%;
     margin-left: 4.22rem;
-    top: 5.74rem;
+    /* top: 5.74rem; */
     background: url(../../images/btn-appoint-num.png) no-repeat;
     background-size: 100% 100%;
 }
@@ -552,11 +583,11 @@ html {
     color: #fff;
     position: absolute;
     left: 3.45rem;
-    top: 7.3rem;
+    /* top: 7.3rem; */
 }
 
 
-.two .two_con{
+.two .two_con {
     position: absolute;
     width: 12.36rem;
     height: 9.89rem;
@@ -589,35 +620,113 @@ html {
 #fullpage .three ul li {
     position: absolute;
     width: 8rem;
-    height:10.8rem;
+    height: 10.8rem;
 }
 
-#fullpage .three ul li p{
+#fullpage .three ul li p {
     position: absolute;
     left: 5rem;
     top: 7.5rem;
     color: #ffffff;
     font-size: .3rem;
+    top: 7.7rem;
 }
 
-#fullpage .three ul li:nth-child(2) p{
+#fullpage .three ul li a {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+#fullpage .three .topIndex {
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    position: absolute;
+    z-index: 99999;
+    /* background: pink; */
+    left: 2.2rem;
+    top: 20%;
+    border-radius: 100%;
+}
+
+#fullpage .three .topgj {
+    left: 1.6rem;
+    top: 19%;
+}
+#fullpage .three .topfy {
+    left: 1.2rem;
+    top: 26%;
+}
+
+#fullpage .three ul li a img {
+    transition: all 0.9s;
+}
+
+#fullpage .three ul li a .a1.off {
+    opacity: 0;
+}
+
+#fullpage .three ul li a .u1.on {
+    opacity: 1;
+    filter: none;
+}
+
+#fullpage .three ul li a img:nth-of-type(2) {
+    position: absolute;
+    left: 0rem;
+    top: 0;
+    opacity: 0;
+}
+
+#fullpage .three .three_con {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    background-color: #141516;
+    background-size: 100% 100%;
+}
+
+
+#fullpage .three ul li:nth-child(2) p {
     left: 4.3rem;
 }
-#fullpage .three ul li:nth-child(3) p{
+
+#fullpage .three ul li:nth-child(3) p {
     left: 5.3rem;
 }
-#fullpage .three ul li p i{
+
+#fullpage .three ul li p i {
+    content: "";
+    position: absolute;
+    top: .5rem;
+    left: .15rem;
     display: block;
-    width: .3rem;
+    width: 0;
     height: .04rem;
-    margin-top: .15rem;
-    margin-left: .15rem;
     background: #9c2624;
+    transition: all 1s;
 }
 
-#fullpage .three ul li img{
+/* #fullpage .three ul li a span:hover p:after {
+    left: 19%;
+    transition: all 1s;
+    width: 60%;
+} */
+
+#fullpage .three ul li a p i.active {
+    left: 19%;
+    transition: all 1s;
+    width: 60%;
+}
+
+#fullpage .three ul li img {
     cursor: pointer;
 }
+
 #fullpage .three ul li:nth-child(1) {
     left: .33rem;
     width: 7.69rem;
@@ -642,6 +751,7 @@ html {
     background: url(../../images/index_04.jpg) no-repeat;
     background-size: cover;
 }
+
 #fullpage .five {
     position: relative;
     height: 1080px;
@@ -714,7 +824,7 @@ html {
     margin-top: 29px;
 }
 
-#fp-nav ul li:last-child{
+#fp-nav ul li:last-child {
     display: none;
 }
 
@@ -727,17 +837,41 @@ footer {
     color: #fff;
     font-size: .12rem;
 }
-.five .last_con ul li{
+
+.five .last_con ul li {
     overflow: hidden;
 }
-/* .five .last_con ul li:hover{
-    transform: scale(1.1,1.1);
-} */
-.five .last_con ul li img{
-    transition: all 0.9s;
-     transition: transform .9s ease 0s;
+
+.four ul li {
+    overflow: hidden;
 }
-#fp-nav ul li a span:nth-child(2){
+
+/* .four ul li:hover img.nav_img3{
+    transform: scale(1.1,1.1);
+}
+.four ul li img.nav_img3{
+    transition: all 0.9s;
+    transition: transform .9s ease 0s;
+} */
+.five .last_con ul li:hover img {
+    transform: scale(1.1, 1.1);
+}
+
+.five .last_con ul li img {
+    transition: all 0.9s;
+    transition: transform .9s ease 0s;
+}
+
+.five .last_con ul li a {
+    transition: all 0.9s;
+    opacity: 1;
+}
+
+.five .last_con ul li a.on {
+    opacity: .4;
+}
+
+#fp-nav ul li a span:nth-child(2) {
     width: .03rem;
     height: .27rem;
     background: #fff;
@@ -745,7 +879,8 @@ footer {
     margin-left: .08rem;
     top: .18rem;
 }
-#fp-nav ul li a span:nth-child(2):before{
+
+#fp-nav ul li a span:nth-child(2):before {
     content: '';
     position: absolute;
     right: .05rem;
@@ -754,17 +889,20 @@ footer {
     background: #ffffff;
 }
 
- #fp-nav ul li:hover a.active span:nth-child(2){
-    background:none;
-    border-radius:inherit !important;
+#fp-nav ul li:hover a.active span:nth-child(2) {
+    background: none;
+    border-radius: inherit !important;
 }
-#fp-nav ul li:nth-child(3):hover a.active span:nth-child(2){
-    background:none;
-    border-radius:inherit !important;
+
+#fp-nav ul li:nth-child(3):hover a.active span:nth-child(2) {
+    background: none;
+    border-radius: inherit !important;
 }
-#fp-nav ul li a.active span:nth-child(1){
+
+#fp-nav ul li a.active span:nth-child(1) {
     padding-left: .15rem !important;
 }
+
 /* 底部 */
 .footer a {
     width: .9rem;
@@ -775,6 +913,7 @@ footer {
     opacity: 1;
     cursor: pointer;
 }
+
 .footer .footer_in {
     position: absolute;
     width: 4.1rem;
@@ -785,6 +924,7 @@ footer {
     top: .28rem;
     text-indent: -9999px;
 }
+
 .footer .intr {
     left: 0;
 }
@@ -802,55 +942,4 @@ footer {
 .footer .private {
     right: 0;
     width: 1rem;
-}
-
-
-@keyframes start {
-
-    0%,
-    30% {
-        opacity: 0;
-        transform: translate3d(0, -10px, 0);
-    }
-
-    60% {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate3d(0, 5px, 0);
-    }
-}
-
-@keyframes rotate {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes circle-move1 {
-    from {
-        background-color: #df2d2d;
-        transform: scale(1);
-    }
-
-    50% {
-        background-color: #df2d2d;
-        transform: scale(1.5);
-        opacity: 0.3;
-    }
-
-    to {
-        background-color: #df2d2d;
-        transform: scale(1.2);
-        opacity: 0.2;
-    }
 }

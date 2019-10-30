@@ -7,7 +7,7 @@ function Page() {
 
 Page.prototype.init = function() {
 	this.openVideo();
-	this.closeVideo();
+    this.closeVideo();
 }
 
 Page.prototype.openVideo = function() {
@@ -36,7 +36,7 @@ function showOrHide(flag) {
     	$("iframe").remove();
         this.video.hide();
         this.mask.hide();
-        $(".video").append('<iframe src="../video/video.mp4"></iframe>');
+        $(".video").append('<iframe src="video/myVideo.mp4"></iframe>');
 
     } else if (flag === 1) {
 

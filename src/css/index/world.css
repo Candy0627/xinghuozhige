@@ -12,28 +12,22 @@
   width: 2.02rem;
   height: 2.88rem;
   text-align: center;
-  background: url(../../images/world-bg.jpg) no-repeat;
-  background-size: 100% 100%;
   cursor: pointer;
 }
 .four ul li:nth-child(1) {
   top: 1rem;
 }
 .four ul li:nth-child(2) {
-  top: 0;
   left: 4.94rem;
 }
 .four ul li:nth-child(3) {
   top: 0.9rem;
-  right: 0;
 }
 .four ul li:nth-child(4) {
   top: 4.52rem;
-  left: 2.65rem;
 }
 .four ul li:nth-child(5) {
   top: 5.37rem;
-  left: 7.89rem;
 }
 .four ul li .pic {
   width: 1.09rem;
@@ -47,7 +41,7 @@
   position: absolute;
   top: 2rem;
   left: 50%;
-  margin-left: -0.55rem;
+  margin-left: -0.56rem;
 }
 .four ul li span {
   display: block;
@@ -103,6 +97,7 @@
   height: 2.88rem;
   text-align: center;
   background-size: 100% 100%;
+  background: #000;
   cursor: pointer;
   overflow: hidden;
 }
@@ -124,7 +119,6 @@
   width: 8.32rem;
   height: 3rem;
   top: 0;
-  left: 8.08rem;
 }
 .five .last_con ul li:nth-child(2) img {
   width: 100%;
@@ -134,7 +128,6 @@
   width: 8.32rem;
   height: 2.34rem;
   top: 3rem;
-  left: 8.08rem;
 }
 .five .last_con ul li:nth-child(3) img {
   width: 100%;
@@ -148,14 +141,12 @@
 .five .last_con ul li:nth-child(5) {
   width: 4.04rem;
   height: 1.7rem;
-  left: 8.1rem;
   top: 5.35rem;
 }
 .five .last_con ul li:nth-child(6) {
   width: 4.28rem;
   height: 1.7rem;
   top: 5.35rem;
-  right: 0;
 }
 .last {
   position: relative;

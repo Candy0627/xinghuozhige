@@ -10,6 +10,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const webpackconfig = {
     mode: 'development',
+    devtool: 'cheap-module-eval-source-map',
     entry: {
         "index": path.resolve(__dirname, "src/js/index/index.js"),
         "list": path.resolve(__dirname, "src/js/list/list.js"),
@@ -54,7 +55,7 @@ const webpackconfig = {
             {
                 test: /\.(eot|ttf|woff|woff2|mp4)$/,
                 // loader: 'url-loader?name=images/[name].[ext]',
-                loader: 'url-loader',
+                loader: 'file-loader',
                 options: {
                     limit: 10,
                     name: 'video/[name].[ext]'
@@ -68,14 +69,6 @@ const webpackconfig = {
                     limit: 10
                 }
             },
-            // {
-            //     test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-            //     loader: 'url-loader',
-            //     query: {
-            //         limit: 10000,
-            //         name: 'video/[name].[ext]'
-            //     }
-            // },
             {
                 test: /\.(html)$/, // 用来匹配html文件模块(html需要通过插件引入？)，可以将html标签中引入的图片资源进行打包
                 use: [{
@@ -109,6 +102,7 @@ const webpackconfig = {
             template: path.join(__dirname, '/src/templates/index.html'),
             // 在目标目录下生成目标文件
             filename: path.join(__dirname, '/dist/index.html'),
+            favicon:'./favicon.ico',
             chunks: ["index"] // 这个参数配合entry可以将打包的模块以<script></script>的形式加载到html文件中
         }),
         new HtmlWebpackPlugin({
@@ -116,6 +110,7 @@ const webpackconfig = {
             template: path.join(__dirname, '/src/templates/list.html'),
             // 在目标目录下生成目标文件
             filename: path.join(__dirname, '/dist/list.html'),
+            favicon:'./favicon.ico',
             chunks: ["list"] // 这个参数配合entry可以将打包的模块以<script></script>的形式加载到html文件中
         }),
         // 该插件可以将源目录中的文件直接复制到目标目录中

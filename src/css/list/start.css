@@ -1,0 +1,58 @@
+#root {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: url(../../images/loading.jpg) 50% no-repeat;
+}
+#root .loading {
+  position: absolute;
+  width: 8.09rem;
+  height: 7.98rem;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  margin-left: -4.045rem;
+  margin-top: -4.3rem;
+}
+#root .wrap {
+  position: absolute;
+  width: 8.09rem;
+  height: 7.98rem;
+  text-align: center;
+  background: url(../../images/loading-wai.png) no-repeat;
+  background-size: 100% 100%;
+  left: 0;
+  top: 0;
+  animation: rotate 8s linear infinite both;
+}
+#root .wrap_in {
+  position: absolute;
+  width: 2.96rem;
+  height: 2.98rem;
+  text-align: center;
+  background: url(../../images/loading-in.png) no-repeat;
+  background-size: 100% 100%;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.5rem;
+  margin-top: -1.5rem;
+}
+#root .pro_mask {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  /* box-shadow: 0 0 5px 0px; */
+  text-align: center;
+  line-height: 2rem;
+  font-size: 0.72rem;
+  color: #ffffff;
+  margin-left: -1.1rem;
+  margin-top: -1rem;
+  font-style: italic;
+  font-family: '宋体';
+  text-shadow: 0.2rem 0rem 0.5rem rgba(242, 48, 45, 0.4), -0.2rem 0rem 0.5rem rgba(242, 48, 45, 0.4), 0rem 0.2rem 0.5rem rgba(242, 48, 45, 0.4), 0rem -0.2rem 0.5rem rgba(242, 48, 45, 0.4);
+}

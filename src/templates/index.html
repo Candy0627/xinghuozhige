@@ -3,65 +3,296 @@
 
 <head>
     <meta charset="utf-8">
-    <title>星火之歌预约页</title>
+    <title>Code:Seed 星火之歌事前登錄受付中</title>
+    <meta http-equiv="keywords" content="Code:Seed 星火之歌事前登錄受付中">
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Code:Seed 星火之歌事前登錄受付中" />
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <meta name="viewport"
         content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        /* CSS3过度及动画 */
+        .one,
+        .two,
+        .three,
+        .four,
+        .five,
+        .last {
+            overflow: hidden;
+        }
+
+        .bg1 {
+            transition: all 1s;
+            bottom: -1rem;
+        }
+
+        .active .bg1 {
+            bottom: .4rem !important;
+            transition-delay: 0.5s;
+        }
+
+        /* 预约 */
+        .bg2_on {
+            width: 1.505rem;
+        }
+
+        .active .bg2_on {
+            width: 3.01rem !important;
+            transition-delay: .2s;
+        }
+
+        .bg2 {
+            transition: all 1s;
+            top: 0rem;
+        }
+
+        .active .bg2 {
+            top: .56rem !important;
+            transition-delay: .6s;
+        }
+
+        .bg2_1 {
+            transition: all 1s;
+            top: 0rem;
+        }
+
+        .active .bg2_1 {
+            top: .2rem !important;
+            transition-delay: .7s;
+        }
+
+        .bg2_2 {
+            transition: all 1s;
+            top: 0rem;
+        }
+
+        .active .bg2_2 {
+            top: .56rem !important;
+            transition-delay: .8s;
+        }
+
+        .bg2_3 {
+            transition: all 1s;
+            top: 7rem;
+        }
+
+        .active .bg2_3 {
+            top: 1.6rem !important;
+            transition-delay: .6s;
+        }
+
+        .bg2_4 {
+            opacity: 0;
+            transition: all 1s;
+            top: 9.6rem;
+        }
+
+        .active .bg2_4 {
+            opacity: 1;
+            top: 5.47rem !important;
+            transition-delay: .7s;
+        }
+
+        .bg2_5 {
+            transition: all 1s;
+            top: 10rem;
+            opacity: 0;
+        }
+
+        .active .bg2_5 {
+            opacity: 1;
+            top: 7.3rem !important;
+            transition-delay: .8s;
+        }
+
+        /* 种火 */
+        .bg3 {
+            transition: all 1s;
+            top: -13rem;
+            opacity: 0;
+        }
+
+        .active .bg3 {
+            opacity: 1;
+            top: 0 !important;
+            transition-delay: .7s;
+        }
+
+        .bg3_1 {
+            transition: all 1s;
+            top: 10rem;
+            opacity: 0;
+        }
+
+        .active .bg3_1 {
+            opacity: 1;
+            top: 0 !important;
+            transition-delay: .7s;
+        }
+
+        .bg3_2 {
+            transition: all 1s;
+            top: -13rem;
+            opacity: 0;
+        }
+
+        .active .bg3_2 {
+            opacity: 1;
+            top: 0 !important;
+            transition-delay: .7s;
+        }
+
+        /* 世界 */
+        .bg4_1 {
+            transition: all 1s;
+            left: -5rem;
+            opacity: 0;
+        }
+
+        .active .bg4_1 {
+            opacity: 1;
+            left: 0 !important;
+            transition-delay: .7s;
+        }
+
+        .bg4_4 {
+            transition: all 1s;
+            left: -5rem;
+            opacity: 0;
+        }
+
+        .active .bg4_4 {
+            opacity: 1;
+            left: 2.65rem !important;
+            transition-delay: .7s;
+        }
+
+        .bg4_2 {
+            transition: all 1s;
+            top: -13rem;
+            opacity: 0;
+        }
+
+        .active .bg4_2 {
+            opacity: 1;
+            top: 0 !important;
+            transition-delay: .7s;
+        }
+
+        .bg4_3 {
+            transition: all 1s;
+            right: -5rem;
+            opacity: 0;
+        }
+
+        .active .bg4_3 {
+            opacity: 1;
+            right: 0 !important;
+            transition-delay: .7s;
+        }
+
+        .bg4_5 {
+            transition: all 1s;
+            right: -5rem;
+            opacity: 0;
+        }
+
+        .active .bg4_5 {
+            opacity: 1;
+            right: 2.1rem !important;
+            transition-delay: .7s;
+        }
+
+        /* 资料 */
+        .bg5_1 {
+            transition: all 1s;
+            left: -5rem;
+            opacity: 0;
+        }
+
+        .active0 .bg5_1 {
+            opacity: 1;
+            left: 0 !important;
+            transition-delay: .7s;
+        }
+
+        .bg5_2 {
+            transition: all 1s;
+            right: -5rem;
+            opacity: 0;
+        }
+
+        .active0 .bg5_2 {
+            opacity: 1;
+            right: 0 !important;
+            transition-delay: .7s;
+        }
+
+        .bg5_3 {
+            transition: all 1s;
+            right: -5rem;
+            opacity: 0;
+        }
+
+        .active0 .bg5_3 {
+            opacity: 1;
+            right: 4.28rem !important;
+            transition-delay: .7s;
+        }
+    </style>
 </head>
 
 <body>
     <div id="fullpage">
-        <div class="section one">
+        <div class="section one fullpage1">
             <div class="one-title-background">
-                <video id="video" width="100%" height="100%" class="one-background-video" data-autoplay autoplay loop
-                    muted poster="../images/index_01.jpg">
-                    <source src="../video/video.mp4">
+                <video id="video" width="100%" height="100%" class="one-background-video" muted="muted" data-autoplay autoplay loop poster="../images/index_01.jpg">
+                    <source src="../video/video.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="one-title-button">
+            <div class="one-title-button animated">
                 <a href="javascript:" class="one-title-button-play play">
                     <span class="title-button-play-title">PV 001</span>
                 </a>
             </div>
-            <span class="one_logo"></span>
-            <div class="one_download">
+            <!-- <span class="one_logo"></span> -->
+            <video id="logoVideo" width="100%" height="100%" class="one_logo" data-autoplay autoplay loop muted>
+                <!-- <source src="../video/logo.mp4"> -->
+            </video>
+            <div class="one_download bg1">
                 <div class="one_con">
                     <a href="#" class="btn"><i></i></a>
                     <a href="#" class="btn"><i></i></a>
                     <a href="#" class="btn"><i></i></a>
                     <a href="#">
                         <i class="video_wrap"></i>
-                        <i class="video_in"></i>
+                        <i class="video_in">立即预约</i>
                     </a>
                     <em></em>
                 </div>
             </div>
         </div>
-        <div class="section two">
-            <div class="two_l"></div>
+        <div class="section two fullpage2">
+            <div class="two_l" id="exp1"></div>
             <div class="two_r"></div>
             <div class="two_l_b"></div>
             <div class="two_r_t"></div>
             <div class="two_r_b"></div>
             <div class="two_con">
-                <div class="two_num_bg">
-                    <div class="two_num">
-                        <img src="../images/1.png" alt="">
-                        <img src="../images/0.png" alt="">
-                        <img src="../images/3.png" alt="">
-                        <img src="../images/6.png" alt="">
-                        <img src="../images/7.png" alt="">
-                        <img src="../images/8.png" alt="">
+                <div class="two_num_bg bg2">
+                    <div class="two_num" id="number">
                     </div>
+                    <i class="bg2_on"></i>
                 </div>
 
-                <div class="two_pos_chilun"></div>
-                <div class="two_pos"></div>
-                <ul>
+                <div class="two_pos_chilun bg2_1"></div>
+                <div class="two_pos bg2_2"></div>
+                <ul class="bg2_3">
                     <li>
                         <div class="two_title">
                             <em class="on">1</em>
-                            <div class="circle circle1"></div>
-                            <div class="circle circle2"></div>
+                            <!-- <div class="circle circle1"></div>
+                            <div class="circle circle2"></div> -->
                         </div>
                         <span>10,000<i></i></span>
                         <div class="two_pic_img">
@@ -74,8 +305,6 @@
                     <li>
                         <div class="two_title">
                             <em class="on">2</em>
-                            <div class="circle circle1"></div>
-                            <div class="circle circle2"></div>
                         </div>
                         <span>20,000<i></i></span>
                         <div class="two_pic_img">
@@ -105,8 +334,8 @@
 
                     </li>
                 </ul>
-                <a href="#" class="two_btn_appoint"></a>
-                <div class="two_text">
+                <a href="#" class="two_btn_appoint bg2_4"></a>
+                <div class="two_text bg2_5">
                     <p>活動规则：</p>
                     <p>1.活動時間：2019年XX月XX日至2019年XX月XX日結束。</p>
                     <p>2.參與活動請務必填寫正確的行動電話號碼，確認提交后不可再次修改，避免遺漏訊息。</p>
@@ -118,66 +347,83 @@
                 </div>
             </div>
         </div>
-        <div class="section three">
-            <ul>
-                <li>
-                    <img src="../images/a1.png" alt="">
-                    <img src="../images/l1.png" alt="" class="none">
-                    <p>攻擊<i></i></p>
-                </li>
-                <li>
-                    <img src="../images/a2.png" alt="">
-                    <img src="../images/l2.png" alt="" class="none">
-                    <p>防禦<i></i></p>
-                </li>
-                <li>
-                    <img src="../images/a3.png" alt="">
-                    <img src="../images/l3.png" alt="" class="none">
-                    <p>輔助<i></i></p>
-                </li>
-            </ul>
+        <div class="section three fullpage3">
+            <div class="three_con">
+                <ul>
+                    <li class="bg3">
+                        <a href="#" title="攻擊">
+                            <span class="topIndex topgj"></span>
+                            <img src="../images/a1.png" alt="" class="a1">
+                            <img src="../images/l1.png" alt="" class="u1">
+                            <p>攻擊<i></i></p>
+                        </a>
+
+                    </li>
+                    <li class="bg3_1">
+                        <a href="#" title="防禦">
+                            <span class="topIndex topfy"></span>
+                            <img src="../images/a2.png" alt="" class="a1">
+                            <img src="../images/l2.png" alt="" class="u1">
+                            <p>防禦<i></i></p>
+                        </a>
+                    </li>
+                    <li class="bg3_2">
+                        <a href="#" title="輔助">
+                            <span class="topIndex"></span>
+                            <img src="../images/a3.png" alt="" class="a1">
+                            <img src="../images/l3.png" alt="" class="u1">
+                            <p>輔助<i></i></p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="section four pageone">
+        <div class="section four pageone fullpage4">
             <ul>
-                <li class="page-role">
+                <li class="page-role bg4_1">
+                    <img src="../images/world-bg.jpg" alt="" class="nav_img3">
                     <div class="pic">
-                        <img src="../images/s1.png" alt="">
+                        <img src="../images/s1.png" alt="" class="nav_img3">
                     </div>
                     <div class="txt">
                         <span class="name">月源石</span>
                         <span class="eng">- xiushi yingw -</span>
                     </div>
                 </li>
-                <li class="page-role">
+                <li class="page-role bg4_2">
+                    <img src="../images/world-bg.jpg" alt="" class="nav_img3">
                     <div class="pic">
-                        <img src="../images/s2.png" alt="">
+                        <img src="../images/s2.png" alt="" class="nav_img3">
                     </div>
                     <div class="txt">
                         <span class="name">種火計劃</span>
                         <span class="eng">- xiushi yingw -</span>
                     </div>
                 </li>
-                <li class="page-role">
+                <li class="page-role bg4_3">
+                    <img src="../images/world-bg.jpg" alt="" class="nav_img3">
                     <div class="pic">
-                        <img src="../images/s3.png" alt="">
+                        <img src="../images/s3.png" alt="" class="nav_img3">
                     </div>
                     <div class="txt">
                         <span class="name">神啟公司</span>
                         <span class="eng">- xiushi yingw -</span>
                     </div>
                 </li>
-                <li class="page-role">
+                <li class="page-role bg4_4">
+                    <img src="../images/world-bg.jpg" alt="" class="nav_img3">
                     <div class="pic">
-                        <img src="../images/s4.png" alt="">
+                        <img src="../images/s4.png" alt="" class="nav_img3">
                     </div>
                     <div class="txt">
                         <span class="name">喪尸</span>
                         <span class="eng">- xiushi yingw -</span>
                     </div>
                 </li>
-                <li class="page-role">
+                <li class="page-role bg4_5">
+                    <img src="../images/world-bg.jpg" alt="" class="nav_img3">
                     <div class="pic">
-                        <img src="../images/s5.png" alt="">
+                        <img src="../images/s5.png" alt="" class="nav_img3">
                     </div>
                     <div class="txt">
                         <span class="name">安全區</span>
@@ -186,37 +432,37 @@
                 </li>
             </ul>
         </div>
-        <div class="section five">
+        <div class="section five fullpage5 active0">
             <div class="last_con">
                 <em></em>
                 <em></em>
                 <ul>
-                    <li>
+                    <li class="bg5_1">
                         <a href="#">
                             <img src="../images/z1.jpg" alt="">
                         </a>
                     </li>
-                    <li>
+                    <li class="bg5_2">
                         <a href="#">
                             <img src="../images/z2.jpg" alt="">
                         </a>
                     </li>
-                    <li>
+                    <li class="bg5_2">
                         <a href="#">
                             <img src="../images/z3.jpg" alt="">
                         </a>
                     </li>
-                    <li>
+                    <li class="bg5_1">
                         <a href="#">
                             <img src="../images/z4.jpg" alt="">
                         </a>
                     </li>
-                    <li>
+                    <li class="bg5_3">
                         <a href="#">
                             <img src="../images/z5.jpg" alt="">
                         </a>
                     </li>
-                    <li>
+                    <li class="bg5_2">
                         <a href="#">
                             <img src="../images/z6.jpg" alt="">
                         </a>
