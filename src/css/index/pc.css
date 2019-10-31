@@ -30,6 +30,12 @@ body{
   background-color: #F4F6FD;
   overflow-x: hidden;
 }
+
+body .myskin{
+    background-color: transparent !important;/*背景透明*/
+    box-shadow: 0 0 0 rgba(0,0,0,0);/*前景无阴影*/
+}
+
 a:hover{
   color: #fc6262;
 }

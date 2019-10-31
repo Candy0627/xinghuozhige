@@ -1,7 +1,10 @@
 import $ from 'jquery';
 import fullpage from 'fullpage.js';
+import '../../js/index/layer/layer.js'
 import '../../js/index/pc.js';
 import '../../js/index/mobile.js';
+
+import '../../js/index/layer/theme/default/layer.css'
 import '../../css/index/fullpage.css';
 import '../../css/index/normalize.css';
 import '../../css/index/main.css';
@@ -12,31 +15,80 @@ import '../../css/index/animate.css';
 import '../../images/video.mp4'
 
 
-var promise = document.querySelector('video').play();
+//数字变化特效
+function magic_number(value, num) {
+    num.animate({
+        count: value
+    }, {
+        duration: 2000, //持续时间
+        step: function () {
+            num.text(Math.round(this.count));
+        }
+    })
+}
+magic_number(203728, $('#number'));
 
-if (promise !== undefined) {
-    promise.then(_ => {
-        // Autoplay started!
-    }).catch(error => {
-        // Autoplay was prevented.
-        // Show a "Play" button so that user can start playback.
-    });
+
+// 点击出现预约弹出框
+document.getElementById('appoint').addEventListener('click', function () {
+    appointInfoPop();
+})
+
+var ul = document.getElementById('backgroundImg');
+// var li = ul.getElementsByTagName('li');
+var li = ul.querySelectorAll('li');
+for (var i = 0; i < li.length; i++) {
+    li[i].onclick = function () {
+        for (var i = 0; i < li.length; i++) {
+            li[i].style.color = '#767676';
+            li[i].style.backgroundColor = '#c8c8c8';
+            this.style.color = '#fff';
+            this.style.backgroundColor = '#a6a6a6';
+        }
+    }
+}
+
+// 预约ajax
+document.getElementById('submit').addEventListener('click', function () {
+    layer.closeAll();
+    appointSuccessPop();
+})
+
+// 弹框关闭按钮
+var arrc = document.getElementsByName('close');
+for (var i = 0; i < arrc.length; i++) {
+    arrc[i].addEventListener('click', function () {
+        layer.closeAll();
+    })
+}
+
+function appointInfoPop() {
+    layer.open({
+        type: 1,
+        shade: true,
+        shadeClose: true,
+        title: false,
+        closeBtn: 0,
+        skin: 'myskin',
+        area: ['8.65rem', '4.49rem'],
+        content: $('#appoint_pop')
+    })
+}
+
+function appointSuccessPop() {
+    layer.open({
+        type: 1,
+        shade: true,
+        shadeClose: true,
+        title: false,
+        closeBtn: 0,
+        skin: 'myskin',
+        area: ['8.65rem', '4.49rem'],
+        content: $('#appoint_success_pop')
+    })
 }
 
 $(function () {
-    // 数字变化
-    function magic_number(value, num) {
-        num.animate({
-            count: value
-        }, {
-            duration: 2000, //持续时间
-            step: function () {
-                num.text(Math.round(this.count));
-            }
-        })
-    }
-    magic_number(203728, $('#number'));
-
     var fullPageInstance = new fullpage('#fullpage', {
         navigation: 'true',
         navigationPosition: 'right',
@@ -44,33 +96,34 @@ $(function () {
         menu: '#myMenu',
         verticalCentered: 'true',
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-        afterRender: function () {
-            // 页面结构渲染完毕后触发的函数
-            $('#video').get(0).play();
-            magic_number(203728, $('#number'));
-        },
-        afterLoad: function (anchorLink, index) {
-            // 到达某一个页面触发的回调函数
-            console.log('当前在', anchorLink.anchor, index.index);
-            var a = anchorLink.anchor;
-            var i = index.index;
-            if (i == 1) {
-                $('.two').find('p').delay(500).animate({
-                    left: '0'
-                }, 1500, 'easeOutExpo')
-            }
-        },
         onLeave: function (index, nextIndex, direction) {
-            // 离开某一个页面触发的回调函数
             console.log('当前离开', index.index, nextIndex.index, direction);
             var i = index.index;
             var nextI = nextIndex.index;
+            if (nextI !== 1) {
+                $('#number').text('');
+            } else {
+                magic_number(203728, $('#number'));
+            }
+            if (nextI == 1 && direction == 'down') {}
+            if (nextI == 1 && direction == 'up') {}
+        },
+        afterLoad: function (anchorLink, index) {
+            console.log('当前在', anchorLink.anchor, index.index);
+            var a = anchorLink.anchor;
+            var i = index.index;
+
             if (i == 1) {
+                console.log('我要执行预约数字动画', $('#number'));
+                setTimeout(function () {
+                    magic_number(203728, $('#number'));
+                }, 20000000000)
 
             }
-            if (nextI == 2) {
-
-            }
+        },
+        // 这个回调是在页面结构生成之后触发，这是要用来初始化其他插件
+        afterRender: function () {
+            $('#video').get(0).play();
         }
     });
 
@@ -127,11 +180,8 @@ $(function () {
 
     // 世界屏
     $('#fullpage .four ul li').hover(function () {
-        // $(this).children('.txt').css('display', 'block').removeClass('animated lightSpeedOut').addClass('animated lightSpeedIn');
 
-    }, function () {
-        // $(this).children('.txt').css('display', 'block').removeClass('animated lightSpeedIn').addClass('animated lightSpeedOut');
-    })
+    }, function () {})
 
     // 资料屏
     $('.five .last_con ul li a').hover(function () {
@@ -140,12 +190,5 @@ $(function () {
     }, function () {
         $(this).parent().siblings().children('a').removeClass('on');
     })
-
-
-
-    // setTimeout(function(){
-    //     $('#fullpage .two .two_num_bg i').addClass('on');
-    // },1000)
-
 
 })
