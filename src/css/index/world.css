@@ -93,10 +93,7 @@
 }
 .five .last_con ul li {
   position: absolute;
-  width: 50%;
-  height: 2.88rem;
   text-align: center;
-  background-size: 100% 100%;
   background: #000;
   cursor: pointer;
   overflow: hidden;
@@ -107,49 +104,179 @@
   display: inline-block;
 }
 .five .last_con ul li:nth-child(1) {
-  width: 8.1rem;
-  height: 5rem;
+  width: 2.88rem;
+  height: 4.72rem;
   top: 0;
-}
-.five .last_con ul li:nth-child(1) img {
-  width: 100%;
-  height: 5rem;
 }
 .five .last_con ul li:nth-child(2) {
-  width: 8.32rem;
-  height: 3rem;
+  width: 5.22rem;
+  height: 2rem;
   top: 0;
-}
-.five .last_con ul li:nth-child(2) img {
-  width: 100%;
-  height: 3rem;
+  left: 2.88rem;
 }
 .five .last_con ul li:nth-child(3) {
-  width: 8.32rem;
-  height: 2.34rem;
-  top: 3rem;
-}
-.five .last_con ul li:nth-child(3) img {
-  width: 100%;
-  height: 2.34rem;
+  width: 5.22rem;
+  height: 2.72rem;
+  top: 2rem;
+  left: 2.88rem;
 }
 .five .last_con ul li:nth-child(4) {
-  width: 8.08rem;
-  height: 2.04rem;
-  top: 5rem;
+  width: 2.9rem;
+  height: 4.72rem;
+  left: 8.1rem;
+  top: 0;
 }
 .five .last_con ul li:nth-child(5) {
-  width: 4.04rem;
-  height: 1.7rem;
-  top: 5.35rem;
+  width: 5rem;
+  height: 2.14rem;
+  left: 11rem;
+  top: 0;
 }
 .five .last_con ul li:nth-child(6) {
+  width: 5rem;
+  height: 2.6rem;
+  left: 11rem;
+  top: 2.14rem;
+}
+.five .last_con ul li:nth-child(7) {
   width: 4.28rem;
-  height: 1.7rem;
-  top: 5.35rem;
+  height: 2.32rem;
+  left: 0;
+  top: 4.72rem;
+}
+.five .last_con ul li:nth-child(8) {
+  width: 8.1rem;
+  height: 2.32rem;
+  left: 4.28rem;
+  top: 4.72rem;
+}
+.five .last_con ul li:nth-child(9) {
+  width: 3.62rem;
+  height: 2.32rem;
+  left: 12.38rem;
+  top: 4.72rem;
 }
 .last {
   position: relative;
   width: 100%;
   height: 0.98rem;
+}
+.world_pop .tip-box {
+  width: 100%;
+  margin-left: 0;
+  height: 6.07rem;
+  left: 0;
+  top: 50%;
+  margin-top: -3.035rem;
+}
+.world_pop .tip-box .w_l {
+  width: 10.13rem;
+  height: 3.44rem;
+}
+.world_pop .tip-box .w_r {
+  width: 12.4rem;
+  height: 3.49rem;
+  position: absolute;
+  top: 0.88rem;
+  left: 7rem;
+}
+.world_pop .tip-box .zl {
+  width: 16.25rem;
+  height: 7.39rem;
+}
+.world_pop .tip-box .bg {
+  width: 100%;
+  height: 6.07rem;
+}
+.world_pop .tip-box i {
+  top: 0.4rem;
+  right: 0.1rem;
+}
+.world_pop .tip-box #w_img {
+  width: 4.52rem;
+  height: 5.6rem;
+}
+.world_pop .tip-box .world_con {
+  position: absolute;
+  top: 0;
+  width: 11.7rem;
+  height: 4rem;
+  left: 50%;
+  margin-left: -5.85rem;
+}
+.world_pop .tip-box .world_con .left {
+  width: 4.78rem;
+  height: 5.79rem;
+}
+.world_pop .tip-box .world_con .left img {
+  transform-origin: center bottom;
+  transform: scaleX(0);
+}
+.world_pop .tip-box .world_con .left img.active {
+  transition: all 0.9s;
+  transform: none;
+}
+.world_pop .tip-box .world_con .right {
+  position: absolute;
+  top: 2.13rem;
+  right: -2.6rem;
+  width: 9rem;
+}
+.world_pop .tip-box .world_con .right h2 {
+  display: block;
+  width: 6rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.4rem;
+  color: #000000;
+  background: url(../../images/w_font.png) no-repeat;
+  background-size: 100% 100%;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+}
+.world_pop .tip-box .world_con .right h2.active {
+  transition: all 0.9s;
+  transform: none;
+}
+.world_pop .tip-box .world_con .right p.txt {
+  width: 100%;
+  font-size: 0.22rem;
+  color: #000000;
+  font-family: '思源黑体';
+  letter-spacing: 0.06rem;
+  margin-top: 0.3rem;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+}
+.world_pop .tip-box .world_con .right p.txt.active {
+  transition: all 0.9s;
+  transform: none;
+}
+.data_pop .tip-box {
+  width: 16.03rem;
+  height: 7.04rem;
+  left: 50%;
+  top: 50%;
+  margin-left: -8.015rem;
+  margin-top: -3.52rem;
+}
+.data_pop .tip-box i {
+  top: -0.5rem;
+  right: 0;
+}
+.data_pop .tip-box .zl {
+  width: 100%;
+}
+.three .three_con .characters_detail .left {
+  position: relative;
+  left: 1.26rem;
+  top: 0.3rem;
+  width: 4.3rem;
+  height: 2.59rem;
+  cursor: pointer;
+}
+.three .three_con .characters_detail .left li {
+  width: 1.76rem;
+  height: 1.76rem;
+  cursor: pointer;
 }

@@ -11,6 +11,12 @@
     <meta name="viewport"
         content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
+        .fb_iframe_widget {
+            display: inline-block;
+            position: absolute !important;
+            left: 0 !important;
+            top: .2rem !important;
+        }
         /* CSS3过度及动画 */
         .one,
         .two,
@@ -204,7 +210,7 @@
         }
 
         /* 资料 */
-        .bg5_1 {
+        /* .bg5_1 {
             transition: all 1s;
             left: -5rem;
             opacity: 0;
@@ -238,7 +244,7 @@
             opacity: 1;
             right: 4.28rem !important;
             transition-delay: .7s;
-        }
+        } */
     </style>
 </head>
 
@@ -283,7 +289,7 @@
                 <div class="two_num_bg bg2">
                     <div class="two_num" id="number">
                     </div>
-                    <i class="bg2_on"></i>
+                    <!-- <i class="bg2_on"></i> -->
                 </div>
 
                 <div class="two_pos_chilun bg2_1"></div>
@@ -349,8 +355,8 @@
             </div>
         </div>
         <div class="section three fullpage3">
-            <div class="three_con">
-                <ul>
+            <div class="three_con" id="characters">
+                <ul class="characters_list" style="display: none;">
                     <li class="bg3">
                         <a href="#" title="攻擊">
                             <span class="topIndex topgj"></span>
@@ -377,10 +383,21 @@
                         </a>
                     </li>
                 </ul>
+                <div class="characters_detail">
+                    <ul class="left">
+                        <li>
+                            <img src="../images/fuzhu/l_icon.png" alt="" srcset="">
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div class="right"></div>
+                </div>
             </div>
         </div>
         <div class="section four pageone fullpage4">
-            <ul>
+            <ul id="four_ul">
                 <li class="page-role bg4_1">
                     <img src="../images/world-bg.jpg" alt="" class="nav_img3">
                     <div class="pic">
@@ -437,35 +454,50 @@
             <div class="last_con">
                 <em></em>
                 <em></em>
-                <ul>
+                <ul id="data_ul">
                     <li class="bg5_1">
                         <a href="#">
-                            <img src="../images/z1.jpg" alt="">
+                            <img src="../images/1.jpg" alt="">
                         </a>
                     </li>
                     <li class="bg5_2">
                         <a href="#">
-                            <img src="../images/z2.jpg" alt="">
+                            <img src="../images/2.jpg" alt="">
                         </a>
                     </li>
                     <li class="bg5_2">
                         <a href="#">
-                            <img src="../images/z3.jpg" alt="">
+                            <img src="../images/3.jpg" alt="">
                         </a>
                     </li>
                     <li class="bg5_1">
                         <a href="#">
-                            <img src="../images/z4.jpg" alt="">
+                            <img src="../images/4.jpg" alt="">
                         </a>
                     </li>
                     <li class="bg5_3">
                         <a href="#">
-                            <img src="../images/z5.jpg" alt="">
+                            <img src="../images/5.jpg" alt="">
                         </a>
                     </li>
                     <li class="bg5_2">
                         <a href="#">
-                            <img src="../images/z6.jpg" alt="">
+                            <img src="../images/6.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/7.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/8.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/9.jpg" alt="">
                         </a>
                     </li>
                 </ul>
@@ -491,16 +523,29 @@
     </div>
 
     <!-- 预约弹框 -->
-    <div id="appoint_pop" style="display: none;">
+    <div id="appoint_pop" class="appoint_pop" style="display: none;">
         <div class="tip-box">
             <img src="../images/pop_bg.png" alt="">
             <i name="close"></i>
             <div id="appoint_now">
                 <div class="m_appoint_now">
-                    <ul id="backgroundImg">
-                        <li id="taiwan" class="current">台灣</li>
+                    <a href="#" class="loginFb"></a>
+
+                    <div id="fb-root"></div>
+                    <script async defer crossorigin="anonymous"
+                        src="https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v5.0"></script>
+
+                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width=""
+                        data-layout="button_count" data-action="like" data-size="large" data-show-faces="true"
+                        data-share="true"></div>
+
+                    <a href="javascript:;" class="select" id="select">台灣</a>
+                    <ul id="backgroundImg" style="display: none;">
+                        <li id="taiwan" class="active">台灣</li>
                         <li id="xianggang" class="">香港</li>
                         <li id="aomen" class="">澳門</li>
+                        <li id="xianggang" class="">新加坡</li>
+                        <li id="aomen" class="">馬來西亞</li>
                     </ul>
                     <div class="con">
                         <div>
@@ -530,6 +575,34 @@
             <a href="javascript:;" class="btn_apk btn" onclick="fbShare()"></a>
         </div>
     </div>
+
+    <!-- 世界弹出框 -->
+    <div id="world_pop" class="world_pop" style="display: none;">
+        <div class="tip-box">
+            <!-- <img src="../images/world_bg.png" alt="" class="bg"> -->
+            <img src="../images/w_l.png" alt="" class="w_l">
+            <img src="../images/w_r.png" alt="" class="w_r">
+            <i name="close"></i>
+            <div class="world_con">
+                <div class="left">
+                    <img src="" alt="" id="w_img">
+                </div>
+                <div class="right">
+                    <h2 id="w_h2">神啟公司</h2>
+                    <p class="txt" id="w_txt">既然已沒有生命 又何必再畏懼死亡既然已沒有生命 又何必再畏懼死亡</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 资料大图弹出框 -->
+    <div id="data_pop" class="data_pop" style="display: none;">
+        <div class="tip-box">
+            <img src="" alt="" class="zl" id="data_img">
+            <i name="close"></i>
+        </div>
+    </div>
+
 </body>
 
 </html>

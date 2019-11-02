@@ -118,10 +118,7 @@
 
             li {
                 position: absolute;
-                width: 50%;
-                height: 2.88rem;
                 text-align: center;
-                background-size: 100% 100%;
                 background: #000;
                 cursor: pointer;
                 overflow: hidden;
@@ -134,59 +131,66 @@
                 }
 
                 &:nth-child(1) {
-                    width: 8.10rem;
-                    height: 5rem;
+                    width: 2.88rem;
+                    height: 4.72rem;
                     top: 0;
-
-                    img {
-                        width: 100%;
-                        height: 5rem;
-                    }
                 }
 
                 &:nth-child(2) {
-                    width: 8.32rem;
-                    height: 3rem;
+                    width: 5.22rem;
+                    height: 2rem;
                     top: 0;
-                    // left: 8.08rem;
-
-                    img {
-                        width: 100%;
-                        height: 3rem;
-                    }
+                    left: 2.88rem;
                 }
 
                 &:nth-child(3) {
-                    width: 8.32rem;
-                    height: 2.34rem;
-                    top: 3rem;
-                    // left: 8.08rem;
-
-                    img {
-                        width: 100%;
-                        height: 2.34rem;
-                    }
+                    width: 5.22rem;
+                    height: 2.72rem;
+                    top: 2rem;
+                    left: 2.88rem;
                 }
 
                 &:nth-child(4) {
-                    width: 8.08rem;
-                    height: 2.04rem;
-                    top: 5rem;
-                    
+                    width: 2.9rem;
+                    height: 4.72rem;
+                    left: 8.1rem;
+                    top: 0;
+
                 }
 
                 &:nth-child(5) {
-                    width: 4.04rem;
-                    height: 1.7rem;
-                    // left: 8.1rem;
-                    top: 5.35rem;
+                    width: 5rem;
+                    height: 2.14rem;
+                    left: 11rem;
+                    top: 0;
                 }
 
                 &:nth-child(6) {
+                    width: 5rem;
+                    height: 2.6rem;
+                    left: 11rem;
+                    top: 2.14rem;
+                }
+
+                &:nth-child(7) {
                     width: 4.28rem;
-                    height: 1.7rem;
-                    top: 5.35rem;
-                    // right: 0;
+                    height: 2.32rem;
+                    left: 0;
+                    top: 4.72rem;
+                }
+
+                &:nth-child(8) {
+                    width: 8.1rem;
+                    height: 2.32rem;
+                    left: 4.28rem;
+                    top: 4.72rem;
+                }
+
+                &:nth-child(9) {
+                    width: 3.62rem;
+                    height: 2.32rem;
+                    left: 12.38rem;
+                    top: 4.72rem;
                 }
             }
 
@@ -198,4 +202,164 @@
     position: relative;
     width: 100%;
     height: .98rem;
+}
+
+.world_pop {
+    .tip-box {
+        width: 100%;
+        margin-left: 0;
+        height: 6.07rem;
+        left: 0;
+        top: 50%;
+        margin-top: -3.035rem;
+
+        .w_l {
+            width: 10.13rem;
+            height: 3.44rem;
+        }
+
+        .w_r {
+            width: 12.4rem;
+            height: 3.49rem;
+            position: absolute;
+            top: .88rem;
+            left: 7rem;
+        }
+
+        .zl {
+            width: 16.25rem;
+            height: 7.39rem;
+        }
+
+        .bg {
+            width: 100%;
+            height: 6.07rem;
+        }
+
+        i {
+            top: .4rem;
+            right: .1rem;
+        }
+
+        #w_img {
+            width: 4.52rem;
+            height: 5.6rem;
+        }
+
+        .world_con {
+            position: absolute;
+            top: 0;
+            width: 11.7rem;
+            height: 4rem;
+            left: 50%;
+            margin-left: -5.85rem;
+
+            .left {
+                // width: 50%;
+                width: 4.78rem;
+                height: 5.79rem;
+
+                img {
+                    transform-origin: center bottom;
+                    transform: scaleX(0);
+
+                    &.active {
+                        transition: all 0.9s;
+                        transform: none;
+                    }
+                }
+            }
+
+            .right {
+                position: absolute;
+                top: 2.13rem;
+                right: -2.6rem;
+                width: 9rem;
+
+                h2 {
+                    display: block;
+                    width: 6rem;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: .4rem;
+                    color: #000000;
+                    background: url(../../images/w_font.png) no-repeat;
+                    background-size: 100% 100%;
+                    transform-origin: center bottom;
+                    transform: scaleY(0);
+
+                    &.active {
+                        transition: all 0.9s;
+                        transform: none;
+                    }
+                }
+
+                p {
+                    &.txt {
+                        width: 100%;
+                        font-size: 0.22rem;
+                        color: #000000;
+                        font-family: '思源黑体';
+                        letter-spacing: 0.06rem;
+                        margin-top: .3rem;
+                        transform-origin: center bottom;
+                        transform: scaleY(0);
+
+                        &.active {
+                            transition: all 0.9s;
+                            transform: none;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+.data_pop {
+    .tip-box {
+        width: 16.03rem;
+        height: 7.04rem;
+        left: 50%;
+        top: 50%;
+        margin-left: -8.015rem;
+        margin-top: -3.52rem;
+
+        i {
+            top: -.5rem;
+            right: 0;
+        }
+
+        .zl {
+            width: 100%;
+
+        }
+    }
+}
+.three{
+    .three_con{
+        .characters_detail{
+            .left{
+                position: relative;
+                left: 1.26rem;
+                top:.3rem;
+                width: 4.3rem;
+                height: 2.59rem;
+                cursor: pointer;
+                li{
+                    width: 1.76rem;
+                    height: 1.76rem;
+                    cursor: pointer;
+                    &:nth-child(1){
+
+                    }
+                }
+            }
+            .right{
+
+            }
+        }
+    }
 }
