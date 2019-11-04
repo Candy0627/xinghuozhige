@@ -3,9 +3,12 @@ import fullpage from 'fullpage.js';
 import '../../js/index/layer/layer.js'
 import '../../js/index/pc.js';
 import '../../js/index/mobile.js';
+import Swiper from 'swiper';
 
 import '../../js/index/layer/theme/default/layer.css'
 import '../../css/index/fullpage.css';
+import '../../css/index/swiper.css';
+import '../../css/index/swiper3d.css';
 import '../../css/index/normalize.css';
 import '../../css/index/main.css';
 import '../../css/index/pc.css';
@@ -55,7 +58,7 @@ document.getElementById('appoint').addEventListener('click', function () {
 })
 var s = document.getElementById('select');
 var d = document.getElementById('backgroundImg');
-s.onclick = function() {
+s.onclick = function () {
     // d.style.display = 'block';
     $('#backgroundImg').slideToggle();
 }
@@ -101,7 +104,7 @@ for (var i = 0; i < arrc.length; i++) {
         i.classList.remove('active');
         h.classList.remove('active');
         t.classList.remove('active');
-        
+
     })
 }
 
@@ -132,6 +135,106 @@ function appointSuccessPop() {
     })
 }
 
+/**
+ * 种火模块
+ * 种火-swiper轮播
+ */
+function swiper1() {
+    var thumbsSwiper = new Swiper('#thumbs', {
+        spaceBetween: 10,
+        slidesPerView: 5,
+        watchSlidesVisibility: true, //防止不可点击
+        onInit: function (swiper) {
+            swiper.slides[5].className = "swiper-slide swiper-slide-active"; //当前选中 状态
+        }
+    })
+    var gallerySwiper = new Swiper('#gallery', {
+        effect: 'coverflow',
+        spaceBetween: 10, //缩略图间距
+        slidesPerView: 3,
+        centeredSlides: true,
+        initialSlide: 2,
+        thumbs: {
+            swiper: thumbsSwiper,
+        },
+        onInit: function (swiper) {
+            swiper.slides[5].className = "swiper-slide swiper-slide-active"; //当前选中 状态
+        },
+        on: {
+            click: function () {
+                var i = this.clickedIndex;
+                var l = document.getElementsByName('name_l');
+                var r = document.getElementsByName('name_r');
+                console.log(i);
+            }
+        }
+    })
+}
+
+function swiper2() {
+    var thumbsSwiper1 = new Swiper('#thumbs1', {
+        spaceBetween: 10,
+        slidesPerView: 5,
+        watchSlidesVisibility: true, //防止不可点击
+    })
+    var gallerySwiper1 = new Swiper('#gallery1', {
+        effect: 'coverflow',
+        spaceBetween: 10, //缩略图间距
+        slidesPerView: 3,
+        centeredSlides: true,
+        initialSlide: 2,
+        thumbs: {
+            swiper: thumbsSwiper1,
+        }
+    })
+}
+
+function swiper3() {
+    var thumbsSwiper2 = new Swiper('#thumbs2', {
+        spaceBetween: 10,
+        slidesPerView: 5,
+        watchSlidesVisibility: true, //防止不可点击
+    })
+    var gallerySwiper2 = new Swiper('#gallery2', {
+        effect: 'coverflow',
+        spaceBetween: 10, //缩略图间距
+        slidesPerView: 3,
+        centeredSlides: true,
+        initialSlide: 2,
+        thumbs: {
+            swiper: thumbsSwiper2,
+        }
+    })
+}
+swiper1();
+
+// gallerySwiper.on('slideChangeTransitionEnd', function (e) {
+//     console.log("===索引值：" + gallerySwiper.activeIndex);
+//     var i = gallerySwiper.activeIndex;
+//     var a = document.getElementsByName('audio');
+//     console.log('当前的this', $(e), $(this))
+//     a[i].style.display = 'block';
+// });
+
+$('.three .three_con .characters_detail .left li').each(function (index) {
+    $(this).on('click', function () {
+        console.log('index是', index);
+        if(index == 0) {
+            $(this).addClass('active0').siblings().removeClass('active1 active2');
+        }
+        if(index == 1) {
+            $(this).addClass('active1').siblings().removeClass('active0 active2');
+        }
+        if(index == 2) {
+            $(this).addClass('active2').siblings().removeClass('active0 active2');
+        }
+        $('.characters_detail .con>div').eq(index).show().siblings().hide();
+        swiper1();
+        swiper2();
+        swiper3();
+        
+    })
+})
 
 /**
  * 世界模块
@@ -178,7 +281,7 @@ for (var i = 0; i < arrw.length; i++) {
         };
         i.classList.add('active');
         h.classList.add('active');
-        t.classList.add('active'); 
+        t.classList.add('active');
     }
 }
 
@@ -190,7 +293,7 @@ function worldPop() {
         title: false,
         closeBtn: 0,
         skin: 'myskin',
-        anim:-1,
+        anim: -1,
         area: ['8.65rem', '4.49rem'],
         content: $('#world_pop')
     })
@@ -208,7 +311,7 @@ function dataPop() {
         title: false,
         closeBtn: 0,
         skin: 'myskin',
-        anim:3,
+        anim: 3,
         area: ['16.25rem', '7.39rem'],
         content: $('#data_pop')
     })
@@ -218,36 +321,36 @@ var ul_d = document.getElementById('data_ul');
 var arr_d = ul_d.querySelectorAll('li');
 for (var i = 0; i < arr_d.length; i++) {
     arr_d[i].index = i;
-    arr_d[i].onclick = function() {
+    arr_d[i].onclick = function () {
         dataPop();
         var d = document.getElementById('data_img');
         switch (this.index) {
-            case 0: 
-                d.setAttribute('src','images/b0.jpg');
+            case 0:
+                d.setAttribute('src', 'images/b0.jpg');
                 break;
-            case 1: 
-                d.setAttribute('src','images/b1.jpg');
+            case 1:
+                d.setAttribute('src', 'images/b1.jpg');
                 break;
-            case 2: 
-                d.setAttribute('src','images/b2.jpg');
+            case 2:
+                d.setAttribute('src', 'images/b2.jpg');
                 break;
-            case 3: 
-                d.setAttribute('src','images/b3.jpg');
+            case 3:
+                d.setAttribute('src', 'images/b3.jpg');
                 break;
-            case 4: 
-                d.setAttribute('src','images/b4.jpg');
+            case 4:
+                d.setAttribute('src', 'images/b4.jpg');
                 break;
-            case 5: 
-                d.setAttribute('src','images/b5.jpg');
+            case 5:
+                d.setAttribute('src', 'images/b5.jpg');
                 break;
-            case 6: 
-                d.setAttribute('src','images/b6.jpg');
+            case 6:
+                d.setAttribute('src', 'images/b6.jpg');
                 break;
-            case 7: 
-                d.setAttribute('src','images/b7.jpg');
+            case 7:
+                d.setAttribute('src', 'images/b7.jpg');
                 break;
-            case 8: 
-                d.setAttribute('src','images/b8.jpg');
+            case 8:
+                d.setAttribute('src', 'images/b8.jpg');
 
         }
         // switch (this.index) {
@@ -286,7 +389,7 @@ for (var i = 0; i < arr_d.length; i++) {
  * 
  */
 $(function () {
-    $('#backgroundImg li').click(function(){
+    $('#backgroundImg li').click(function () {
         $(this).addClass('active').siblings().removeClass('active');
         $('#select').text($(this).text());
         $('#backgroundImg').hide();
@@ -342,14 +445,14 @@ $(function () {
 
 
     // 世界-浮层
-    $(document).mousemove(function(e) {
-    	var x = e.originalEvent.x || e.originalEvent.layerX || 0;
-    	var y = e.originalEvent.y || e.originalEvent.layerY || 0;
-    	var $imgDeco = $('.page-role');
-		$imgDeco.css({
-			webkitTransform: 'translate3d('+(x*0.04)+'px, '+(y*0.04)+'px, 0px)',
-			transform: 'translate3d('+(x*0.04)+'px, '+(y*0.04)+'px, 0px)',
-		})
+    $(document).mousemove(function (e) {
+        var x = e.originalEvent.x || e.originalEvent.layerX || 0;
+        var y = e.originalEvent.y || e.originalEvent.layerY || 0;
+        var $imgDeco = $('.page-role');
+        $imgDeco.css({
+            webkitTransform: 'translate3d(' + (x * 0.04) + 'px, ' + (y * 0.04) + 'px, 0px)',
+            transform: 'translate3d(' + (x * 0.04) + 'px, ' + (y * 0.04) + 'px, 0px)',
+        })
     })
 
     // $(document).mousemove(function (e) {

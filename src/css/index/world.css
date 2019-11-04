@@ -267,16 +267,105 @@
 .data_pop .tip-box .zl {
   width: 100%;
 }
+.three .three_con .characters_detail {
+  width: 14.36rem;
+  height: 10rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -7.18rem;
+  top: 50%;
+  margin-top: -5rem;
+}
 .three .three_con .characters_detail .left {
   position: relative;
-  left: 1.26rem;
-  top: 0.3rem;
-  width: 4.3rem;
-  height: 2.59rem;
+  width: 4.4rem;
+  height: 2.6rem;
+  top: 0.67rem;
   cursor: pointer;
+  z-index: 99999;
 }
 .three .three_con .characters_detail .left li {
+  position: absolute;
   width: 1.76rem;
   height: 1.76rem;
+}
+.three .three_con .characters_detail .left li:nth-child(1) {
+  width: 1.67rem;
+  height: 1.67rem;
+  background: url(../../images/fuzhu/l_icon.png) no-repeat;
+  background-size: 100% 100%;
+  top: 0;
+  left: 0;
   cursor: pointer;
+}
+.three .three_con .characters_detail .left li:nth-child(1).active0 {
+  background: url(../../images/fuzhu/l_icon_active.png) no-repeat;
+  background-size: 100% 100%;
+  top: 0;
+  left: 0;
+}
+.three .three_con .characters_detail .left li:nth-child(2) {
+  width: 1.67rem;
+  height: 1.67rem;
+  background: url(../../images/fangyu/l_icon.png) no-repeat;
+  background-size: 100% 100%;
+  top: 0;
+  left: 1.86rem;
+}
+.three .three_con .characters_detail .left li:nth-child(2).active1 {
+  background: url(../../images/fangyu/l_icon_active.png) no-repeat;
+  background-size: 100% 100%;
+}
+.three .three_con .characters_detail .left li:nth-child(3) {
+  width: 1.67rem;
+  height: 1.67rem;
+  background: url(../../images/gongji/l_icon.png) no-repeat;
+  background-size: 100% 100%;
+  top: 0.9rem;
+  left: 0.935rem;
+}
+.three .three_con .characters_detail .left li:nth-child(3).active2 {
+  background: url(../../images/gongji/l_icon_active.png) no-repeat;
+  background-size: 100% 100%;
+}
+.three .three_con .characters_detail .right {
+  width: 12.2rem;
+  height: 9.7rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -6.1rem;
+}
+.three .three_con .characters_detail .right .name {
+  position: absolute;
+  top: -4.33rem;
+  right: 0;
+  font-size: 0.26rem;
+  width: 0.81rem;
+  height: 2.45rem;
+  background: url(../../images/char_name.png) no-repeat;
+  background-size: 100% 100%;
+}
+.three .three_con .characters_detail .right .name span {
+  display: inline-block;
+  position: absolute;
+}
+.three .three_con .characters_detail .right .name span.l {
+  right: 0;
+  padding-top: 0.5rem;
+  padding-right: 0.08rem;
+  color: #000;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+.three .three_con .characters_detail .right .name span.r {
+  left: 0;
+  color: #fff;
+  width: 0.42rem;
+  padding-right: 0.07rem;
+  padding-top: 0.95rem;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
 }
