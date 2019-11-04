@@ -292,14 +292,14 @@
 .three .three_con .characters_detail .left li:nth-child(1) {
   width: 1.67rem;
   height: 1.67rem;
-  background: url(../../images/fuzhu/l_icon.png) no-repeat;
+  background: url(../../images/fuzhu/l_fuzhu_icon.png) no-repeat;
   background-size: 100% 100%;
   top: 0;
   left: 0;
   cursor: pointer;
 }
 .three .three_con .characters_detail .left li:nth-child(1).active0 {
-  background: url(../../images/fuzhu/l_icon_active.png) no-repeat;
+  background: url(../../images/fuzhu/l_fuzhu_icon_active.png) no-repeat;
   background-size: 100% 100%;
   top: 0;
   left: 0;
@@ -307,25 +307,25 @@
 .three .three_con .characters_detail .left li:nth-child(2) {
   width: 1.67rem;
   height: 1.67rem;
-  background: url(../../images/fangyu/l_icon.png) no-repeat;
+  background: url(../../images/fangyu/l_fangyu_icon.png) no-repeat;
   background-size: 100% 100%;
   top: 0;
   left: 1.86rem;
 }
 .three .three_con .characters_detail .left li:nth-child(2).active1 {
-  background: url(../../images/fangyu/l_icon_active.png) no-repeat;
+  background: url(../../images/fangyu/l_fangyu_icon_active.png) no-repeat;
   background-size: 100% 100%;
 }
 .three .three_con .characters_detail .left li:nth-child(3) {
   width: 1.67rem;
   height: 1.67rem;
-  background: url(../../images/gongji/l_icon.png) no-repeat;
+  background: url(../../images/gongji/l_gongji_icon.png) no-repeat;
   background-size: 100% 100%;
   top: 0.9rem;
   left: 0.935rem;
 }
 .three .three_con .characters_detail .left li:nth-child(3).active2 {
-  background: url(../../images/gongji/l_icon_active.png) no-repeat;
+  background: url(../../images/gongji/l_gongji_icon_active.png) no-repeat;
   background-size: 100% 100%;
 }
 .three .three_con .characters_detail .right {

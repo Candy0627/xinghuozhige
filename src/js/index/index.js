@@ -144,6 +144,8 @@ function swiper1() {
         spaceBetween: 10,
         slidesPerView: 5,
         watchSlidesVisibility: true, //防止不可点击
+        observer: true,
+        observeParents: true,
         onInit: function (swiper) {
             swiper.slides[5].className = "swiper-slide swiper-slide-active"; //当前选中 状态
         }
@@ -154,6 +156,8 @@ function swiper1() {
         slidesPerView: 3,
         centeredSlides: true,
         initialSlide: 2,
+        observer: true,
+        observeParents: true,
         thumbs: {
             swiper: thumbsSwiper,
         },
@@ -176,6 +180,8 @@ function swiper2() {
         spaceBetween: 10,
         slidesPerView: 5,
         watchSlidesVisibility: true, //防止不可点击
+        observer: true,
+        observeParents: true
     })
     var gallerySwiper1 = new Swiper('#gallery1', {
         effect: 'coverflow',
@@ -183,6 +189,8 @@ function swiper2() {
         slidesPerView: 3,
         centeredSlides: true,
         initialSlide: 2,
+        observer: true,
+        observeParents: true,
         thumbs: {
             swiper: thumbsSwiper1,
         }
@@ -193,6 +201,8 @@ function swiper3() {
     var thumbsSwiper2 = new Swiper('#thumbs2', {
         spaceBetween: 10,
         slidesPerView: 5,
+        observer: true,
+        observeParents: true,
         watchSlidesVisibility: true, //防止不可点击
     })
     var gallerySwiper2 = new Swiper('#gallery2', {
@@ -201,6 +211,8 @@ function swiper3() {
         slidesPerView: 3,
         centeredSlides: true,
         initialSlide: 2,
+        observer: true,
+        observeParents: true,
         thumbs: {
             swiper: thumbsSwiper2,
         }
@@ -219,20 +231,20 @@ swiper1();
 $('.three .three_con .characters_detail .left li').each(function (index) {
     $(this).on('click', function () {
         console.log('index是', index);
-        if(index == 0) {
+        if (index == 0) {
             $(this).addClass('active0').siblings().removeClass('active1 active2');
         }
-        if(index == 1) {
+        if (index == 1) {
             $(this).addClass('active1').siblings().removeClass('active0 active2');
         }
-        if(index == 2) {
-            $(this).addClass('active2').siblings().removeClass('active0 active2');
+        if (index == 2) {
+            $(this).addClass('active2').siblings().removeClass('active0 active1');
         }
         $('.characters_detail .con>div').eq(index).show().siblings().hide();
         swiper1();
         swiper2();
         swiper3();
-        
+
     })
 })
 
