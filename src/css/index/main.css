@@ -1182,3 +1182,18 @@ transition: all 1s;
     cursor: pointer;
     background: blue;
 }
+
+.text-gradient {
+    font-family: '微软雅黑';
+    font-size: 10em;
+    position: relative;
+}
+
+.text-gradient[data-text]::after {
+    content: attr(data-text);
+    color: #c1201d;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#e44d42), to(rgba(193, 32, 29, 0)));
+}

@@ -128,6 +128,7 @@ img {
     height: 100%;
 }
 .swiper-container-list a em{
+    display: none !important;
     position: absolute;
     width: .25rem;
     height: .28rem;
