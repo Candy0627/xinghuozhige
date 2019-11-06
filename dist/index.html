@@ -149,6 +149,18 @@
             transition-delay: .7s;
         }
 
+        .current .bg3_center {
+            opacity: 0;
+            top: 13rem !important;
+            transition-delay: .7s;
+        }
+
+        .current .bg3_l_r {
+            opacity: 0;
+            top: -13rem !important;
+            transition-delay: .7s;
+        }
+
         /* 世界 */
         .bg4_1 {
             transition: all 1s;
@@ -363,26 +375,26 @@
         <div class="section three fullpage3">
             <div class="three_con" id="characters">
                 <ul class="characters_list">
-                    <li class="bg3">
+                    <li class="bg3 bg3_l_r">
                         <a href="#" title="攻擊">
-                            <span class="topIndex topgj"></span>
+                            <span class="topIndex topgj" id="gongji_t"></span>
                             <img src="images/a1.png" alt="" class="a1">
                             <img src="images/l1.png" alt="" class="u1">
                             <p>攻擊<i></i></p>
                         </a>
 
                     </li>
-                    <li class="bg3_1">
+                    <li class="bg3_1 bg3_center">
                         <a href="#" title="防禦">
-                            <span class="topIndex topfy"></span>
+                            <span class="topIndex topfy" id="fangyu_t"></span>
                             <img src="images/a2.png" alt="" class="a1">
                             <img src="images/l2.png" alt="" class="u1">
                             <p>防禦<i></i></p>
                         </a>
                     </li>
-                    <li class="bg3_2">
+                    <li class="bg3_2 bg3_l_r">
                         <a href="#" title="輔助">
-                            <span class="topIndex"></span>
+                            <span class="topIndex" id="fuzhu_t"></span>
                             <img src="images/a3.png" alt="" class="a1">
                             <img src="images/l3.png" alt="" class="u1">
                             <p>輔助<i></i></p>
@@ -405,6 +417,7 @@
                                                 <img src="images/lt1_lahaier.png" alt="轮播图">
                                                 <em name="audio none"></em>
                                             </a>
+
                                         </div>
                                         <div class="swiper-slide">
                                             <a href="javascript:;">
@@ -428,6 +441,8 @@
                                     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                                 </div>
                                 <div class="swiper-container swiper-container-thumbs thumbs" id="thumbs">
+                                    <img src="data:image/png;base64,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" alt="" class="bot_yuyeu">
+                                    <img src="images/zh_b_yuan_bg.png" alt="" class="bot_bg">
                                     <div class="swiper-wrapper" style="transition-duration: 0ms;">
                                         <div class="swiper-slide">
                                             <a href="javascript:;">
@@ -482,60 +497,6 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <!-- <div class="swiper-wrapper" style="transition-duration: 0ms;">
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="images/l1amengsen.png" alt="轮播图">
-                                                <div class="name">
-                                                    <span class="l" name="name_l">
-                                                        阿蒙森
-                                                    </span>
-                                                    <span class="r" name="name_r">
-                                                        上阪すみれ
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="images/l2fangao.png" alt="轮播图">
-                                                <div class="name">
-                                                    <span class="l" name="name_l">
-                                                        梵高
-                                                    </span>
-                                                    <span class="r" name="name_r">
-                                                        夏怜
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="images/l3qigefulide.png" alt="轮播图">
-                                                <div class="name">
-                                                    <span class="l" name="name_l">
-                                                        齐格弗里德
-                                                    </span>
-                                                    <span class="r" name="name_r">
-                                                        白椛ひとみ
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="images/l4xide.png" alt="轮播图">
-                                                <div class="name">
-                                                    <span class="l" name="name_l">
-                                                        熙德
-                                                    </span>
-                                                    <span class="r" name="name_r">
-                                                        斎藤千和
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div> -->
                                     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                                 </div>
                             </div>
@@ -548,7 +509,6 @@
                                 <div class="d_con">
                                     <em class="top_d"></em>
                                     <em class="top_b"></em>
-                                    <em class="top_line"></em>
                                     <em class="top_audio"></em>
                                     <i class="top_close"></i>
                                     <dl>
@@ -562,8 +522,20 @@
                                                 雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為；身體十分耐寒，喜歡下雪天，可以穿著夏裝從容的在雪中散步；雖然不願意承認，但其實十分喜歡喝牛奶，怕讓別人覺得自己是個沒斷奶的孩子，所以在別人面前總是裝作討厭牛奶的樣子。</span>
                                         </dd>
                                         <dd>
+                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                id="d_age">16</span>
+                                        </dd>
+                                        <dd>
                                             <span class="text-gradient" data-text="身高">身高:</span><span
                                                 id="d_height">155cm</span>
+                                        </dd>
+                                        <dd>
+                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                id="d_character">逞强 冷静</span>
+                                        </dd>
+                                        <dd>
+                                            <span class="text-gradient" data-text="人生信条">人生信条:</span><span
+                                                id="d_motto">只要雪还在下…</span>
                                         </dd>
                                         <dd>
                                             <span class="text-gradient" data-text="武器">武器:</span><span
@@ -572,10 +544,12 @@
                                     </dl>
                                     <ul>
                                         <li class="active">
-                                            <a href="#"><img src="images/d3_xiunv_icon1.png" alt="" id="fuzhu_three"></a>
+                                            <a href="#"><img src="images/d3_xiunv_icon1.png" alt=""
+                                                    id="fuzhu_three"></a>
                                         </li>
                                         <li>
-                                            <a href="#"><img src="images/d3_xiunv_icon2.png" alt="" id="fuzhu_four"></a>
+                                            <a href="#"><img src="images/d3_xiunv_icon2.png" alt=""
+                                                    id="fuzhu_four"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -616,6 +590,8 @@
                                 </div>
 
                                 <div class="swiper-container swiper-container-thumbs thumbs" id="thumbs1">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAAFUCAYAAABP6wWpAAAe60lEQVR4nO3d29MsV13G8Wfew36zd3Z2DpsQAgk7gYAS5JhoOFqAHNULQSykKG/0Rq/8c7wSb8QqLasIFEWhohKhlISTCoZDOAWScAqbnWTv7PM7Xvx6pdesWav71z095++nampm+p13pmem+5l16tWj8XgsAMCEUXU9EZA7S1gRAFhlo8JtAhMAvEqBOSosB4CtRQkTAGqNhUUCEwBMa806F5ij5BoANp0r79LATP+J0ASw6dw556mSE5oAttlzGUgbJoBt1qlASGACgBOBCWBbdW5u3Ov5xByADmBdDNYPQwkTwCYbtNOawASwqQYf4RNXybs8ufexVN0BLNrchkJ62zD7ys4pBwBzMPcx44uqkjP4HcAQRtElXT538y5hxihtAuijFIYLL4gtMjADz5skVAGsXM10GYHpEX9QhCewPVYuJGOrGpgxwhPYbKsYkiNl8mYdAjNGeAKbYRVDMhWH5kjSeN0CM0Z4AutlHUJSaljPdQ7MWNcvgoAFZhePfFmXMJzJpgRmV0wmAnS3MsN7FmiiLXNbAzNFgAKTNjkES1rfM4GZV/rgCFJsom0Mx15KgZntUgdBirVGMM4oF5h8qN3lPjNCFMvEftyu94zruX+klDmbeWywE2PCMrfT1y09Pv5b07Kxyq/F9rF8hOL8ZLf10Xg8DgviBwbsEAA2VdMPTlogGEsap9O75aZM4lcMwCbx5trUY+glB7BpZi3kzXykT9yeJVFVB7B8i6j99h64TtUcwLLNO4can5+zRgKAaQ3jODApQQKAyeZh3yN9hgpX2kIBtEn7UJaGI30ALEuXrJlHLrU951TBsanThyM5AEjTR31teqEqNx59LC1/HGZuuFIpqJsO30ufq/Q8Tc/d9D9B6fm8R0dxFBVSTdtcl8NZF9V7vOlh2Sg+NLJp9Ds7N1ZFnxLONpSK4NdWUs7Nj3uoNT+nD7ZTn+AjLLePp32yadlGnDUSAKTF/wiOJP+wIk7hAGAVLOpwyHDt7iUHgE3XKYBzh0bSGwZgG/SecX3WF8oNDQq308cz6xGAVZcdariXPGCWJ2+7PcTrANh8yxog3zTMKDtwPW3spCQIoI9cjbPP/68UOn0AtI2KmfW5l61riZVecmAFlA4Fji3rqKRVCLa+ep2fp489TR8SmUvXeY3DXOcvaRW17Yy5x3mfr+tzetel7bUXdaz0otDGP5tFzVrEkT5boG1n9Pyt6XFdntO7Lm3PR4BgXrwl0+eCs3SKCjZSANumaQIiSdOBmSslEJ4AoP7jMIcKUYYrAVg1xV5yzhoJANOybfBN5/QpzU4OAPO0ss2A3l5yTq0AoIvckLBFDxEb/HX6nGaXkiew2nIFnFKhZ57h1WVY2izPu7DnYxwmMLzSgP1lDMLftMHx8zxsM1cYLM5WVHoCZZ5kKIsqrebeR1ploNS8mrp+N2lYlc5KusiZu0v3sXoaZyxahRLmMn9tZz0aBYsx1JFCHD0Ej07DitioAGy7bP71PTSyqWRG0ALYSLPMuD5EaNJuCGBtcKQPADj1GbguUTIEsIXaSpi0RwJApW16t9IyANg6ITAJSgDIey4Lm8ZhAsAmmflAlT6TbwBAH/FhqbnDlOc5qUbuOP7Or7cKh0YCWA1ts5RJ+fkXcsFTCsDSkYR9TszX51zjMyEwgdUwa60uV2pLeSYimeUov9Lj5mVeJdL0ujhbEYD+SmHkLYn1LT2lr+/5O3NG9LBtgUnb7HLM63Nvm7+w6YCLXDgNNRVcqaTS9FjvcixGdptddmCWJlpVZvksjcKlX3Hv/zQtG4Lneb2vXdr55fz/+Hly/9P1M5j3pLldhsS1LacEhkZ9jyWPN6bcr2m8XGrfqD0b+Cwb7izzKc76PH1fq+9rl3b+PqWkIT4DAgcbY+jZipp6vthxAKw1bwmT6gmArdelSk5oAthqTSdBy42SB4CtxbHkAODU95w+ALB1OEUFADgRmADgRGACgBOBCQBOBCYAOBGYAOBEYAKAE4EJAE4EJgA4EZgA4ERgAoATgQkATgQmADgRmADgRGACgBOBCQBOBCYAOBGYAOBEYAKAE4EJAE4EJgA4EZgA4ERgAoATgQkATgQmADgRmADgRGACgBOBCQBOBCYAOBGYAOBEYAKAE4EJAE4EJgA4EZgA4ERgAoATgQkATgQmADgRmADgRGACgBOBCQBOBCYAOBGYAOBEYAKAE4EJAE4EJgA4EZgA4ERgAoATgQkATgQmADgRmADgRGACgBOBCQBOBCYAOBGYAOBEYAKAE4EJAE4EJgA4EZgA4ERgAoATgQkATgQmADgRmADgRGACgBOBCQBOBCYAOBGYAOBEYAKAE4EJAE4EJgA4EZgA4ERgAoATgQkATgQmADgRmADgRGACgBOBCQBOBCYAOBGYAOBEYAKAE4EJAE4EJgA4EZgA4ERgAoATgQkATgQmADgRmADgRGACgBOBCQBOBCYAOBGYAOBEYAKAE4EJAE4EJgA4EZgA4ERgAoATgQkATgQmADgRmADgRGACgBOBCQBOBCYAOBGYAOBEYAKAE4EJAE4EJgA4EZgA4ERgAoATgQkATgQmADjtLXsFsPZGy16BjsaF5aOWvwME5hbrEnRNIbIpATOWfSbz+gEIz78pn9dWIjDXV58de1y43fW1cuESP1/u8YteXlqfIQMrfA4eo+R61tfFEhCYyzFUKcaz4+ReK2677hp0cUiUXr8UzJ7Hz7p8VLidM0vgdwnLoXlel1CdAwJzOMvYeXKllqaSVSlAxoXluedser1V0BbQnnXvujz3nKXQ9fJ+xqVqftv2uGrf21ogMP0WHYhddsLcxj8uLB8i7NZ5Z+sTLn2esylcR6pL+WNJh9X9OPzi769t/fqUOHP/s87f60IQmHlddqD0F74tkOLH7yTLDpPlpZJgTrpztZUmUfN+JkO1P8bfdfo9hUANf9+TbQ/h/66qXwdS03bZFMxsL5FtD8whfrlLj4uDaze6PZZ0RZM7SloaPJQfgbg4bZ/tLB1xpdC6rLpEGv/tQPX+O5Z0Ubbd7KoO5LSd1dMWmzZpEKKRbQvMpg06/VuXsAwb0BFNBuHF6Hbu0sXWbqRrxNPG2eU54m3parLsQnW9KwvT8CN7INsOd6tlz1T/e6S6Ds9TWuc4wL1jU7dmyNSmB2ZpQ20Kx6b/CRvEgWwjDVWlc9XyUF061OSGd1UE5DZr67Tx/l8ulOIQHMm2xWdV12xCkF4rab9adlXS6epvRyRd0uT2mluHNEjTYM+VRjduG960wGyqGse3vQF5RPYZhWrOWdWBeFVWtY43pCvJc3TZYDZu44JLl1KpJ0DD4+J20JEsIEOI7ld/G0k6KdvOr8iC88nC6+WCsxSipar/2lvnwGwrPTYFZfq/YSPaqy7nZG1HO7JgvKDJUuKl6H+7tiFuxIaDufP05ue2vdI41BBoaRv6E7Lt/EC2D4yq6ztlTUoXZSXWp5UP0MPkfhqk6bo0vb+VNxqPx6FBObSFhF663BtX4X5fXZ/HU5WOr0sBGTaOS7JgvK56zOVq2RXlN4TcehOQWKYuHZdd9pddScckXSPLhV9KOirp+bICxVlJ5zWdE2kbfa7NfpY8GXJ4XylP0gwMNcrDdQjMpjcVrnPhGF+HtsZjkq5XHYznVJcWS7+MufVsWm8CEqvA28HZVMAYJZc9WeHiRHV9TtKPZAWQXVmISs2dnLn7sbb9h8DMyL2R0peY+6L3JB2X/SIeyKoTp1UHZ2hrzH2RuXUjILHuZg3Q0v63IyuEvFjWFnpW0k9UV+E9F2l6/1Pmftv76KpzYK5SG2ZTSMYDvONQD3/fVd0LeFr2xR2V/QL+QlaiHKtuh2wqTaa35VgOrLqmwkm67cfL2kLzULbP/UpWODmh+sil21Xvk2c0vf+FMCqF58p1Gq1CCTP365aGYi4oQzvLnbKq9jnZF/Okpr+UtpAkIIFaW19BW20vXI5LuknS86rb/y3bT3dUjzCJAzP0G+RCdB7WpkoeViz+FYtfu3T7qOzDv1HSt2Qf+glZ8T+UItMPO1fkJyABv1w1uFRl34mu4304Hsp0n2x//Xl1eVb5EmduXx6y1LnygVlqK9mJrneS+2F97pZ0g+oP+VeaHiheKt4P+R4AlPflcF2qGe7I+hhulHSLrMDzULQ89Lwfyrdfp7f7vofc+i8tMHMfaBqKu9H9A0m3SnqRpMck/bhadl7NIekdCgRgGN7SZ6nmGK6vl/Sbsir7Y5J+qvr4+DhApXKVvW8upfeXFphpUMalxzgg48utku6RlSJ/KOlnqsdFxpe29sku6wlgdqXwDNelfomw7+/KSp0vlh0D/21ZqfOyqsCqnqtUaAq65lNpXRcWmKVfl/iDCYF5IOklssbhB1XP7HNe0yHZ1D7ZZf0AzF9bIJXyIQ7S10q6WdIPZGM+Q6kzBGiu6h54c6q0fnMPzKag3I0uYdkbZL8mj8k6cX6u/IfR1obRtE4Als8Tnrm+jB1ZYL5M0gsl/ZOmC1NXo+u2prku6zTXwCz9Yuwml9tkxe2zkk5JelzWSxZWKrz5tMjtXQ8Aq60tqHJV9R3ZYZpXZaNl7pMVsp7QdHbEF6k8PGkpgZl25MRvMsz0syurdr+uuv2A6rbJ+NehqUSZe20A6y0XWm1NeWFykFfK8uArsuCMQzMtfOWybKGBmftVCM8RZv0J9++UdK+kr0p6JHozcWCW2idzrw9g84wyt+PQHKk+ZUcokJ2S5cNjspLnWdX5kpY600xbWGDGL5CWKMPlFllv97+qDsb0ko72V+YawPZJwzNcQk7tJrd3JL23uv2grD+kqWDW9JqDBmaa/GlQHpf0Zkl3SPqipK8nKx2veHxsaUBQAgjS4My1b4bLnuwAl3slfV/SF2Q5c0XT+dOWbYMEZtq2EKrdYer73Wplj8rC8nzDyjZ15gBAqjQcKW4K3JV1Dr1A1q55IOtUvqLJLGqqos8cmPEKh2TfUz1L+U2yDp3PRyuTBmVupqAuZ0cEgJBP8e04w+Ia746kt8sOw/ys7HDqODhLVfRiYO6oXbxyYWX2ZVOo7Ut6taQPqz47XTg3SLhczqxcqZsfANrEGRI3711RPTl4OHPC52QD3v9Y0qtkuRWyK+6YlqY7gaa0zYcZniAuVcaXe6qV+Lhs0tBcsbfUXgAAs0j7PuIO5DhMH5KF5p2qjyQcKX/SwsbQbKqSx0+QVsGPqT7X8RXZScJCSbJLaZIABdBFU6Cl7Ztph3S4/0bZ3JxnVJdK4xE7cf51qpKn1fB92XChP5HNS/msrGMnrn6XBowCwDzlqulpFT00GX5IlmVxQTAUGItKVfJcu+WebCah98u66+MqeDybCD3fAJYlzp3cKTHGshE8T0n6Q0n3y3rT42bDYhNiLjDTnqeQvgeSfk92WOPDqoMyDkvaKgGsgtCcWDqC8JuykuZ5WcZJdc/4YfT/E1mWa8NMxzWFqngoaYb2ylDEnaX6TbAC6KK1J7vwP/GQyHiUTzgv2OOykT7xqJ70IJupNsx0TNNe9cTvlZ0e4oLqNoBZwxIAFiFt20wLfLdLep8s6+KhRnEHuKR6/FEs7hXfk03g+TzV59AJCUxYAlgXaWiGgt9VSf8hOzrxtaoLitkOoDgwc4caHZf0JtmknaG9krAEsI7SYULxQPfPSnq9rJRZGmY50YYZSpShfn9EVre/XZbA4YnjMUuzhiVhC6CLPm2YuecIU8WFPpojqicojociTYwv38s8Sdzx87jsjI3pFEmULAGsq3gui6uyvAtB+XLZ+YOuKFPCTI+hjAPzlKyEmc5gTFAC2ARjTU80/CpJd2ly0mKF61wbZgjNV0q6VpPd60ycAWAT5CbwOJT0PVlBMS5dTpUwg/gBN8uO5slN7w4AmyANzZ9Ker4yYSk1B+b1svNjpKVKQhPAJkgPhxxL+qWkL8sZmLH7ZZNrAMC2uCTp26U/NgXmT6LbQ3TlA8Cqu0bSu0t/TAMzLpr+rmz6o4leIhGeADZD7lQXN8j6b7Id3LkSZnjQRdl0bnH3OmEJYJOk489vldWus53ccWDG0xodygZv3qHpmYwITgDrrnTmyTtkp7OIs/C54AyBGfcWhe7170o6ITtsKD22EgDWXZggPS4QfkbSd1Q4H1nbseRhYs0w8QbHkgNYpnkcSx6y7jZJv5A1R2aPJc91+sTTH12V9ArZQM74vL9UzQGso9x5zHdkHdx/IAvR4jnL0zbMiTOkVdf7kt6jelaPxgk2AWBF5SZIDyXMd0n6L9nBOrnDwSWVe8lDCfOKpK/JznvxtupFCE0A66YUlruS7pNl3Nc0earwqSZD7zl9jkv6gKRPyhKYc/oAWIZZz+kTn3onFP7CPJit5/QpBeZO9AL7mjwR2r6kcxrmrJEEJoAuugRmOm1lyK8QlHdXy7+pOssua3JIUeNJ0KT8NO4hHMeSPiybMy6erTiuond9UwAwtJBBufbKPUm/IWtm/KUme8Iba8y585JLkyXFq8lKfELWm3SdrJE0pPfl6LHxC1GKBLAoucnQ45LlrqR7Jd0j6R8l/Ux1gTCEZfnJM1XyuBMnnMw8bs/ckw1of7+kL0h6VJNnk4y75A+j58khTAF00VR7jUuV4RKPLw/DiG6TdFp2JtwQlnFHT5x/EyOHmgIzDrN0cHtYgR1JB7KZ2X+uOjDjom1T2yaBCaCLXGCWSpVxXr1A0m9L+rSsDyZXyEszbyowS1XyIKRtGnrh/p4srX9f0lckPRStcAjNtENIIigBzC6dbSgejB6H5X2yKvi/y0b5xFXw+FxlI02WMKdfsKWEmQZbnOBxFf2kbHD7rqyN8xnVgZkrbcZnbQMAr7jJMHem2xCSIThfITs/2WckndF0FTw33jLNQHeVPC5V5lZyL7ncLemR6IUvajI00+Bsa+MEgGCUXOKgDGG5K+mopNfLar0hd64kl7Twlsu4zlXyWFqlzp1x7RvVG3iJbNbiByX9T/Um4tCMe6No1wRQMkpuxx06u8llX9JrJL1R0g+rx1xQvm+l1znKupQwS28mrqLHReIXSHqrbPjRp2VnY4vPbx5SPz19LydbA5CbDT2eji2+hPx6g6TbJX1OljdxSDZVwUuvOVOVPFaqoqdF411JL5X1oJ+XdRD9SHVghlH1uTZOOomA7ZKWJktV7zhjfk3Si2QhuSM7ZDsukKUdz7kqePr6g1TJU21V9PDGHqneyFFJb5ENQ/qypP+rlsdvqC0409cFsN5KIZkGZdypsyM7Uue3ZFXuh1SXIHNNf72r4FMrO0MJc+q5Mm82/UUIU8DfKytxfkb10URNwVl6w4QnsH7SkAzX8RwWaVDuyiYBCu2Sb5K1Uz6qclDmmvpK65Guy+BV8qYPIm1zKDXQHsraOa+V9L+SfqzJds7DzKW0XoQnsLpKIZl25KTV7x1Zu+RrZIWtz6o+hcRV5Qtb3v6QpQdm6YXTEmfoJApV9VfJPpBDSffLDlmamCVEk78auV8PwhNYLU3V7bREuZu5HsnaKN8oG23zddlQxbi3u1SilPw5ld5feGCWViBX3I7bJm6XneJyJJsB+bvVJR38Xip1UvoElqepFJmrcqclyj1Jd8nGc18n6WPVc8RV7rgJr9Tf0TWfSuu88MAsrUipvSJu77y7utwsG9/5eU0HZa6ts+0DJDyB4XhCMleSjPf78Ng/k/SUpIclfVvWVplrl5w1KHPrnlv/pQVmbgXD7dwvTXx9QtLzZO2bp2S/QI/Ihid1LXkO/X6AbdIWMLmgLJUkT0l6mWzY4cdl06ztyzqDc01x8xh2uPKBma5YGAvV1vgbbp+Q9OuyD/qkpAdkw5Ok/Adc+jUiQIF2XQIyV5qM999rZJP3npc1t90o67x5RPk+i6bO3mCoHCq9v5UJzPh54pUM16W2jrj0eVz2S3VW0vuq+9+X9APZQPn0w84NU2oKT0IU26QpPMJ1U6dNbp+9XlbAeYnsVN2fl3XeSOVhhJ7hhENZy8DMrXzbF5O2g+zLivh3VpdPyULzdtmJ2c8qH5pxcJbaRJqK/oQo1lEpKMLtpj6HUkCOZIWWU7KS5DdkR/bdJSvEPKr6yL6mPoi2kS/pus9irQMzt+LhtrenLb6MZCXPOyQ9K2vz/JzKjcdN4dklRJveF7BIuXDxhGMpJNOAPCLbV8IZGI5JekxW1f6Wyn0LXUOy7T31tTGBGWsKz6bqQPy+bpF0q2xw/DFJH5T0hOzL/bGkpzX9BXoCtKkaT5BiUTzBmF53Cch433qFrOT4IlnN7q9l2/XzVZ8fJy2QePoTgrZ9hMDsoOnXsa3KEO7vyb7c+Eu/Xzbu6y7ZLCc/0eTpNkuhmTvyqE+QNi0HpHJQeIMxvr+j9rDclxUybpX0Qkn/LJvY4l2yZq7HVJ+WxhOOaXtkl5Asvd9ZbXxgxkobSlsVvvTreYNs0tFbZT3wD0v6N9lhm/E5izzhWarGtwVo0+dBoG62piDIbevx7VIwlgIxXRYKEbfI2hvPSfpQ9bcnZIWI76g+1XauNtalQzW93QWBOZA+AVq63pMNg7gg60R6s2wYxBlJX5M1aF8j+xDPq394lkqiTRtW22dGsK6Wth28tNPGt9uq1LllpZA8KgvGM7LO0N+RHSByRlalflA2zCfdltuu5xWQKQJzDnIfhHfDSgM0DtGT1TqflvQ62TGul2Ung/+qbPaUg2rZJeU3pNJFLbdz1yrcLy3LIWC78e6wucc17aDpdZfSY+5yRLa9XpS10d8jq0HtS3pS0hdlHaGhYJBO5j1rZ6gy94dAYC5A2wfTdMmFaXy5Xnb45lOyX+Y3yTbMC9X9L0p6vHrcFdkJ4po6kZqq8Z4wbbrdtKxpeVerEsJD7Vyl52kLxTQI02WzBuSOrO39pGwkyJOyiWzukwXhryR9SVadvk623T2l5hpR27a5iFxoQmAugeeXvkuQ5v52vWxDPi0LybfKZl45KvvF/xdZ+9Cp6jXPyDbm0E7qDcuuJVJvsM6r6j/0d953B2r7v9I24rntKTF6bo9kNZsTsiahG2TV6O/LqtHvkDUJPSU74u1h2SiQkfLB2BSUnmBcRkCmCMwVMUSIei57km6Shehl2azRt8kC9jpJ/yBrS7pP9p2clQXso6ob3aXuYem9Tm977peWef42pKadqa002Ha/KQy917nbe6rHMr5UNvj7hKx0+KDsMOC3qP5BfVR2OOGu7HMN28QQF2WuVbi/LATmimrawdpKBeml7e9p6XQsG+J0Uhakx2UnoX9G0kdk7VBnq8sDsl7NO2Vf6jOy6lmYxMATjEOWRJcRnF2CcsiSY+lvI9n+dKPsR/CYrObwXVlv9Ntk3+lxWQB+Utas82pZKD4j+9F8UtM/ip7A8/xdmevYqu6bBOYaaSulNJVK0/tdl4f7oYp2bXX9PdnO+A5ZyfVYdflbWXB+sPrfEKIPVI9/WXV9XtbeelqLLXV6/l7SttMMWZrcle0s+7KwO6p6hMR3ZNXkt6j+3J+S9Inqse+Wfe5nZcPSvirrFLxJ9iMXahm5sEvvd12uzHV6u2nZqiIwN0CfIA3XbaXVpvu52+myk7Id+drq+uuyDeCdshLONbIQ+DvZzvsX1d8vy4L072XB+h5Nnt/5P6vHvVKTZwH9YbX85modLlX3n5Z93wfR5zKu/t7FSNYDHLukugMkPP9YVkI7IukO1adFuSw7bO9a2bml9qvP4Jzs0NkbJX2gWn4gGwHxMVkwvrv6TC5Uy79UPebF1f+fj65LwdV0u+1+7nbuOr3dtGzdEJgbrPTldqn6dQlZz//mruPbe6rD4kB2VMdI0sur+/uybeXL1ePfGS0LR01J1nSg6n9Gkj5a3f/z6DV3JP1VdfsvNemjkv40uv+0pL+RhfxHouVnZaXp45L+SDaMRrKS3qdkPwbvUB30Z2UjF/ZlZx68XP3PBVn1eKd6rovV365Uz+dpyvCGWtvj+jSVyLF8ExCYW8oTpul9b6m1z3XbsrZ1y90vLctpe5x3W/GUrJruNwVjbtms1023c/fblm+6pQbmLOclx2zadoRRw+P6tMd1ve0Nyi4hOeTGHusSKt5w6hJsfcOvKfS2NRBXGoG5utp2plFyv2SWQOtbguwajN7Hdw0Rbzte32CbpZ2QQFxDBOb66rpjegM2aAuxvqXFoUuZfYOn7f+GCGdsGAJze8wSALmQ28SA2MT3hAERmPAgSABZrzgAwIHABAAnAhMAnAhMAHAiMAHAicAEACcCEwCcCEwAcCIwAcCJwAQAJwITAJwITABwIjABwInABAAnAhMAnAhMAHAiMAHAicAEACcCEwCcCEwAcCIwAcCJwAQAJwITAJwITABwIjABwInABAAnAhMAnAhMAHAiMAHAicAEACcCEwCcCEwAcCoF5nihawEAa4ASJgA4pYE5LtwGgK2XK2ESlACQsdfyd8ITACq0YQKAUxyYbaVJSpsAtpq3hElYAth6bW2YKYITwNaiDRMAnLqWMIO4pDkaYkUAYIVka9NDlDDH0aXxxQBgnQ1dJU+DEwDWzTi5fs482zDHovQJYL2k+TRxv28b5hArAgCrpDWj/h+8ClQSvDhfQwAAAABJRU5ErkJggg==" alt="" class="bot_yuyeu">
+                                    <img src="images/zh_b_yuan_bg.png" alt="" class="bot_bg">
                                     <div class="swiper-wrapper" style="transition-duration: 0ms;">
                                         <div class="swiper-slide">
                                             <a href="javascript:;">
@@ -677,43 +653,57 @@
                             <div class="Detail" id='swpier_fangyu_detail' style="display: none;">
                                 <div class="img_tab">
                                     <img src="images/d3_xiunv1.png" alt="" id="fangyu_first">
-                                    <img src="images/d3_xiunv2.png" alt="" style="display:none" id="fangyu_two">
+                                    <img src="images/d3_xiunv2.png" alt="" style="display:none"
+                                        id="fangyu_two">
                                 </div>
 
                                 <div class="d_con">
-                                    <em class="top_d"></em>
-                                    <em class="top_b"></em>
-                                    <em class="top_line"></em>
-                                    <em class="top_audio"></em>
-                                    <i class="top_close"></i>
-                                    <dl>
-                                        <dt>
-                                            <h3><em class="l"></em>CV<span id="f_cv">夏怜</span><em class="r"></em></h3>
-                                            <h2 class="text-gradient" data-text="希普頓修女" id='f_name'>希普頓修女</h2>
-                                        </dt>
-                                        <dd>
-                                            <span class="text-gradient" data-text="簡介">簡介:</span>
-                                            <span id='f_info'>第一個到達南極點的探險家的名字命名的火種少女。
-                                                雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為；身體十分耐寒，喜歡下雪天，可以穿著夏裝從容的在雪中散步；雖然不願意承認，但其實十分喜歡喝牛奶，怕讓別人覺得自己是個沒斷奶的孩子，所以在別人面前總是裝作討厭牛奶的樣子。</span>
-                                        </dd>
-                                        <dd>
-                                            <span class="text-gradient" data-text="身高">身高:</span><span
-                                                id="f_height">155cm</span>
-                                        </dd>
-                                        <dd>
-                                            <span class="text-gradient" data-text="武器">武器:</span><span
-                                                id="f_weapon">冰凍射線槍</span>
-                                        </dd>
-                                    </dl>
-                                    <ul>
-                                        <li class="active">
-                                            <a href="#"><img src="images/d3_xiunv_icon1.png" alt="" id="fangyu_three"></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img src="images/d3_xiunv_icon2.png" alt="" id="fangyu_four"></a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                        <em class="top_d"></em>
+                                        <em class="top_b"></em>
+                                        <em class="top_audio"></em>
+                                        <i class="top_close"></i>
+                                        <dl>
+                                            <dt>
+                                                <h3><em class="l"></em>CV<span id="f_cv">夏怜</span><em class="r"></em></h3>
+                                                <h2 class="text-gradient" data-text="希普頓修女" id='f_name'>希普頓修女</h2>
+                                            </dt>
+                                            <dd>
+                                                <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                <span id='f_info'>第一個到達南極點的探險家的名字命名的火種少女。
+                                                    雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為；身體十分耐寒，喜歡下雪天，可以穿著夏裝從容的在雪中散步；雖然不願意承認，但其實十分喜歡喝牛奶，怕讓別人覺得自己是個沒斷奶的孩子，所以在別人面前總是裝作討厭牛奶的樣子。</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                    id="f_age">16</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="身高">身高:</span><span
+                                                    id="f_height">155cm</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="性格">性格:</span><span
+                                                    id="f_character">逞强 冷静</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="人生信条">人生信条:</span><span
+                                                    id="f_motto">只要雪还在下…</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="武器">武器:</span><span
+                                                    id="f_weapon">冰凍射線槍</span>
+                                            </dd>
+                                        </dl>
+                                        <ul>
+                                            <li class="active">
+                                                <a href="#"><img src="images/d3_xiunv_icon1.png" alt=""
+                                                        id="fangyu_three"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><img src="images/d3_xiunv_icon2.png" alt=""
+                                                        id="fangyu_four"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
 
                             </div>
                         </div>
@@ -750,6 +740,8 @@
                                 </div>
 
                                 <div class="swiper-container swiper-container-thumbs thumbs" id="thumbs2">
+                                    <img src="data:image/png;base64,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" alt="" class="bot_yuyeu">
+                                    <img src="images/zh_b_yuan_bg.png" alt="" class="bot_bg">
                                     <div class="swiper-wrapper" style="transition-duration: 0ms;">
                                         <div class="swiper-slide">
                                             <a href="javascript:;">
@@ -810,43 +802,57 @@
                             <div class="Detail" id='swpier_gongji_detail' style="display: none;">
                                 <div class="img_tab">
                                     <img src="images/d3_xiunv1.png" alt="" id="gongji_first">
-                                    <img src="images/d3_xiunv2.png" alt="" style="display:none" id="gongji_two">
+                                    <img src="images/d3_xiunv2.png" alt="" style="display:none"
+                                        id="gongji_two">
                                 </div>
 
                                 <div class="d_con">
-                                    <em class="top_d"></em>
-                                    <em class="top_b"></em>
-                                    <em class="top_line"></em>
-                                    <em class="top_audio"></em>
-                                    <i class="top_close"></i>
-                                    <dl>
-                                        <dt>
-                                            <h3><em class="l"></em>CV<span id="g_cv">夏怜</span><em class="r"></em></h3>
-                                            <h2 class="text-gradient" data-text="希普頓修女" id='g_name'>希普頓修女</h2>
-                                        </dt>
-                                        <dd>
-                                            <span class="text-gradient" data-text="簡介">簡介:</span>
-                                            <span id='g_info'>第一個到達南極點的探險家的名字命名的火種少女。
-                                                雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為；身體十分耐寒，喜歡下雪天，可以穿著夏裝從容的在雪中散步；雖然不願意承認，但其實十分喜歡喝牛奶，怕讓別人覺得自己是個沒斷奶的孩子，所以在別人面前總是裝作討厭牛奶的樣子。</span>
-                                        </dd>
-                                        <dd>
-                                            <span class="text-gradient" data-text="身高">身高:</span><span
-                                                id="g_height">155cm</span>
-                                        </dd>
-                                        <dd>
-                                            <span class="text-gradient" data-text="武器">武器:</span><span
-                                                id="g_weapon">冰凍射線槍</span>
-                                        </dd>
-                                    </dl>
-                                    <ul>
-                                        <li class="active">
-                                            <a href="#"><img src="images/d3_xiunv_icon1.png" alt="" id="gongji_three"></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img src="images/d3_xiunv_icon2.png" alt="" id="gongji_four"></a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                        <em class="top_d"></em>
+                                        <em class="top_b"></em>
+                                        <em class="top_audio"></em>
+                                        <i class="top_close"></i>
+                                        <dl>
+                                            <dt>
+                                                <h3><em class="l"></em>CV<span id="g_cv">夏怜</span><em class="r"></em></h3>
+                                                <h2 class="text-gradient" data-text="希普頓修女" id='g_name'>希普頓修女</h2>
+                                            </dt>
+                                            <dd>
+                                                <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                <span id='g_info'>第一個到達南極點的探險家的名字命名的火種少女。
+                                                    雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為；身體十分耐寒，喜歡下雪天，可以穿著夏裝從容的在雪中散步；雖然不願意承認，但其實十分喜歡喝牛奶，怕讓別人覺得自己是個沒斷奶的孩子，所以在別人面前總是裝作討厭牛奶的樣子。</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                    id="g_age">16</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="身高">身高:</span><span
+                                                    id="g_height">155cm</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="性格">性格:</span><span
+                                                    id="g_character">逞强 冷静</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="人生信条">人生信条:</span><span
+                                                    id="g_motto">只要雪还在下…</span>
+                                            </dd>
+                                            <dd>
+                                                <span class="text-gradient" data-text="武器">武器:</span><span
+                                                    id="g_weapon">冰凍射線槍</span>
+                                            </dd>
+                                        </dl>
+                                        <ul>
+                                            <li class="active">
+                                                <a href="#"><img src="images/d3_xiunv_icon1.png" alt=""
+                                                        id="gongji_three"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><img src="images/d3_xiunv_icon2.png" alt=""
+                                                        id="gongji_four"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
 
                             </div>
                         </div>
@@ -1002,8 +1008,8 @@
                     <script async defer crossorigin="anonymous"
                         src="https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v5.0"></script>
 
-                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width=""
-                        data-layout="button_count" data-action="like" data-size="large" data-show-faces="true"
+                    <div class="fb-like" data-href="https://www.facebook.com/codeseed.tw" data-width=""
+                        data-layout="button_count" data-action="like" data-size="small" data-show-faces="true"
                         data-share="true"></div>
 
                     <a href="javascript:;" class="select" id="select">台灣</a>
@@ -1052,7 +1058,7 @@
             <i name="close"></i>
             <div class="world_con">
                 <div class="left">
-                    <img src="xxxHTMLLINKxxx0.328053397875520240.6015263378482776xxx" alt="" id="w_img">
+                    <img src="xxxHTMLLINKxxx0.72887977205796160.35358204659309944xxx" alt="" id="w_img">
                 </div>
                 <div class="right">
                     <h2 id="w_h2">神啟公司</h2>
@@ -1065,7 +1071,7 @@
     <!-- 资料大图弹出框 -->
     <div id="data_pop" class="data_pop" style="display: none;">
         <div class="tip-box">
-            <img src="xxxHTMLLINKxxx0.172328489454581570.14110507234431258xxx" alt="" class="zl" id="data_img">
+            <img src="xxxHTMLLINKxxx0.78705615318071050.08383345449183088xxx" alt="" class="zl" id="data_img">
             <i name="close"></i>
         </div>
     </div>
