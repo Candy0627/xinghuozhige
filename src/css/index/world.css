@@ -331,7 +331,7 @@
 }
 .three .three_con .characters_detail .right .name {
   position: absolute;
-  top: -4.33rem;
+  top: -3rem;
   right: 0;
   font-size: 0.26rem;
   width: 0.81rem;
@@ -344,15 +344,19 @@
   position: absolute;
 }
 .three .three_con .characters_detail .right .name span.l {
+  width: 0.405rem;
+  height: 1.95rem;
   right: 0;
-  padding-top: 0.3rem;
   padding-right: 0.08rem;
   color: #000;
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
+  text-align: center;
 }
 .three .three_con .characters_detail .right .name span.r {
+  width: 0.405rem;
+  height: 2.45rem;
   left: 0;
   color: #fff;
   width: 0.42rem;
@@ -449,6 +453,12 @@
   text-align: center;
   padding-bottom: 0;
   margin-bottom: 0;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+}
+.three .three_con .characters_detail .Detail .d_con dl dt h3.active {
+  transition: all 0.9s;
+  transform: none;
 }
 .three .three_con .characters_detail .Detail .d_con dl dt h3 em {
   display: inline-block;
@@ -471,6 +481,12 @@
   color: #df2d2d;
   margin-top: 0;
   padding-bottom: 0;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+}
+.three .three_con .characters_detail .Detail .d_con dl dt h2.active {
+  transition: all 0.9s;
+  transform: none;
 }
 .three .three_con .characters_detail .Detail .d_con dl dd {
   font-family: '思源黑体';
@@ -480,6 +496,12 @@
   margin-left: 0;
   padding-left: 0;
   letter-spacing: 0.04rem;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+}
+.three .three_con .characters_detail .Detail .d_con dl dd.active {
+  transition: all 0.9s;
+  transform: none;
 }
 .three .three_con .characters_detail .Detail .d_con dl dd span:nth-child(1) {
   color: #df2d2d;

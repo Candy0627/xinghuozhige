@@ -18,6 +18,12 @@
             top: .2rem !important;
         }
 
+        ._2tga._8j9w {
+            height: 34px !important;
+            padding: 0 20px !important;
+        }
+
+
         /* CSS3过度及动画 */
         .one,
         .two,
@@ -112,6 +118,40 @@
             transition-delay: .8s;
         }
 
+        /* 预约模块 */
+        .bgt_1{
+            transition: all 1s;
+            top: -1rem;
+            opacity: 0;
+        }
+        .active .bgt_1{
+            opacity: 1;
+            top: 0 !important;
+            transition-delay: .8s;
+        }
+
+        .bgt_2{
+            transition: all 1s;
+            left:-10rem;
+            opacity: 0;
+        }
+        .active .bgt_2{
+            opacity: 1;
+            left: 0 !important;
+            transition-delay: .8s;
+        }
+
+        .bgt_3{
+            transition: all 1s;
+            right: -10rem;
+            opacity: 0;
+        }
+        .active .bgt_3{
+            opacity: 1;
+            right: 0 !important;
+            transition-delay: .8s;
+        }
+
         /* 种火 */
         .bg3 {
             transition: all 1s;
@@ -146,6 +186,18 @@
         .active .bg3_2 {
             opacity: 1;
             top: 0 !important;
+            transition-delay: .7s;
+        }
+
+        .current .bg3_center {
+            opacity: 0;
+            top: 13rem !important;
+            transition-delay: .7s;
+        }
+
+        .current .bg3_l_r {
+            opacity: 0;
+            top: -13rem !important;
             transition-delay: .7s;
         }
 
@@ -251,7 +303,7 @@
 
 <body>
     <div id="fullpage">
-        <div class="section one fullpage1">
+        <div class="section one">
             <div class="one-title-background">
                 <video id="video" width="100%" height="100%" class="one-background-video" muted="muted" data-autoplay
                     autoplay loop poster="../images/index_01.jpg">
@@ -272,7 +324,7 @@
                     <a href="#" class="btn"><i></i></a>
                     <a href="#" class="btn"><i></i></a>
                     <a href="#" class="btn"><i></i></a>
-                    <a href="#">
+                    <a href="#參與預約">
                         <i class="video_wrap"></i>
                         <i class="video_in">立即预约</i>
                     </a>
@@ -280,7 +332,7 @@
                 </div>
             </div>
         </div>
-        <div class="section two fullpage2">
+        <div class="section two">
             <div class="two_l" id="exp1"></div>
             <div class="two_r"></div>
             <div class="two_l_b"></div>
@@ -295,16 +347,16 @@
 
                 <div class="two_pos_chilun bg2_1"></div>
                 <div class="two_pos bg2_2"></div>
-                <ul class="bg2_3">
+                <ul class="bg2_3" id="process_ul">
                     <li>
                         <div class="two_title">
                             <em class="on">1</em>
                             <!-- <div class="circle circle1"></div>
                             <div class="circle circle2"></div> -->
                         </div>
-                        <span>10,000<i></i></span>
+                        <span>50,000<i></i></span>
                         <div class="two_pic_img">
-
+                            <div class="corner none"><i></i></div>
                             <img src="../images/c1.png" alt="" class="none">
                             <img src="../images/u1.png" alt="">
                         </div>
@@ -314,8 +366,9 @@
                         <div class="two_title">
                             <em class="on">2</em>
                         </div>
-                        <span>20,000<i></i></span>
+                        <span>10,000,0<i></i></span>
                         <div class="two_pic_img">
+                            <div class="corner none"><i></i></div>
                             <img src="../images/c2.png" alt="" class="none">
                             <img src="../images/u2.png" alt="">
                         </div>
@@ -323,9 +376,9 @@
                     </li>
                     <li>
                         <div class="two_title"><em>3</em></div>
-                        <span>50,000<i></i></span>
+                        <span>15,000,0<i></i></span>
                         <div class="two_pic_img">
-                            <div class="corner"><i></i></div>
+                            <div class="corner none"><i></i></div>
                             <img src="../images/c3.png" alt="">
                             <img src="../images/u3.png" alt="" class="none">
                         </div>
@@ -333,56 +386,102 @@
                     </li>
                     <li>
                         <div class="two_title"><em>4</em></div>
-                        <span>10,000,0<i></i></span>
+                        <span>20,000,0<i></i></span>
                         <div class="two_pic_img">
-                            <div class="corner"><i></i></div>
+                            <div class="corner none"><i></i></div>
                             <img src="../images/c4.png" alt="">
                             <img src="../images/u4.png" alt="" class="none">
                         </div>
 
                     </li>
                 </ul>
-                <a href="javascript:;" class="two_btn_appoint bg2_4" id="appoint"></a>
+                <a href="javascript:;" class="two_btn_appoint bg2_4" id="appoint" style="display: none;"></a>
                 <div class="two_text bg2_5">
                     <p>活動规则：</p>
-                    <p>1.活動時間：2019年XX月XX日至2019年XX月XX日結束。</p>
+                    <p>1.活動時間：2019年11月12日12:00开始至12月10日23:59分结束。</p>
                     <p>2.參與活動請務必填寫正確的行動電話號碼，確認提交后不可再次修改，避免遺漏訊息。</p>
-                    <p>3.活動結束后，獎勵將以簡訊的方式統一發送到您預留的行動電話上，請注意查收。</p>
-                    <p>4.虛寶碼有效期至XX月XX日截止，虛寶碼僅限兌換一次。</p>
-                    <p>5.預約成就解鎖獎勵為全服發放 ，遊戲伺服器開放前X天安裝註冊即可在遊戲中領取。獎勵檔次將按照最高</p>
-                    <p>觸發檔位進行發放（例最終預約人數達到10萬，即發放10萬一檔獎勵，不累計發放）。</p>
-                    <p>6.活動最終解釋權歸MoreFun Game所有。</p>
+                    <p>3.活動結束后，遊戲上市及好康資訊將以簡訊的方式統一發送到您預留的行動電話上，請注意查收。</p>
+                    <p>4.預約成就解鎖獎勵為全服發放 ，伺服器正式開放后前三日註冊的角色登入遊戲即可透過郵件領取。</p>
+                    <P>獎勵檔次將按照最高觸發檔位進行發放（例最終預約人數達到20萬，即發放20萬一檔獎勵，不累計發放）。</p>
+                    <p>5.活動最終解釋權歸MoreFun Game所有。</p>
                 </div>
             </div>
         </div>
 
 
+        <div class="section thre">
+            <div id="appoint_now">
+                <div class="m_appoint_now">
+                    <div class="step_font bgt_1">
+                        只要完成FB登入、正確輸入您的手機號碼即可完成預約
+                        <span class="font">豐富好康送給您！</span>
+                    </div>
+                    <div class="step1 bgt_2">
+                        <a href="#" class="loginFb" id='loginFb'></a>
+                        <div class="fb_btn">
+
+                            <div class="fb-like" data-href="https://www.facebook.com/codeseed.tw" data-width=""
+                                data-layout="button_count" data-action="like" data-size="large" data-show-faces="false"
+                                data-share="true"></div>
 
 
+                            <div id="fb-root"></div>
+                            <script async defer crossorigin="anonymous"
+                                src="https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v5.0"></script>
+                        </div>
 
-        <div class="section three fullpage3">
+                    </div>
+                    <div class="step2 bgt_3">
+                        <a href="javascript:;" class="select"><span id="select">台灣</span><em id="select_em"></em></a>
+                        <ul id="backgroundImg" style="display: none;">
+                            <li id="taiwan" class="">台灣</li>
+                            <li id="xianggang" class="">香港</li>
+                            <li id="aomen" class="active">澳門</li>
+                            <li id="xianggang" class="">新加坡</li>
+                            <li id="aomen" class="">馬來西亞</li>
+                        </ul>
+                        <div class="con">
+                            <div>
+                                <form action="javascript:;" id="myForm">
+                                    <div class="c_width">
+                                        <span class="areaphone" id="areaphone">+886</span>
+                                        <input type="text" placeholder="請填寫0後的9位數行動電話號碼" class="phone" id="phone"
+                                            maxlength="9">
+                                    </div>
+                                </form>
+                                <input type="button" class="btn_appoint" id="submit">
+                                <!-- <a href="javascript:;" class="btn_appoint" ></a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section three">
             <div class="three_con" id="characters">
                 <ul class="characters_list">
-                    <li class="bg3">
+                    <li class="bg3 bg3_l_r">
                         <a href="#" title="攻擊">
-                            <span class="topIndex topgj"></span>
+                            <span class="topIndex topgj" id="gongji_t"></span>
                             <img src="../images/a1.png" alt="" class="a1">
                             <img src="../images/l1.png" alt="" class="u1">
                             <p>攻擊<i></i></p>
                         </a>
 
                     </li>
-                    <li class="bg3_1">
+                    <li class="bg3_1 bg3_center">
                         <a href="#" title="防禦">
-                            <span class="topIndex topfy"></span>
+                            <span class="topIndex topfy" id="fangyu_t"></span>
                             <img src="../images/a2.png" alt="" class="a1">
                             <img src="../images/l2.png" alt="" class="u1">
                             <p>防禦<i></i></p>
                         </a>
                     </li>
-                    <li class="bg3_2">
+                    <li class="bg3_2 bg3_l_r">
                         <a href="#" title="輔助">
-                            <span class="topIndex"></span>
+                            <span class="topIndex" id="fuzhu_t"></span>
                             <img src="../images/a3.png" alt="" class="a1">
                             <img src="../images/l3.png" alt="" class="u1">
                             <p>輔助<i></i></p>
@@ -405,6 +504,7 @@
                                                 <img src="../images/fuzhu/lt1_lahaier.png" alt="轮播图">
                                                 <em name="audio none"></em>
                                             </a>
+
                                         </div>
                                         <div class="swiper-slide">
                                             <a href="javascript:;">
@@ -428,6 +528,8 @@
                                     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                                 </div>
                                 <div class="swiper-container swiper-container-thumbs thumbs" id="thumbs">
+                                    <img src="../images/zh_b_yuan.png" alt="" class="bot_yuyeu">
+                                    <img src="../images/zh_b_yuan_bg.png" alt="" class="bot_bg">
                                     <div class="swiper-wrapper" style="transition-duration: 0ms;">
                                         <div class="swiper-slide">
                                             <a href="javascript:;">
@@ -482,60 +584,6 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <!-- <div class="swiper-wrapper" style="transition-duration: 0ms;">
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="../images/fangyu/l1amengsen.png" alt="轮播图">
-                                                <div class="name">
-                                                    <span class="l" name="name_l">
-                                                        阿蒙森
-                                                    </span>
-                                                    <span class="r" name="name_r">
-                                                        上阪すみれ
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="../images/fangyu/l2fangao.png" alt="轮播图">
-                                                <div class="name">
-                                                    <span class="l" name="name_l">
-                                                        梵高
-                                                    </span>
-                                                    <span class="r" name="name_r">
-                                                        夏怜
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="../images/fangyu/l3qigefulide.png" alt="轮播图">
-                                                <div class="name">
-                                                    <span class="l" name="name_l">
-                                                        齐格弗里德
-                                                    </span>
-                                                    <span class="r" name="name_r">
-                                                        白椛ひとみ
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="../images/fangyu/l4xide.png" alt="轮播图">
-                                                <div class="name">
-                                                    <span class="l" name="name_l">
-                                                        熙德
-                                                    </span>
-                                                    <span class="r" name="name_r">
-                                                        斎藤千和
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div> -->
                                     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                                 </div>
                             </div>
@@ -548,7 +596,6 @@
                                 <div class="d_con">
                                     <em class="top_d"></em>
                                     <em class="top_b"></em>
-                                    <em class="top_line"></em>
                                     <em class="top_audio"></em>
                                     <i class="top_close"></i>
                                     <dl>
@@ -562,8 +609,20 @@
                                                 雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為；身體十分耐寒，喜歡下雪天，可以穿著夏裝從容的在雪中散步；雖然不願意承認，但其實十分喜歡喝牛奶，怕讓別人覺得自己是個沒斷奶的孩子，所以在別人面前總是裝作討厭牛奶的樣子。</span>
                                         </dd>
                                         <dd>
+                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                id="d_age">16</span>
+                                        </dd>
+                                        <dd>
                                             <span class="text-gradient" data-text="身高">身高:</span><span
                                                 id="d_height">155cm</span>
+                                        </dd>
+                                        <dd>
+                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                id="d_character">逞强 冷静</span>
+                                        </dd>
+                                        <dd>
+                                            <span class="text-gradient" data-text="人生信条">人生信条:</span><span
+                                                id="d_motto">只要雪还在下…</span>
                                         </dd>
                                         <dd>
                                             <span class="text-gradient" data-text="武器">武器:</span><span
@@ -572,10 +631,12 @@
                                     </dl>
                                     <ul>
                                         <li class="active">
-                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon1.png" alt="" id="fuzhu_three"></a>
+                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon1.png" alt=""
+                                                    id="fuzhu_three"></a>
                                         </li>
                                         <li>
-                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon2.png" alt="" id="fuzhu_four"></a>
+                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon2.png" alt=""
+                                                    id="fuzhu_four"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -616,6 +677,8 @@
                                 </div>
 
                                 <div class="swiper-container swiper-container-thumbs thumbs" id="thumbs1">
+                                    <img src="../images/zh_b_yuan.png" alt="" class="bot_yuyeu">
+                                    <img src="../images/zh_b_yuan_bg.png" alt="" class="bot_bg">
                                     <div class="swiper-wrapper" style="transition-duration: 0ms;">
                                         <div class="swiper-slide">
                                             <a href="javascript:;">
@@ -677,13 +740,13 @@
                             <div class="Detail" id='swpier_fangyu_detail' style="display: none;">
                                 <div class="img_tab">
                                     <img src="../images/fuzhu/d3_xiunv1.png" alt="" id="fangyu_first">
-                                    <img src="../images/fuzhu/d3_xiunv2.png" alt="" style="display:none" id="fangyu_two">
+                                    <img src="../images/fuzhu/d3_xiunv2.png" alt="" style="display:none"
+                                        id="fangyu_two">
                                 </div>
 
                                 <div class="d_con">
                                     <em class="top_d"></em>
                                     <em class="top_b"></em>
-                                    <em class="top_line"></em>
                                     <em class="top_audio"></em>
                                     <i class="top_close"></i>
                                     <dl>
@@ -697,8 +760,20 @@
                                                 雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為；身體十分耐寒，喜歡下雪天，可以穿著夏裝從容的在雪中散步；雖然不願意承認，但其實十分喜歡喝牛奶，怕讓別人覺得自己是個沒斷奶的孩子，所以在別人面前總是裝作討厭牛奶的樣子。</span>
                                         </dd>
                                         <dd>
+                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                id="f_age">16</span>
+                                        </dd>
+                                        <dd>
                                             <span class="text-gradient" data-text="身高">身高:</span><span
                                                 id="f_height">155cm</span>
+                                        </dd>
+                                        <dd>
+                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                id="f_character">逞强 冷静</span>
+                                        </dd>
+                                        <dd>
+                                            <span class="text-gradient" data-text="人生信条">人生信条:</span><span
+                                                id="f_motto">只要雪还在下…</span>
                                         </dd>
                                         <dd>
                                             <span class="text-gradient" data-text="武器">武器:</span><span
@@ -707,10 +782,12 @@
                                     </dl>
                                     <ul>
                                         <li class="active">
-                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon1.png" alt="" id="fangyu_three"></a>
+                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon1.png" alt=""
+                                                    id="fangyu_three"></a>
                                         </li>
                                         <li>
-                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon2.png" alt="" id="fangyu_four"></a>
+                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon2.png" alt=""
+                                                    id="fangyu_four"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -750,6 +827,8 @@
                                 </div>
 
                                 <div class="swiper-container swiper-container-thumbs thumbs" id="thumbs2">
+                                    <img src="../images/zh_b_yuan.png" alt="" class="bot_yuyeu">
+                                    <img src="../images/zh_b_yuan_bg.png" alt="" class="bot_bg">
                                     <div class="swiper-wrapper" style="transition-duration: 0ms;">
                                         <div class="swiper-slide">
                                             <a href="javascript:;">
@@ -810,13 +889,13 @@
                             <div class="Detail" id='swpier_gongji_detail' style="display: none;">
                                 <div class="img_tab">
                                     <img src="../images/fuzhu/d3_xiunv1.png" alt="" id="gongji_first">
-                                    <img src="../images/fuzhu/d3_xiunv2.png" alt="" style="display:none" id="gongji_two">
+                                    <img src="../images/fuzhu/d3_xiunv2.png" alt="" style="display:none"
+                                        id="gongji_two">
                                 </div>
 
                                 <div class="d_con">
                                     <em class="top_d"></em>
                                     <em class="top_b"></em>
-                                    <em class="top_line"></em>
                                     <em class="top_audio"></em>
                                     <i class="top_close"></i>
                                     <dl>
@@ -830,8 +909,20 @@
                                                 雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為；身體十分耐寒，喜歡下雪天，可以穿著夏裝從容的在雪中散步；雖然不願意承認，但其實十分喜歡喝牛奶，怕讓別人覺得自己是個沒斷奶的孩子，所以在別人面前總是裝作討厭牛奶的樣子。</span>
                                         </dd>
                                         <dd>
+                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                id="g_age">16</span>
+                                        </dd>
+                                        <dd>
                                             <span class="text-gradient" data-text="身高">身高:</span><span
                                                 id="g_height">155cm</span>
+                                        </dd>
+                                        <dd>
+                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                id="g_character">逞强 冷静</span>
+                                        </dd>
+                                        <dd>
+                                            <span class="text-gradient" data-text="人生信条">人生信条:</span><span
+                                                id="g_motto">只要雪还在下…</span>
                                         </dd>
                                         <dd>
                                             <span class="text-gradient" data-text="武器">武器:</span><span
@@ -840,10 +931,12 @@
                                     </dl>
                                     <ul>
                                         <li class="active">
-                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon1.png" alt="" id="gongji_three"></a>
+                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon1.png" alt=""
+                                                    id="gongji_three"></a>
                                         </li>
                                         <li>
-                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon2.png" alt="" id="gongji_four"></a>
+                                            <a href="#"><img src="../images/fuzhu/d3_xiunv_icon2.png" alt=""
+                                                    id="gongji_four"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -856,14 +949,7 @@
         </div>
 
 
-
-
-
-
-
-
-
-        <div class="section four pageone fullpage4">
+        <div class="section four pageone">
             <ul id="four_ul">
                 <li class="page-role bg4_1">
                     <img src="../images/world-bg.jpg" alt="" class="nav_img3">
@@ -917,7 +1003,7 @@
                 </li>
             </ul>
         </div>
-        <div class="section five fullpage5 active0">
+        <div class="section five active0">
             <div class="last_con">
                 <em></em>
                 <em></em>
@@ -990,47 +1076,52 @@
     </div>
 
     <!-- 预约弹框 -->
-    <div id="appoint_pop" class="appoint_pop" style="display: none;">
+    <!-- <div id="appoint_pop" class="appoint_pop" style="display: none;">
         <div class="tip-box">
             <img src="../images/pop_bg.png" alt="">
             <i name="close"></i>
             <div id="appoint_now">
                 <div class="m_appoint_now">
-                    <a href="#" class="loginFb"></a>
 
-                    <div id="fb-root"></div>
-                    <script async defer crossorigin="anonymous"
-                        src="https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v5.0"></script>
+                    <div class="step1">
+                        <a href="#" class="loginFb"></a>
+                        <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous"
+                            src="https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v5.0"></script>
 
-                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width=""
-                        data-layout="button_count" data-action="like" data-size="large" data-show-faces="true"
-                        data-share="true"></div>
+                        <div class="fb-like" data-href="https://www.facebook.com/codeseed.tw" data-width=""
+                            data-layout="button_count" data-action="like" data-size="small" data-show-faces="true"
+                            data-share="true"></div>
+                    </div>
 
-                    <a href="javascript:;" class="select" id="select">台灣</a>
-                    <ul id="backgroundImg" style="display: none;">
-                        <li id="taiwan" class="active">台灣</li>
-                        <li id="xianggang" class="">香港</li>
-                        <li id="aomen" class="">澳門</li>
-                        <li id="xianggang" class="">新加坡</li>
-                        <li id="aomen" class="">馬來西亞</li>
-                    </ul>
-                    <div class="con">
-                        <div>
-                            <form action="javascript:;" id="myForm">
-                                <div class="c_width">
-                                    <span class="areaphone" id="areaphone">+852</span>
-                                    <input type="text" placeholder="請填寫8位數電話號碼" class="phone" id="phone" maxlength="9">
-                                </div>
-                            </form>
-                            <input type="button" class="btn_appoint" id="submit">
-                            <!-- <a href="javascript:;" class="btn_appoint" ></a> -->
+                    <div class="step2">
+                        <a href="javascript:;" class="select" id="select">台灣</a>
+                        <ul id="backgroundImg" style="display: none;">
+                            <li id="taiwan" class="active">台灣</li>
+                            <li id="xianggang" class="">香港</li>
+                            <li id="aomen" class="">澳門</li>
+                            <li id="xianggang" class="">新加坡</li>
+                            <li id="aomen" class="">馬來西亞</li>
+                        </ul>
+                        <div class="con">
+                            <div>
+                                <form action="javascript:;" id="myForm">
+                                    <div class="c_width">
+                                        <span class="areaphone" id="areaphone">+852</span>
+                                        <input type="text" placeholder="請填寫8位數電話號碼" class="phone" id="phone"
+                                            maxlength="9">
+                                    </div>
+                                </form>
+                                <input type="button" class="btn_appoint" id="submit">
+                                <a href="javascript:;" class="btn_appoint" ></a> -->
+    <!-- </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <a href="javascript:;" class="btn_fbShare" onclick="fbShare()"></a> -->
+            <a href="javascript:;" class="btn_fbShare" onclick="fbShare()"></a> 
         </div>
-    </div>
+    </div> -->
 
     <!-- 预约成功弹框 -->
     <div id="appoint_success_pop" style="display: none;">
@@ -1070,6 +1161,24 @@
         </div>
     </div>
 
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '596196177797821',
+                cookie: true, // 启用cookie
+                xfbml: true, // 解析此页面上的社交插件
+                version: 'v2.8' // 使用图形api 2.8版本
+            });
+        };
+    </script>
 </body>
 
 </html>

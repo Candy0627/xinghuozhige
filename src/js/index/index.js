@@ -82,8 +82,8 @@ import '../../images/gongji/d4_napolun2.png'
 import '../../images/gongji/d1_aiyinsitan_icon1.png'
 import '../../images/gongji/d1_aiyinsitan_icon2.png'
 
-import '../../images/gongji/d1_jialilve_icon1.png'
-import '../../images/gongji/d1_jialilve_icon2.png'
+import '../../images/gongji/d2_jialilve_icon1.png'
+import '../../images/gongji/d2_jialilve_icon2.png'
 
 import '../../images/gongji/d3_dechuanjiakang_icon1.png'
 import '../../images/gongji/d3_dechuanjiakang_icon2.png'
@@ -91,22 +91,129 @@ import '../../images/gongji/d3_dechuanjiakang_icon2.png'
 import '../../images/gongji/d4_napolun_icon1.png'
 import '../../images/gongji/d4_napolun_icon2.png'
 
+import '../../images/x1.png'
+import '../../images/x2.png'
+import '../../images/x3.png'
+import '../../images/x4.png'
+
 
 /**
- * 预约模块
+ * 第二屏预约奖励
  * 数字变化特效
+ * 预约数字ajax
  */
+
 function magic_number(value, num) {
     num.animate({
         count: value
     }, {
-        duration: 2000, //持续时间
+        duration: 6000, //持续时间
         step: function () {
             num.text(Math.round(this.count));
         }
     })
 }
-magic_number(203728, $('#number'));
+$.get("https://admin.gamemorefun.net/welcome/get_appointment_number", function (res) {
+    var res = JSON.parse(res);
+    if (res && res.data) {
+        var n = res.data;
+        $('#number').text(n);
+        // magic_number(number, $('#number'));
+        appointProcess(n);
+    }
+})
+// 预约进程变化
+function appointProcess(n) {
+    console.log('dsfhj', n);
+    if (n > 0 && n < 50000) {
+        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(1) .two_title em').removeClass('on');
+        $('.two ul li:nth-child(2) .two_title em').removeClass('on');
+        $('.two ul li:nth-child(3) .two_title em').removeClass('on');
+        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
+        $('#process_ul').css({
+            'background': 'url(../../images/x0.png) no-repeat',
+            'background-size': '100% 100%'
+        });
+    } else if (n >= 50000 && n < 100000) {
+        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(1) .two_title em').addClass('on');
+        $('.two ul li:nth-child(2) .two_title em').removeClass('on');
+        $('.two ul li:nth-child(3) .two_title em').removeClass('on');
+        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
+        $('#process_ul').css({
+            'background': 'url(../../images/x1.png) no-repeat',
+            'background-size': '100% 100%'
+        });
+    } else if (n >= 100000 && n < 150000) {
+        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(1) .two_title em').addClass('on');
+        $('.two ul li:nth-child(2) .two_title em').addClass('on');
+        $('.two ul li:nth-child(3) .two_title em').removeClass('on');
+        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
+        $('#process_ul').css({
+            'background': 'url(../../images/x2.png) no-repeat',
+            'background-size': '100% 100%'
+        });
+    } else if (n >= 150000 && n < 200000) {
+        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
+        $('.two ul li:nth-child(1) .two_title em').addClass('on');
+        $('.two ul li:nth-child(2) .two_title em').addClass('on');
+        $('.two ul li:nth-child(3) .two_title em').addClass('on');
+        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
+        $('#process_ul').css({
+            'background': 'url(../../images/x3.png) no-repeat',
+            'background-size': '100% 100%'
+        });
+    } else if (n >= 200000) {
+        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
+        $('.two ul li:nth-child(1) .two_title em').addClass('on');
+        $('.two ul li:nth-child(2) .two_title em').addClass('on');
+        $('.two ul li:nth-child(3) .two_title em').addClass('on');
+        $('.two ul li:nth-child(4) .two_title em').addClass('on');
+        $('#process_ul').css({
+            'background': 'url(../../images/x4.png) no-repeat',
+            'background-size': '100% 100%'
+        });
+    }
+}
+
+/**
+ * 第三屏预约逻辑
+ * fb登录成功之后进行第二步的预约逻辑
+ */
+var l = document.getElementById('loginFb');
+l.onclick = function () {
+    FB.login(function (reponse) {
+        if (response.status === 'connected') {
+            // FB.api('/me', function (response) {
+            //     console.log('登录成功: ' + response.name);
+            // });
+            // 预约逻辑
+            fblogin = 'true';
+        } else {
+            console.log('该用户没有登录');
+        }
+    }, {
+        scope: 'public_profile,email'
+    })
+}
+
 
 
 /**
@@ -116,12 +223,6 @@ magic_number(203728, $('#number'));
 document.getElementById('appoint').addEventListener('click', function () {
     appointInfoPop();
 })
-var s = document.getElementById('select');
-var d = document.getElementById('backgroundImg');
-s.onclick = function () {
-    // d.style.display = 'block';
-    $('#backgroundImg').slideToggle();
-}
 
 
 // var ul = document.getElementById('backgroundImg');
@@ -144,10 +245,81 @@ s.onclick = function () {
  * 预约模块
  * ajax
  */
+var fblogin = 'false';
 document.getElementById('submit').addEventListener('click', function () {
-    layer.closeAll();
-    appointSuccessPop();
+    // if (fblogin == 'false') {
+    //     layer.msg('请先进行facebook登录');
+    // } else {
+    var platform = '1';
+    var engSimpol = '';
+    var area = document.getElementById('select').innerText;
+    var str = document.getElementById('areaphone').innerText;
+    var areaPhone = str.substr(1);
+    var number = document.getElementById('phone').value;
+    console.log('number', typeof number);
+    var allNumber = areaPhone + number;
+    switch (area) {
+        case '台灣':
+            engSimpol = 'TW';
+            break;
+        case '香港':
+            engSimpol = 'HK';
+            break;
+        case '澳門':
+            engSimpol = 'MO';
+            break;
+        case '新加坡':
+            engSimpol = 'SG';
+            break;
+        case '馬來西亞':
+            engSimpol = 'MY';
+            break;
+    }
+
+    if (area == "") {
+        layer.msg('地區不能爲空！');
+    }
+
+
+    if (!validatePhone(allNumber,areaPhone,number)) {
+        if (number == "") {
+            layer.msg('電話號碼不能爲空！');
+        }else{
+            layer.msg('电话号码格式錯誤!');
+        }
+    } else {
+        $.post('https://admin.gamemorefun.net/welcome/appointment', {
+            phone: allNumber,
+            country: engSimpol,
+            platform: platform
+        }, function (res) {
+
+            var data = JSON.parse(res);
+            console.log(data.success);
+            if (data.success == 'true') {
+
+                // layer.msg('预约成功！');
+                appointSuccessPop();
+                // layer.msg(res.msg);
+            } else {
+                layer.msg(data.msg);
+            }
+        })
+    }
+    // }
+    // layer.closeAll();
 })
+
+function validatePhone(phone,areaCode,number) {
+    let map = {
+        886: /^(886)?\d{9,10}$/,
+        852: /^(852)?\d{8}$/,
+        853: /^(853)?\d{8}$/,
+        60: /^(852)?\d{9}$/,
+        65: /^(852)?\d{8}$/
+    };
+    return map[areaCode].test(phone);
+}
 /**
  * 预约模块
  * 弹框关闭按钮
@@ -206,32 +378,15 @@ function swiper1() {
         watchSlidesVisibility: true, //防止不可点击
         observer: true,
         observeParents: true,
-        onInit: function (swiper) {
-            swiper.slides[5].className = "swiper-slide swiper-slide-active"; //当前选中 状态
-        }
-    })
-    var gallerySwiper = new Swiper('#gallery', {
-        effect: 'coverflow',
-        spaceBetween: 10, //缩略图间距
-        slidesPerView: 3,
-        centeredSlides: true,
-        initialSlide: 2,
-        observer: true,
-        observeParents: true,
-        thumbs: {
-            swiper: thumbsSwiper,
-        },
-        onInit: function (swiper) {
-            swiper.slides[5].className = "swiper-slide swiper-slide-active"; //当前选中 状态
-        },
         on: {
             click: function () {
                 var i = this.clickedIndex;
                 var l = document.getElementsByName('name_l');
                 var r = document.getElementsByName('name_r');
-                console.log('hide', i);
+                console.log('当前的第一个hide', i);
                 $('.characters_detail .fuzhu .swpier_fuzhu').hide();
                 $('.characters_detail .fuzhu .Detail').show();
+                $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
                 switch (i) {
                     case 0:
                         lahaier();
@@ -249,6 +404,30 @@ function swiper1() {
             }
         }
     })
+    var gallerySwiper = new Swiper('#gallery', {
+        effect: 'coverflow',
+        spaceBetween: 10, //缩略图间距
+        slidesPerView: 3,
+        centeredSlides: true,
+        initialSlide: 2,
+        observer: true,
+        observeParents: true,
+        coverflowEffect: {
+            rotate: -34,
+            stretch: 0,
+            depth: 180,
+            modifier: 1,
+            slideShadows: true
+        },
+        thumbs: {
+            swiper: thumbsSwiper,
+        },
+        on: {
+            click: function () {
+
+            }
+        }
+    })
 }
 
 function lahaier() {
@@ -257,6 +436,11 @@ function lahaier() {
     var i = document.getElementById('d_info');
     var h = document.getElementById('d_height');
     var w = document.getElementById('d_weapon');
+
+    var a = document.getElementById('d_age');
+    var q = document.getElementById('d_character');
+    var m = document.getElementById('d_motto');
+
     var o = document.getElementById('fuzhu_first');
     var t = document.getElementById('fuzhu_two');
     var e = document.getElementById('fuzhu_three');
@@ -265,7 +449,12 @@ function lahaier() {
     c.innerText = '悠木碧';
     n.innerText = '拉海爾';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以歷史上英法百年戰爭中著名的法國騎士拉海爾的名字命名的女性火種外表年齡略顯幼小，和她的名字不同（ 拉海爾La Hire， 原意為古法文的憤怒）， 這個小女孩冷靜、 內斂，總是面無表情，很少表露情緒，說話不多，卻總能通過一兩 個辭彙點中對話中的要害。 說白了就是個三無蘿莉。 相對於說話，更習慣通過文字 通訊工具與人交流，使用文字通訊時，卻是另外一種人格，話多暴躁。';
+    i.innerText = '以歷史上英法百年戰爭中著名的法國騎士拉海爾的名字命名的種火少女外表年齡略顯幼小，三無蘿莉，相對於說話，更習慣通過文字通訊工具與人交流，使用文字通訊時，卻是另外一種人格，話多暴躁。';
+
+    a.innerText = '17';
+    q.innerText = '三無';
+    m.innerText = '這樣下去的話…總有一天能看到新的動漫…對吧？';
+
     h.innerText = '145cm';
     w.innerText = '儀仗劍，電子終端';
     o.setAttribute('src', '../../images/d1_lahaier1.png');
@@ -280,18 +469,27 @@ function niudun() {
     var i = document.getElementById('d_info');
     var h = document.getElementById('d_height');
     var w = document.getElementById('d_weapon');
-    var o = document.getElementById('fuzhu_first');
 
+    var a = document.getElementById('d_age');
+    var q = document.getElementById('d_character');
+    var m = document.getElementById('d_motto');
+
+    var o = document.getElementById('fuzhu_first');
     var t = document.getElementById('fuzhu_two');
     var e = document.getElementById('fuzhu_three');
     var r = document.getElementById('fuzhu_four');
 
 
-    c.innerText = '日高里菜';
+    c.innerText = '日高裡菜';
     n.innerText = '牛頓';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以著名的物理學家牛頓的名字命名的女性火種有些懶散頹廢的少女，不修邊幅，討厭麻煩，拖延症患者，卻有著神一般的解決能	力，當問題到了不能不解決的時候，會以最直接有效的方式迅速徹底的解決掉。對於他人的求助，並不會拒絕，但也不會自己出手幫忙，通常會將求助者介紹給其他有解決能力的人。喜歡吃蘋果，認為只要有蘋果，他可以不吃其他任何東西就活下來。';
-    h.innerText = '165cm';
+    i.innerText = '以著名的物理學家牛頓的名字命名的種火少女，懶散頹廢的少女，討厭麻煩，卻有著神一般解決問題的能力。喜歡吃蘋果，認為只要有蘋果，他可以不吃其他任何東西。';
+
+    a.innerText = '19';
+    q.innerText = '打不起精神';
+    m.innerText = '我想將甜美的蘋果撒播在世界各地。';
+
+    h.innerText = '170cm';
     w.innerText = '重力球';
     o.setAttribute('src', '../../images/d2_niudun1.png');
     t.setAttribute('src', '../../images/d2_niudun2.png');
@@ -306,18 +504,27 @@ function xipudunxiunv() {
     var i = document.getElementById('d_info');
     var h = document.getElementById('d_height');
     var w = document.getElementById('d_weapon');
-    var o = document.getElementById('fuzhu_first');
 
+    var a = document.getElementById('d_age');
+    var q = document.getElementById('d_character');
+    var m = document.getElementById('d_motto');
+
+    var o = document.getElementById('fuzhu_first');
     var t = document.getElementById('fuzhu_two');
     var e = document.getElementById('fuzhu_three');
     var r = document.getElementById('fuzhu_four');
 
-    c.innerText = '夏怜';
+    c.innerText = '夏憐';
     n.innerText = '希普顿修女';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以著名的预言家希普顿修女的名字命名为代号的火种战士职业偶像歌手，面对粉丝和观众的时候是一个行为端正的美少女偶像，其实内心中住着一个猥琐大叔，私下里喜欢绘声绘色的和别人交流黄段子，对美女评头论足。有着莫名其妙的超能力，可以通过感应直到附近哪个方向有美女，并给美女打分，被她称为美女雷达。不只能发出有美感让人愉悦的声音，同时也是制造噪音的能手。';
+    i.innerText = '以著名的預言家希普頓修女的名字命名的種火少女，職業偶像歌手。不僅能發出有美感讓人愉悅的聲音，同時也是製造噪音的能手。';
+
+    a.innerText = '19(29)';
+    q.innerText = '元氣（猥瑣）';
+    m.innerText = '嗯嗯嗯！別看世界變成這樣，但是美麗的女性還是很多的嘛（口水）~';
+
     h.innerText = '165cm';
-    w.innerText = '麦克风';
+    w.innerText = '麥克風';
     o.setAttribute('src', '../../images/d3_xiunv1.png');
 
     t.setAttribute('src', '../../images/d3_xiunv2.png');
@@ -332,8 +539,13 @@ function kaisa() {
     var i = document.getElementById('d_info');
     var h = document.getElementById('d_height');
     var w = document.getElementById('d_weapon');
-    var o = document.getElementById('fuzhu_first');
 
+    var a = document.getElementById('d_age');
+    var q = document.getElementById('d_character');
+    var m = document.getElementById('d_motto');
+
+
+    var o = document.getElementById('fuzhu_first');
     var t = document.getElementById('fuzhu_two');
     var e = document.getElementById('fuzhu_three');
     var r = document.getElementById('fuzhu_four');
@@ -341,9 +553,14 @@ function kaisa() {
     c.innerText = '斎藤千和';
     n.innerText = '凱撒';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以古罗马共和国执政官尤里乌斯凯撒的名字为代号的火种战士乐观开朗，爱笑，自来熟，善于交际；因为善于和各种各样的人打交道，并且能拉来投资，所以隐隐有援力从身上散发出来';
-    h.innerText = '165cm';
-    w.innerText = '罗马式宽刃短剑；古罗马军团式鹰旗';
+    i.innerText = '以古羅馬共和國執政官尤裡烏斯凱撒的名字為代號的種火少女，樂觀開朗，愛笑，善於交際；因為善於和各種各樣的人打交道，並且能拉來投資，所以隱隱有援力從身上散發出來';
+
+    a.innerText = '19';
+    q.innerText = '元氣';
+    m.innerText = '如果足夠努力，就會綻放出足夠的光芒。在光芒的指引下，我們都會繼續前進！';
+
+    h.innerText = '170cm';
+    w.innerText = '羅馬式寬刃短劍；古羅馬軍團式鷹旗';
     o.setAttribute('src', '../../images/d4_kaisa1.png');
 
     t.setAttribute('src', '../../images/d4_kaisa2.png');
@@ -362,19 +579,7 @@ function swiper2() {
         slidesPerView: 5,
         watchSlidesVisibility: true, //防止不可点击
         observer: true,
-        observeParents: true
-    })
-    var gallerySwiper1 = new Swiper('#gallery1', {
-        effect: 'coverflow',
-        spaceBetween: 10, //缩略图间距
-        slidesPerView: 3,
-        centeredSlides: true,
-        initialSlide: 2,
-        observer: true,
         observeParents: true,
-        thumbs: {
-            swiper: thumbsSwiper1,
-        },
         on: {
             click: function () {
                 var i = this.clickedIndex;
@@ -383,6 +588,7 @@ function swiper2() {
                 console.log('防御hide', i);
                 $('#swpier_fangyu').hide();
                 $('#swpier_fangyu_detail').show();
+                $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
                 switch (i) {
                     case 0:
                         amengsen();
@@ -399,6 +605,25 @@ function swiper2() {
             }
         }
     })
+    var gallerySwiper1 = new Swiper('#gallery1', {
+        effect: 'coverflow',
+        spaceBetween: 10, //缩略图间距
+        slidesPerView: 3,
+        centeredSlides: true,
+        initialSlide: 2,
+        observer: true,
+        observeParents: true,
+        coverflowEffect: {
+            rotate: -34,
+            stretch: 0,
+            depth: 180,
+            modifier: 1,
+            slideShadows: true
+        },
+        thumbs: {
+            swiper: thumbsSwiper1,
+        }
+    })
 }
 
 function amengsen() {
@@ -407,8 +632,12 @@ function amengsen() {
     var i = document.getElementById('f_info');
     var h = document.getElementById('f_height');
     var w = document.getElementById('f_weapon');
-    var o = document.getElementById('fangyu_first');
 
+    var a = document.getElementById('f_age');
+    var q = document.getElementById('f_character');
+    var m = document.getElementById('f_motto');
+
+    var o = document.getElementById('fangyu_first');
     var t = document.getElementById('fangyu_two');
     var e = document.getElementById('fangyu_three');
     var r = document.getElementById('fangyu_four');
@@ -416,11 +645,16 @@ function amengsen() {
     c.innerText = '上阪すみれ';
     n.innerText = '阿蒙森';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以第一個到達南極點的探險家的名字命名的火種少女雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣	的行為；身體十分耐寒，喜歡下雪天，可以穿著夏裝從容的在雪中散步；雖然不願意承	認，但其實十分喜歡喝牛奶，怕讓別人覺得自己是個沒斷奶的孩子，所以在別人面前總是裝作討厭牛奶的樣子。';
+    i.innerText = '以第一個到達南極點的探險家的名字命名的種火少女雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為';
+
+    a.innerText = '16';
+    q.innerText = '逞强 冷静';
+    m.innerText = '只要雪还在下…';
+
+
     h.innerText = '155cm';
     w.innerText = '冰凍射線槍';
     o.setAttribute('src', '../../images/d1_amengsen1.png');
-
     t.setAttribute('src', '../../images/d1_amengsen2.png');
     e.setAttribute('src', '../../images/d1_amengsen_icon1.png');
     r.setAttribute('src', '../../images/d1_amengsen_icon2.png');
@@ -432,20 +666,28 @@ function fangao() {
     var i = document.getElementById('f_info');
     var h = document.getElementById('f_height');
     var w = document.getElementById('f_weapon');
-    var o = document.getElementById('fangyu_first');
 
+    var a = document.getElementById('f_age');
+    var q = document.getElementById('f_character');
+    var m = document.getElementById('f_motto');
+
+    var o = document.getElementById('fangyu_first');
     var t = document.getElementById('fangyu_two');
     var e = document.getElementById('fangyu_three');
     var r = document.getElementById('fangyu_four');
 
-    c.innerText = '夏怜';
+    c.innerText = '夏憐';
     n.innerText = '梵高';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以著名立體主義畫家梵高的名字命名的少女火種電波系少女，自理能力幾乎為0，經常會對著空氣說出一些他人聽不懂的辭彙，繪	畫天賦極高，擅長在立體空間中直接繪上色彩，通過色彩表達自己的感情，或者影	響他人的感情。';
+    i.innerText = '以著名立體主義畫家梵高的名字命名的種火少女電波系少女，擅長在立體空間中直接繪上色彩，通過色彩表達自己的感情，或者影響他人的感情。';
+
+    a.innerText = '15';
+    q.innerText = '冷淡';
+    m.innerText = '只要雪还要將世界重新染上希望的顏色在下…';
+
     h.innerText = '155cm';
     w.innerText = '電子調色板，全息筆刷';
     o.setAttribute('src', '../../images/d2_fangao1.png');
-
     t.setAttribute('src', '../../images/d2_fangao2.png');
     e.setAttribute('src', '../../images/d2_fangao_icon1.png');
     r.setAttribute('src', '../../images/d2_fangao_icon2.png');
@@ -457,17 +699,26 @@ function qigefulide() {
     var i = document.getElementById('f_info');
     var h = document.getElementById('f_height');
     var w = document.getElementById('f_weapon');
-    var o = document.getElementById('fangyu_first');
 
+    var a = document.getElementById('f_age');
+    var q = document.getElementById('f_character');
+    var m = document.getElementById('f_motto');
+
+    var o = document.getElementById('fangyu_first');
     var t = document.getElementById('fangyu_two');
     var e = document.getElementById('fangyu_three');
     var r = document.getElementById('fangyu_four');
 
     c.innerText = '白椛ひとみ';
-    n.innerText = '齐格弗里德';
+    n.innerText = '齊格弗里德';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以北歐神話中著名的屠龍英雄齊格弗裏德的名字命名的女性火種沉默寡言的少女騎士，感情淡漠，表情冷峻，有些像機器人，喜好，欲望，目標等	全都沒有，不笑不哭，不悲不喜，由於這個性情，很少自發的做些什麼，大多時候	是受人拜託解決問題而行動，戰鬥時也多是被動挨打，不過由於強橫的身體，基本上不會受什麼傷。間歇性健忘，有時甚至會把1分鐘前的事情都忘的一乾二淨。沒	事的時候會望著銀河系的中心發呆。';
-    h.innerText = '190cm';
+    i.innerText = '以北歐神話中著名的屠龍英雄齊格弗里德的名字命名的種火少女沉默寡言的少女騎士，感情淡漠，表情冷峻，沒事的時候會望著星空發呆。';
+
+    a.innerText = '20';
+    q.innerText = '天然呆  冷淡';
+    m.innerText = '我不想傷害什麼，但我知道舉起這把劍的時候，我就已經不能回頭了。';
+
+    h.innerText = '185cm';
     w.innerText = '雙手大劍';
     o.setAttribute('src', '../../images/d3_qigefulide1.png');
 
@@ -483,8 +734,13 @@ function xide() {
     var i = document.getElementById('f_info');
     var h = document.getElementById('f_height');
     var w = document.getElementById('f_weapon');
-    var o = document.getElementById('fangyu_first');
 
+    var a = document.getElementById('f_age');
+    var q = document.getElementById('f_character');
+    var m = document.getElementById('f_motto');
+
+
+    var o = document.getElementById('fangyu_first');
     var t = document.getElementById('fangyu_two');
     var e = document.getElementById('fangyu_three');
     var r = document.getElementById('fangyu_four');
@@ -493,11 +749,15 @@ function xide() {
     c.innerText = '斎藤千和';
     n.innerText = '熙德';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以西班牙著名的骑士英雄熙德的名字为代号的火种战士帅气潇洒风流的御姐，拥有骑士的美德，却并不死板，正直的同时懂变通，口才一流还有幽默感，尤其是会讨女孩子的欢心，喜欢所有女性，看不惯别人粗鲁的对待女性，尤其是美女。力量不弱却也不算顶尖，所以剑术走的是华丽兼具实用的路子，不以力取胜。对小孩子没辙，如果让她来带孩子，会变得手足无措。  身高：170cm';
-    h.innerText = '170cm';
-    w.innerText = '双剑：左手“帆式”短剑提泽纳（Tizona），右手西班牙笼手十字剑科拉达（Colada）';
-    o.setAttribute('src', '../../images/d4_xide1.png');
+    i.innerText = '以西班牙著名的騎士英雄熙德的名字為代號的種火少女帥氣瀟灑的禦姐，擁有騎士的美德，卻不死板，正直的同時懂得變通，口才一流還有幽默感。';
 
+    a.innerText = '19';
+    q.innerText = '绅士';
+    m.innerText = '嗯嗯，我的剑刃一直以来便是为了守护而存在。';
+
+    h.innerText = '180cm';
+    w.innerText = '雙劍：左手“帆式”短劍提澤納（Tizona），右手西班牙籠手十字劍科拉達（Colada）';
+    o.setAttribute('src', '../../images/d4_xide1.png');
     t.setAttribute('src', '../../images/d4_xide2.png');
     e.setAttribute('src', '../../images/d4_xide_icon1.png');
     r.setAttribute('src', '../../images/d4_xide_icon2.png');
@@ -513,27 +773,15 @@ function swiper3() {
         slidesPerView: 5,
         watchSlidesVisibility: true, //防止不可点击
         observer: true,
-        observeParents: true
-    })
-    var gallerySwiper2 = new Swiper('#gallery2', {
-        effect: 'coverflow',
-        spaceBetween: 10, //缩略图间距
-        slidesPerView: 3,
-        centeredSlides: true,
-        initialSlide: 2,
-        observer: true,
         observeParents: true,
-        thumbs: {
-            swiper: thumbsSwiper2,
-        },
         on: {
             click: function () {
                 var i = this.clickedIndex;
                 var l = document.getElementsByName('name_l');
                 var r = document.getElementsByName('name_r');
-                console.log('攻击hide', i);
                 $('#swiper_gongji').hide();
                 $('#swpier_gongji_detail').show();
+                $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
                 switch (i) {
                     case 0:
                         aiyinsitan();
@@ -550,6 +798,25 @@ function swiper3() {
             }
         }
     })
+    var gallerySwiper2 = new Swiper('#gallery2', {
+        effect: 'coverflow',
+        spaceBetween: 10, //缩略图间距
+        slidesPerView: 3,
+        centeredSlides: true,
+        initialSlide: 2,
+        observer: true,
+        observeParents: true,
+        coverflowEffect: {
+            rotate: -34,
+            stretch: 0,
+            depth: 180,
+            modifier: 1,
+            slideShadows: true
+        },
+        thumbs: {
+            swiper: thumbsSwiper2,
+        }
+    })
 }
 
 function aiyinsitan() {
@@ -558,24 +825,32 @@ function aiyinsitan() {
     var i = document.getElementById('g_info');
     var h = document.getElementById('g_height');
     var w = document.getElementById('g_weapon');
-    var o = document.getElementById('fangyu_first');
 
-    var t = document.getElementById('fangyu_two');
-    var e = document.getElementById('fangyu_three');
-    var r = document.getElementById('fangyu_four');
+    var a = document.getElementById('g_age');
+    var q = document.getElementById('g_character');
+    var m = document.getElementById('g_motto');
+
+    var o = document.getElementById('gongji_first');
+    var t = document.getElementById('gongji_two');
+    var e = document.getElementById('gongji_three');
+    var r = document.getElementById('gongji_four');
 
 
     c.innerText = '小清水亜美';
     n.innerText = '愛因斯坦';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以偉大的物理學家愛因斯坦之名命名的火種少女.智商極高的科學天才，性格古靈精怪，活潑好動，愛捉弄人，愛做鬼臉，雖然嘴上	不承認，但是個非常有愛心，樂意幫助他人的好女孩。';
+    i.innerText = '以偉大的物理學家愛因斯坦之名命名的種火少女，智商極高的科學天才，性格古靈精怪，活潑好動，愛捉弄人，是個非常有愛心，樂意幫助他人的好女孩。';
     h.innerText = '160cm';
     w.innerText = '核動力裝甲，質能轉換手套';
-    o.setAttribute('src', '../../images/d1_aiyinsitan1.png');
 
+    a.innerText = '16';
+    q.innerText = '愛捉弄人 活潑 善良';
+    m.innerText = '動力嘛…辛辛苦苦一上午，然後是最喜歡的下午茶時間！這就夠了啦~';
+
+    o.setAttribute('src', '../../images/d1_aiyinsitan1.png');
     t.setAttribute('src', '../../images/d1_aiyinsitan2.png');
-    e.setAttribute('src', '../../images/d1_aiyinsitan.png');
-    r.setAttribute('src', '../../images/d1_aiyinsitan.png');
+    e.setAttribute('src', '../../images/d1_aiyinsitan_icon1.png');
+    r.setAttribute('src', '../../images/d1_aiyinsitan_icon2.png');
 };
 
 function jialilve() {
@@ -583,24 +858,32 @@ function jialilve() {
     var n = document.getElementById('g_name');
     var i = document.getElementById('g_info');
     var h = document.getElementById('g_height');
+
+    var a = document.getElementById('g_age');
+    var q = document.getElementById('g_character');
+    var m = document.getElementById('g_motto');
+
     var w = document.getElementById('g_weapon');
-    var o = document.getElementById('fangyu_first');
+    var o = document.getElementById('gongji_first');
+    var t = document.getElementById('gongji_two');
+    var e = document.getElementById('gongji_three');
+    var r = document.getElementById('gongji_four');
 
-    var t = document.getElementById('fangyu_two');
-    var e = document.getElementById('fangyu_three');
-    var r = document.getElementById('fangyu_four');
-
-    c.innerText = '金元寿子';
+    c.innerText = '金元壽子';
     n.innerText = '伽利略';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以著名的天文學家伽利略的名字命名的女性火種學識淵博，知識量豐富，善於觀察，卻是個有些冒失的，徹底的行動派，抱著"不	試試怎麼知道結果"的想法行動，但同樣的錯誤絕不會再犯第二次。';
+    i.innerText = '以著名的天文學家伽利略的名字命名的種火少女，學識淵博，知識量豐富，善於觀察，徹底的行動派，同樣的錯誤絕不會再犯第二次。';
+
+    a.innerText = '17';
+    q.innerText = '好奇，仔細';
+    m.innerText = '總有一天，我會復原星空讓人們都能感受到浩瀚的美麗。';
+
     h.innerText = '170cm';
     w.innerText = '光線槍';
     o.setAttribute('src', '../../images/d2_jialilve1.png');
-
     t.setAttribute('src', '../../images/d2_jialilve2.png');
-    e.setAttribute('src', '../../images/d2_jialilve.png');
-    r.setAttribute('src', '../../images/d2_jialilve.png');
+    e.setAttribute('src', '../../images/d2_jialilve_icon1.png');
+    r.setAttribute('src', '../../images/d2_jialilve_icon2.png');
 };
 
 function dechuanjiakang() {
@@ -609,23 +892,31 @@ function dechuanjiakang() {
     var i = document.getElementById('g_info');
     var h = document.getElementById('g_height');
     var w = document.getElementById('g_weapon');
-    var o = document.getElementById('fangyu_first');
 
-    var t = document.getElementById('fangyu_two');
-    var e = document.getElementById('fangyu_three');
-    var r = document.getElementById('fangyu_four');
+    var a = document.getElementById('g_age');
+    var q = document.getElementById('g_character');
+    var m = document.getElementById('g_motto');
 
-    c.innerText = '井上麻里奈';
+    var o = document.getElementById('gongji_first');
+    var t = document.getElementById('gongji_two');
+    var e = document.getElementById('gongji_three');
+    var r = document.getElementById('gongji_four');
+
+    c.innerText = '井上麻裡奈';
     n.innerText = '德川家康';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以日本战国大名德川家康的名字为代号的火种战士弱气的萝莉，说话轻声轻气，有些懦弱，就连被别人大声说两句就会委屈的要哭出来，习惯性道歉。害怕惹事，如果有超出预想的情况发生，就会陷入慌乱。但是一旦武装起来，带上面具，就会变成另一种人格，爆发出不符合体格的怪力，大声吼叫，像黑帮小混混一样的挑衅，唯恐天下不乱的态度，但解除武装后就会后悔不已。';
+    i.innerText = '以日本戰國大名德川家康的名字為代號的種火少女，雙重人格。弱氣的蘿莉，說話輕聲輕氣，有些懦弱，帶上面具，就會變成另一種人格，爆發出不符合體格的怪力，解除武裝後就會後悔不已。';
+
+    a.innerText = '17';
+    q.innerText = '懦弱善良/兇暴殘酷';
+    m.innerText = '收集所有古代刀劍';
+
     h.innerText = '145cm';
     w.innerText = '妖刀村正，武士面具';
     o.setAttribute('src', '../../images/d3_dechuanjiakang1.png');
-
     t.setAttribute('src', '../../images/d3_dechuanjiakang2.png');
-    e.setAttribute('src', '../../images/d3_dechuanjiakang.png');
-    r.setAttribute('src', '../../images/d3_dechuanjiakang.png');
+    e.setAttribute('src', '../../images/d3_dechuanjiakang_icon1.png');
+    r.setAttribute('src', '../../images/d3_dechuanjiakang_icon2.png');
 };
 
 function napolun() {
@@ -633,27 +924,38 @@ function napolun() {
     var n = document.getElementById('g_name');
     var i = document.getElementById('g_info');
     var h = document.getElementById('g_height');
+
+    var a = document.getElementById('g_age');
+    var q = document.getElementById('g_character');
+    var m = document.getElementById('g_motto');
+
     var w = document.getElementById('g_weapon');
-    var o = document.getElementById('fangyu_first');
+    var o = document.getElementById('gongji_first');
+    var t = document.getElementById('gongji_two');
+    var e = document.getElementById('gongji_three');
+    var r = document.getElementById('gongji_four');
 
-    var t = document.getElementById('fangyu_two');
-    var e = document.getElementById('fangyu_three');
-    var r = document.getElementById('fangyu_four');
 
-
-    c.innerText = '日高里菜';
-    n.innerText = '拿破仑';
+    c.innerText = '日高裡菜';
+    n.innerText = '拿破崙';
     n.setAttribute('data-text', n.innerText);
-    i.innerText = '以法兰西大帝拿破仑的名字为代号的火种战士没有辜负拿破仑之名的袖珍身材，娇小软萌萝莉一枚，爱吃甜食，尤其是马卡龙。讨厌别人把她当小孩子逗弄，不过也仅仅是鼓起包子脸生闷气的程度。尤其讨厌别人说她小（身高意义上），被说小的时候会愤怒爆发，不过也只是用粉拳给别人按摩罢了。';
-    h.innerText = '140cm';
-    w.innerText = '';
-    o.setAttribute('src', '../../images/d4_napolun1.png');
+    i.innerText = '以法蘭西皇帝拿破崙的名字為代號的種火少女，嬌小軟萌蘿莉一枚，愛吃甜食，尤其討厭別人說她小（身高意義上），被說小的時候會憤怒爆發，不過也只是用粉拳給別人按摩罷了。';
 
+    a.innerText = '15';
+    q.innerText = '認真';
+    m.innerText = '煙花祭，在之前是存在的吧？嗯嗯，我想要去征服看看…';
+
+    h.innerText = '140cm';
+    w.innerText = '？？？';
+    o.setAttribute('src', '../../images/d4_napolun1.png');
     t.setAttribute('src', '../../images/d4_napolun2.png');
-    e.setAttribute('src', '../../images/d4_napolun.png');
-    r.setAttribute('src', '../../images/d4_napolun.png');
+    e.setAttribute('src', '../../images/d4_napolun_icon1.png');
+    r.setAttribute('src', '../../images/d4_napolun_icon2.png');
+
+
 };
 
+// 弹窗中左边的三个logo状态
 $('.three .three_con .characters_detail .left li').each(function (index) {
     $(this).on('click', function () {
         console.log('index是', index);
@@ -673,14 +975,50 @@ $('.three .three_con .characters_detail .left li').each(function (index) {
     })
 })
 
+// 种火模块--最初三个屏幕个字点击
+// 攻击
+var gj = document.getElementById('gongji_t');
+gj.onclick = function () {
+    $('.three_con ul').addClass('current');
+    setTimeout(function () {
+        $('.characters_detail').show();
+        $('.characters_detail .left li').eq(2).addClass('active2').siblings().removeClass('active0 active1');
+        $('.characters_detail .con div.right').eq(2).show().siblings().hide();
+        swiper3();
+    }, 1000)
+}
+// 防御
+var fy = document.getElementById('fangyu_t');
+fy.onclick = function () {
+    $('.three_con ul').addClass('current');
+    setTimeout(function () {
+        $('.characters_detail').show();
+        $('.characters_detail .left li').eq(1).addClass('active1').siblings().removeClass('active0 active2');
+        $('.characters_detail .con div.right').eq(1).fadeIn().siblings().fadeOut();
+        swiper2();
+    }, 1000);
+}
+
+// 辅助
+var fz = document.getElementById('fuzhu_t');
+fz.onclick = function () {
+    $('.three_con ul').addClass('current');
+    setTimeout(function () {
+        $('.characters_detail').show();
+        $('.characters_detail .left li').eq(0).addClass('active0').siblings().removeClass('active2 active1');
+        $('.characters_detail .con div.right').eq(0).show().siblings().hide();
+        swiper1();
+    }, 1000)
+}
+
 /**
  * 种火模块
  * -点击刚开始最初始的状态
  */
-$('.characters_list li').on('click',function(){
-    $('.characters_list').fadeOut();
-    $('.characters_detail').fadeIn();
-})
+// $('.characters_list li').on('click', function () {
+//     $('.characters_list').fadeOut();
+//     $('.characters_detail').fadeIn();
+// })
 
 /**
  * 人物立绘模块
@@ -690,7 +1028,7 @@ $('.Detail .d_con ul li').each(function (index) {
     $(this).on('click', function () {
         console.log(index);
         $(this).addClass('active').siblings().removeClass('active');
-        $('.img_tab img').eq(index).show().siblings().hide();
+        $('.img_tab img').eq(index).fadeIn().siblings().fadeOut();
     })
 })
 
@@ -700,6 +1038,54 @@ $('.Detail .d_con ul li').each(function (index) {
  */
 $('.top_close').on('click', function () {
     $(this).parents('.Detail').hide().siblings().show();
+    $('.Detail h3,.Detail h2,.Detail dd').removeClass('active');
+    // console.log($(this).siblings('dl').children('dt').children('h2').text());
+    $('.Detail .d_con ul li:nth-child(1)').addClass('active');
+    $('.Detail .d_con ul li:nth-child(2)').removeClass('active');
+
+    var t = $(this).siblings('dl').children('dt').children('h2').text();
+    var fy = document.getElementById('fangyu_first');
+    var fz = document.getElementById('fuzhu_first');
+    var gj = document.getElementById('gongji_first');
+
+    switch (t) {
+        case '阿蒙森':
+            fy.setAttribute('src', '../../images/d1_amengsen1.png');
+            break;
+        case '梵高':
+            fy.setAttribute('src', '../../images/d2_fangao1.png');
+            break;
+        case '齊格弗里德':
+            fy.setAttribute('src', '../../images/d3_qigefulide1.png');
+            break;
+        case '熙德':
+            fy.setAttribute('src', '../../images/d4_xide1.png');
+            break;
+        case '拉海爾':
+            fz.setAttribute('src', '../../images/d1_lahaier1.png');
+            break;
+        case '牛頓':
+            fz.setAttribute('src', '../../images/d2_niudun1.png');
+            break;
+        case '希普頓修女':
+            fz.setAttribute('src', '../../images/d3_xipudunxiunv1.png');
+            break;
+        case '凱撒':
+            fz.setAttribute('src', '../../images/d4_kaisa1.png');
+            break;
+        case '愛因斯坦':
+            fz.setAttribute('src', '../../images/d1_aiyinsitan1.png');
+            break;
+        case '伽利略':
+            fz.setAttribute('src', '../../images/d2_jialilve1.png');
+            break;
+        case '德川家康':
+            fz.setAttribute('src', '../../images/d3_dechuanjiakang1.png');
+            break;
+        case '拿破崙':
+            fz.setAttribute('src', '../../images/d4_napolun1.png');
+            break;
+    }
 })
 
 /**
@@ -820,20 +1206,65 @@ for (var i = 0; i < arr_d.length; i++) {
     }
 }
 
+
+
 /**
  * fullpage 插件主目录
  */
+var s = document.getElementById('select');
+var e = document.getElementById('select_em');
+var d = document.getElementById('backgroundImg');
+
+
+s.onclick = function () {
+    e.classList.add('active');
+    $('#backgroundImg').slideToggle();
+}
+
+function ifText(st) {
+    if (st == '台灣') {
+        document.getElementById('areaphone').innerText = '+886';
+        document.getElementById('phone').setAttribute('placeholder', '請填寫0後的9位數行動電話號碼');
+        document.getElementById('phone').setAttribute('maxlength', '9');
+    }
+    if (st == '香港') {
+        document.getElementById('areaphone').innerText = '+852';
+        document.getElementById('phone').setAttribute('placeholder', '請填寫8位數行動電話號碼');
+        document.getElementById('phone').setAttribute('maxlength', '8');
+    }
+    if (st == '澳門') {
+        document.getElementById('areaphone').innerText = '+853';
+        document.getElementById('phone').setAttribute('placeholder', '請填寫8位數行動電話號碼');
+        document.getElementById('phone').setAttribute('maxlength', '8');
+    }
+    if (st == '新加坡') {
+        document.getElementById('areaphone').innerText = '+65';
+        document.getElementById('phone').setAttribute('placeholder', '請填寫8位數行動電話號碼');
+        document.getElementById('phone').setAttribute('maxlength', '8');
+    }
+    if (st == '馬來西亞') {
+        document.getElementById('areaphone').innerText = '+60';
+        document.getElementById('phone').setAttribute('placeholder', '請填寫9位數行動電話號碼');
+        document.getElementById('phone').setAttribute('maxlength', '9');
+    }
+}
+
+
 $(function () {
     $('#backgroundImg li').click(function () {
         $(this).addClass('active').siblings().removeClass('active');
-        $('#select').text($(this).text());
         $('#backgroundImg').hide();
+        $('#select').text($(this).text());
+        var st = $(this).text();
+        document.getElementById('phone').value ='';
+        ifText(st);
+        $('#select').siblings('em').removeClass('active');
     });
 
     var fullPageInstance = new fullpage('#fullpage', {
         navigation: 'true',
         navigationPosition: 'right',
-        anchors: ['首頁', '預約', '種火', '世界', '資料', 'footer'],
+        anchors: ['首頁', '預約獎勵', '參與預約', '種火', '世界觀', '檔案', 'footer'],
         menu: '#myMenu',
         verticalCentered: 'true',
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
@@ -841,26 +1272,26 @@ $(function () {
             console.log('当前离开', index.index, nextIndex.index, direction);
             var i = index.index;
             var nextI = nextIndex.index;
-            if (nextI !== 1) {
-                $('#number').text('');
-            } else {
-                magic_number(203728, $('#number'));
-            }
-            if (nextI == 1 && direction == 'down') {}
-            if (nextI == 1 && direction == 'up') {}
+            // if (nextI !== 1) {
+            //     $('#number').text('');
+            // } else {
+            //     magic_number(203728, $('#number'));
+            // }
+            // if (nextI == 1 && direction == 'down') {}
+            // if (nextI == 1 && direction == 'up') {}
         },
         afterLoad: function (anchorLink, index) {
             console.log('当前在', anchorLink.anchor, index.index);
             var a = anchorLink.anchor;
             var i = index.index;
 
-            if (i == 1) {
-                console.log('我要执行预约数字动画', $('#number'));
-                setTimeout(function () {
-                    magic_number(203728, $('#number'));
-                }, 20000000000)
+            // if (i == 1) {
+            //     console.log('我要执行预约数字动画', $('#number'));
+            //     setTimeout(function () {
+            //         magic_number(203728, $('#number'));
+            //     }, 20000000000)
 
-            }
+            // }
         },
         // 这个回调是在页面结构生成之后触发，这是要用来初始化其他插件
         afterRender: function () {
