@@ -2,6 +2,7 @@ import $ from 'jquery'
 import fullpage from 'fullpage.js'
 import '../../js/index/layer/layer.js'
 import '../../js/index/pc.js'
+import '../../js/index/ajax.js'
 import '../../js/index/mobile.js'
 import Swiper from 'swiper'
 
@@ -98,232 +99,14 @@ import '../../images/x4.png'
 
 
 /**
- * 第二屏预约奖励
- * 数字变化特效
- * 预约数字ajax
- */
-
-function magic_number(value, num) {
-    num.animate({
-        count: value
-    }, {
-        duration: 6000, //持续时间
-        step: function () {
-            num.text(Math.round(this.count));
-        }
-    })
-}
-$.get("https://admin.gamemorefun.net/welcome/get_appointment_number", function (res) {
-    var res = JSON.parse(res);
-    if (res && res.data) {
-        var n = res.data;
-        $('#number').text(n);
-        // magic_number(number, $('#number'));
-        appointProcess(n);
-    }
-})
-// 预约进程变化
-function appointProcess(n) {
-    console.log('dsfhj', n);
-    if (n > 0 && n < 50000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(1) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(2) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(3) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
-        $('#process_ul').css({
-            'background': 'url(../../images/x0.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    } else if (n >= 50000 && n < 100000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(1) .two_title em').addClass('on');
-        $('.two ul li:nth-child(2) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(3) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
-        $('#process_ul').css({
-            'background': 'url(../../images/x1.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    } else if (n >= 100000 && n < 150000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(1) .two_title em').addClass('on');
-        $('.two ul li:nth-child(2) .two_title em').addClass('on');
-        $('.two ul li:nth-child(3) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
-        $('#process_ul').css({
-            'background': 'url(../../images/x2.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    } else if (n >= 150000 && n < 200000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(1) .two_title em').addClass('on');
-        $('.two ul li:nth-child(2) .two_title em').addClass('on');
-        $('.two ul li:nth-child(3) .two_title em').addClass('on');
-        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
-        $('#process_ul').css({
-            'background': 'url(../../images/x3.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    } else if (n >= 200000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(1) .two_title em').addClass('on');
-        $('.two ul li:nth-child(2) .two_title em').addClass('on');
-        $('.two ul li:nth-child(3) .two_title em').addClass('on');
-        $('.two ul li:nth-child(4) .two_title em').addClass('on');
-        $('#process_ul').css({
-            'background': 'url(../../images/x4.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    }
-}
-
-/**
- * 第三屏预约逻辑
- * fb登录成功之后进行第二步的预约逻辑
- */
-var l = document.getElementById('loginFb');
-l.onclick = function () {
-    FB.login(function (reponse) {
-        if (response.status === 'connected') {
-            // FB.api('/me', function (response) {
-            //     console.log('登录成功: ' + response.name);
-            // });
-            // 预约逻辑
-            fblogin = 'true';
-        } else {
-            console.log('该用户没有登录');
-        }
-    }, {
-        scope: 'public_profile,email'
-    })
-}
-
-
-
-/**
- * 预约模块
+ * 第二屏幕预约奖励模块
  * 点击出现预约弹出框 以及 出现下拉框地区选择
  */
 document.getElementById('appoint').addEventListener('click', function () {
     appointInfoPop();
 })
 
-
-// var ul = document.getElementById('backgroundImg');
-// var li = ul.getElementsByTagName('li');
-// var li = ul.querySelectorAll('li');
-// for (var i = 0; i < li.length; i++) {
-//     li[i].onclick = function () {
-//         for (var i = 0; i < li.length; i++) {
-//             li[i].style.color = '#767676';
-//             li[i].style.backgroundColor = '#c8c8c8';
-//             li[0].classList.add('leftBorder');
-//             li[2].classList.add('rightBorder');
-//             this.style.color = '#fff';
-//             this.style.backgroundColor = '#a6a6a6';
-//         }
-//     }
-// }
-
-/**
- * 预约模块
- * ajax
- */
-var fblogin = 'false';
-document.getElementById('submit').addEventListener('click', function () {
-    // if (fblogin == 'false') {
-    //     layer.msg('请先进行facebook登录');
-    // } else {
-    var platform = '1';
-    var engSimpol = '';
-    var area = document.getElementById('select').innerText;
-    var str = document.getElementById('areaphone').innerText;
-    var areaPhone = str.substr(1);
-    var number = document.getElementById('phone').value;
-    console.log('number', typeof number);
-    var allNumber = areaPhone + number;
-    switch (area) {
-        case '台灣':
-            engSimpol = 'TW';
-            break;
-        case '香港':
-            engSimpol = 'HK';
-            break;
-        case '澳門':
-            engSimpol = 'MO';
-            break;
-        case '新加坡':
-            engSimpol = 'SG';
-            break;
-        case '馬來西亞':
-            engSimpol = 'MY';
-            break;
-    }
-
-    if (area == "") {
-        layer.msg('地區不能爲空！');
-    }
-
-
-    if (!validatePhone(allNumber,areaPhone,number)) {
-        if (number == "") {
-            layer.msg('電話號碼不能爲空！');
-        }else{
-            layer.msg('电话号码格式錯誤!');
-        }
-    } else {
-        $.post('https://admin.gamemorefun.net/welcome/appointment', {
-            phone: allNumber,
-            country: engSimpol,
-            platform: platform
-        }, function (res) {
-
-            var data = JSON.parse(res);
-            console.log(data.success);
-            if (data.success == 'true') {
-
-                // layer.msg('预约成功！');
-                appointSuccessPop();
-                // layer.msg(res.msg);
-            } else {
-                layer.msg(data.msg);
-            }
-        })
-    }
-    // }
-    // layer.closeAll();
-})
-
-function validatePhone(phone,areaCode,number) {
-    let map = {
-        886: /^(886)?\d{9,10}$/,
-        852: /^(852)?\d{8}$/,
-        853: /^(853)?\d{8}$/,
-        60: /^(852)?\d{9}$/,
-        65: /^(852)?\d{8}$/
-    };
-    return map[areaCode].test(phone);
-}
-/**
- * 预约模块
- * 弹框关闭按钮
- */
+// 弹框关闭按钮
 var arrc = document.getElementsByName('close');
 for (var i = 0; i < arrc.length; i++) {
     arrc[i].index = i;
@@ -339,7 +122,6 @@ for (var i = 0; i < arrc.length; i++) {
 
     })
 }
-
 
 function appointInfoPop() {
     layer.open({
@@ -367,6 +149,50 @@ function appointSuccessPop() {
     })
 }
 
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    grabCursor: true,
+    keyboard: {
+        enabled: true,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    on: {
+        slideChangeTransitionEnd: function () {
+            // $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
+            console.log('当前滑动的是哪个索引', this.activeIndex);
+            var i = this.activeIndex;
+            var fz = document.getElementById('fuzhu_l');
+            var fy = document.getElementById('fangyu_l');
+            var gj = document.getElementById('gongji_l');
+            switch (i) {
+                case 0:
+                    fz.classList.add('active0');
+                    fy.classList.remove('active1');
+                    gj.classList.remove('active2');
+                    break;
+                case 4:
+                    fz.classList.remove('active0');
+                    fy.classList.add('active1');
+                    gj.classList.remove('active2');
+                    break;
+                case 8:
+                    fz.classList.remove('active0');
+                    fy.classList.remove('active1');
+                    gj.classList.add('active2');
+                    break;
+            }
+        }
+    }
+});
+
 /**
  * 种火模块
  * -辅助
@@ -386,7 +212,7 @@ function swiper1() {
                 console.log('当前的第一个hide', i);
                 $('.characters_detail .fuzhu .swpier_fuzhu').hide();
                 $('.characters_detail .fuzhu .Detail').show();
-                $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
+
                 switch (i) {
                     case 0:
                         lahaier();
@@ -461,6 +287,7 @@ function lahaier() {
     t.setAttribute('src', '../../images/d1_lahaier2.png');
     e.setAttribute('src', '../../images/d1_lahaier_icon1.png');
     r.setAttribute('src', '../../images/d1_lahaier_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 };
 
 function niudun() {
@@ -495,6 +322,7 @@ function niudun() {
     t.setAttribute('src', '../../images/d2_niudun2.png');
     e.setAttribute('src', '../../images/d2_niudun_icon1.png');
     r.setAttribute('src', '../../images/d2_niudun_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 
 };
 
@@ -530,6 +358,7 @@ function xipudunxiunv() {
     t.setAttribute('src', '../../images/d3_xiunv2.png');
     e.setAttribute('src', '../../images/d3_xiunv_icon1.png');
     r.setAttribute('src', '../../images/d3_xiunv_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 
 };
 
@@ -566,13 +395,13 @@ function kaisa() {
     t.setAttribute('src', '../../images/d4_kaisa2.png');
     e.setAttribute('src', '../../images/d4_kaisa_icon1.png');
     r.setAttribute('src', '../../images/d4_kaisa_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 
 };
 swiper1();
-/**
- * 种火模块
- * -防御
- */
+
+
+//防御
 function swiper2() {
     var thumbsSwiper1 = new Swiper('#thumbs1', {
         spaceBetween: 10,
@@ -588,7 +417,6 @@ function swiper2() {
                 console.log('防御hide', i);
                 $('#swpier_fangyu').hide();
                 $('#swpier_fangyu_detail').show();
-                $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
                 switch (i) {
                     case 0:
                         amengsen();
@@ -658,6 +486,7 @@ function amengsen() {
     t.setAttribute('src', '../../images/d1_amengsen2.png');
     e.setAttribute('src', '../../images/d1_amengsen_icon1.png');
     r.setAttribute('src', '../../images/d1_amengsen_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 };
 
 function fangao() {
@@ -691,6 +520,7 @@ function fangao() {
     t.setAttribute('src', '../../images/d2_fangao2.png');
     e.setAttribute('src', '../../images/d2_fangao_icon1.png');
     r.setAttribute('src', '../../images/d2_fangao_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 };
 
 function qigefulide() {
@@ -725,6 +555,7 @@ function qigefulide() {
     t.setAttribute('src', '../../images/d3_qigefulide2.png');
     e.setAttribute('src', '../../images/d3_qigefulide_icon1.png');
     r.setAttribute('src', '../../images/d3_qigefulide_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 
 };
 
@@ -761,12 +592,10 @@ function xide() {
     t.setAttribute('src', '../../images/d4_xide2.png');
     e.setAttribute('src', '../../images/d4_xide_icon1.png');
     r.setAttribute('src', '../../images/d4_xide_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 };
 
-/**
- * 种火模块
- * -攻击
- */
+//攻击
 function swiper3() {
     var thumbsSwiper2 = new Swiper('#thumbs2', {
         spaceBetween: 10,
@@ -781,7 +610,6 @@ function swiper3() {
                 var r = document.getElementsByName('name_r');
                 $('#swiper_gongji').hide();
                 $('#swpier_gongji_detail').show();
-                $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
                 switch (i) {
                     case 0:
                         aiyinsitan();
@@ -851,6 +679,7 @@ function aiyinsitan() {
     t.setAttribute('src', '../../images/d1_aiyinsitan2.png');
     e.setAttribute('src', '../../images/d1_aiyinsitan_icon1.png');
     r.setAttribute('src', '../../images/d1_aiyinsitan_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 };
 
 function jialilve() {
@@ -884,6 +713,7 @@ function jialilve() {
     t.setAttribute('src', '../../images/d2_jialilve2.png');
     e.setAttribute('src', '../../images/d2_jialilve_icon1.png');
     r.setAttribute('src', '../../images/d2_jialilve_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 };
 
 function dechuanjiakang() {
@@ -917,6 +747,7 @@ function dechuanjiakang() {
     t.setAttribute('src', '../../images/d3_dechuanjiakang2.png');
     e.setAttribute('src', '../../images/d3_dechuanjiakang_icon1.png');
     r.setAttribute('src', '../../images/d3_dechuanjiakang_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 };
 
 function napolun() {
@@ -951,6 +782,7 @@ function napolun() {
     t.setAttribute('src', '../../images/d4_napolun2.png');
     e.setAttribute('src', '../../images/d4_napolun_icon1.png');
     r.setAttribute('src', '../../images/d4_napolun_icon2.png');
+    $('.Detail h3,.Detail h2,.Detail dd').addClass('active');
 
 
 };
@@ -975,50 +807,6 @@ $('.three .three_con .characters_detail .left li').each(function (index) {
     })
 })
 
-// 种火模块--最初三个屏幕个字点击
-// 攻击
-var gj = document.getElementById('gongji_t');
-gj.onclick = function () {
-    $('.three_con ul').addClass('current');
-    setTimeout(function () {
-        $('.characters_detail').show();
-        $('.characters_detail .left li').eq(2).addClass('active2').siblings().removeClass('active0 active1');
-        $('.characters_detail .con div.right').eq(2).show().siblings().hide();
-        swiper3();
-    }, 1000)
-}
-// 防御
-var fy = document.getElementById('fangyu_t');
-fy.onclick = function () {
-    $('.three_con ul').addClass('current');
-    setTimeout(function () {
-        $('.characters_detail').show();
-        $('.characters_detail .left li').eq(1).addClass('active1').siblings().removeClass('active0 active2');
-        $('.characters_detail .con div.right').eq(1).fadeIn().siblings().fadeOut();
-        swiper2();
-    }, 1000);
-}
-
-// 辅助
-var fz = document.getElementById('fuzhu_t');
-fz.onclick = function () {
-    $('.three_con ul').addClass('current');
-    setTimeout(function () {
-        $('.characters_detail').show();
-        $('.characters_detail .left li').eq(0).addClass('active0').siblings().removeClass('active2 active1');
-        $('.characters_detail .con div.right').eq(0).show().siblings().hide();
-        swiper1();
-    }, 1000)
-}
-
-/**
- * 种火模块
- * -点击刚开始最初始的状态
- */
-// $('.characters_list li').on('click', function () {
-//     $('.characters_list').fadeOut();
-//     $('.characters_detail').fadeIn();
-// })
 
 /**
  * 人物立绘模块
@@ -1026,23 +814,38 @@ fz.onclick = function () {
  */
 $('.Detail .d_con ul li').each(function (index) {
     $(this).on('click', function () {
-        console.log(index);
+        console.log('index22', index);
+        
+            if ($(this).parents().hasClass('xiunv')) {
+                if($(this).hasClass('x1')){
+                    // console.log('是修女模块');
+                    $(this).parents('.d_con').children().children().find('.age_x').text(29);
+                    $(this).parents('.d_con').children().children().find('.age_d').text('猥瑣');
+                } else {
+                    $(this).parents('.d_con').children().children().find('.age_x').text(19);
+                    $(this).parents('.d_con').children().children().find('.age_d').text('元氣');
+                }
+                
+            } else {
+                // console.log('不是修女模块');
+            }
+        
+        
         $(this).addClass('active').siblings().removeClass('active');
         $('.img_tab img').eq(index).fadeIn().siblings().fadeOut();
     })
 })
 
+$('.Detail dt,.Detail h3,.Detail h2,.Detail dd').addClass('active');
 /**
  * 人物立绘模块
  * 右上角关闭按钮
  */
 $('.top_close').on('click', function () {
     $(this).parents('.Detail').hide().siblings().show();
-    $('.Detail h3,.Detail h2,.Detail dd').removeClass('active');
-    // console.log($(this).siblings('dl').children('dt').children('h2').text());
     $('.Detail .d_con ul li:nth-child(1)').addClass('active');
     $('.Detail .d_con ul li:nth-child(2)').removeClass('active');
-
+    $('.Detail dt,.Detail h3,.Detail h2,.Detail dd').removeClass('active');
     var t = $(this).siblings('dl').children('dt').children('h2').text();
     var fy = document.getElementById('fangyu_first');
     var fz = document.getElementById('fuzhu_first');
@@ -1249,14 +1052,13 @@ function ifText(st) {
     }
 }
 
-
 $(function () {
     $('#backgroundImg li').click(function () {
         $(this).addClass('active').siblings().removeClass('active');
         $('#backgroundImg').hide();
         $('#select').text($(this).text());
         var st = $(this).text();
-        document.getElementById('phone').value ='';
+        document.getElementById('phone').value = '';
         ifText(st);
         $('#select').siblings('em').removeClass('active');
     });
@@ -1345,16 +1147,8 @@ $(function () {
         $(this).siblings('p').children('i').removeClass('active');
     })
 
-    // 世界屏
-    // $('#fullpage .four ul li').hover(function () {
-    //     $(this).removeClass('on').siblings().addClass('on');
-    // }, function () {
-    //     $(this).siblings().removeClass('on');
-    // })
-
     // 资料屏
     $('.five .last_con ul li a').hover(function () {
-        // $(this).hide().siblings('img').show();
         $(this).parent().siblings().children('a').addClass('on');
     }, function () {
         $(this).parent().siblings().children('a').removeClass('on');

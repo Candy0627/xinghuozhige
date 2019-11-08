@@ -1,11 +1,11 @@
 .four ul {
   width: 12rem;
-  height: 8.26rem;
+  height: 8.4rem;
   position: absolute;
   left: 50%;
   top: 50%;
   margin-left: -6rem;
-  margin-top: -4.13rem;
+  margin-top: -4.2rem;
 }
 .four ul li {
   position: absolute;
@@ -41,7 +41,8 @@
   position: absolute;
   top: 2rem;
   left: 50%;
-  margin-left: -0.56rem;
+  margin-left: -50%;
+  width: 100%;
 }
 .four ul li span {
   display: block;
@@ -52,7 +53,8 @@
 }
 .four ul li .eng {
   font-size: 0.14rem;
-  color: #9c2624;
+  font-weight: 600;
+  color: #f3231f;
 }
 .five .last_con {
   width: 17.3rem;
@@ -278,8 +280,8 @@
 }
 .three .three_con .characters_detail .left {
   position: relative;
-  width: 4.4rem;
-  height: 2.6rem;
+  width: 2.78rem;
+  height: 2.06rem;
   top: 1rem;
   left: 1rem;
   cursor: pointer;
@@ -287,12 +289,11 @@
 }
 .three .three_con .characters_detail .left li {
   position: absolute;
-  width: 1.76rem;
-  height: 1.76rem;
+  width: 1.32rem;
+  height: 1.32rem;
+  cursor: pointer;
 }
 .three .three_con .characters_detail .left li:nth-child(1) {
-  width: 1.67rem;
-  height: 1.67rem;
   background: url(../../images/fuzhu/l_fuzhu_icon.png) no-repeat;
   background-size: 100% 100%;
   top: 0;
@@ -306,24 +307,20 @@
   left: 0;
 }
 .three .three_con .characters_detail .left li:nth-child(2) {
-  width: 1.67rem;
-  height: 1.67rem;
   background: url(../../images/fangyu/l_fangyu_icon.png) no-repeat;
   background-size: 100% 100%;
   top: 0;
-  left: 1.86rem;
+  right: 0;
 }
 .three .three_con .characters_detail .left li:nth-child(2).active1 {
   background: url(../../images/fangyu/l_fangyu_icon_active.png) no-repeat;
   background-size: 100% 100%;
 }
 .three .three_con .characters_detail .left li:nth-child(3) {
-  width: 1.67rem;
-  height: 1.67rem;
   background: url(../../images/gongji/l_gongji_icon.png) no-repeat;
   background-size: 100% 100%;
-  top: 0.9rem;
-  left: 0.935rem;
+  bottom: 0;
+  left: 0.73rem;
 }
 .three .three_con .characters_detail .left li:nth-child(3).active2 {
   background: url(../../images/gongji/l_gongji_icon_active.png) no-repeat;
@@ -374,21 +371,23 @@
   left: 50%;
   margin-left: -6.1rem;
 }
-.three .three_con .characters_detail .Detail {
+.three .three_con .characters_detail .right .Detail {
   width: 100%;
   height: 9.7rem;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
-.three .three_con .characters_detail .Detail .d_con {
+.three .three_con .characters_detail .right .Detail .img_tab {
+  position: relative;
+  left: 0;
+}
+.three .three_con .characters_detail .right .Detail .d_con {
   width: 6.88rem;
   height: 6.64rem;
   position: absolute;
   top: 1.41rem;
   right: 3.8rem;
+  cursor: pointer;
 }
-.three .three_con .characters_detail .Detail .d_con .top_d {
+.three .three_con .characters_detail .right .Detail .d_con .top_d {
   width: 0.85rem;
   height: 0.3rem;
   position: absolute;
@@ -397,7 +396,7 @@
   background: url(../../images/d_t_z.png) no-repeat;
   background-size: 100% 100%;
 }
-.three .three_con .characters_detail .Detail .d_con .top_line {
+.three .three_con .characters_detail .right .Detail .d_con .top_line {
   width: 7.03rem;
   height: 8.51rem;
   position: absolute;
@@ -406,7 +405,7 @@
   background: url(../../images/d_line.png) no-repeat;
   background-size: 100% 100%;
 }
-.three .three_con .characters_detail .Detail .d_con .top_audio {
+.three .three_con .characters_detail .right .Detail .d_con .top_audio {
   width: 1.93rem;
   height: 0.27rem;
   position: absolute;
@@ -415,7 +414,7 @@
   background: url(../../images/d_voice.png) no-repeat;
   background-size: 100% 100%;
 }
-.three .three_con .characters_detail .Detail .d_con .top_b {
+.three .three_con .characters_detail .right .Detail .d_con .top_b {
   width: 5.48rem;
   height: 0.3rem;
   position: absolute;
@@ -424,7 +423,7 @@
   background: url(../../images/d_b_z.png) no-repeat;
   background-size: 100% 100%;
 }
-.three .three_con .characters_detail .Detail .d_con .top_close {
+.three .three_con .characters_detail .right .Detail .d_con .top_close {
   width: 0.45rem;
   height: 0.43rem;
   position: absolute;
@@ -435,14 +434,17 @@
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
-.three .three_con .characters_detail .Detail .d_con .top_close:hover {
+.three .three_con .characters_detail .right .Detail .d_con .top_close:hover {
   transform: rotate(180deg);
 }
-.three .three_con .characters_detail .Detail .d_con dl {
+.three .three_con .characters_detail .right .Detail .d_con dl {
   margin-top: 0;
   padding-top: 0;
 }
-.three .three_con .characters_detail .Detail .d_con dl dt h3 {
+.three .three_con .characters_detail .right .Detail .d_con dl dt {
+  display: inline-block;
+}
+.three .three_con .characters_detail .right .Detail .d_con dl dt h3 {
   display: block;
   position: relative;
   font-size: 0.26rem;
@@ -456,39 +458,39 @@
   transform-origin: center bottom;
   transform: scaleY(0);
 }
-.three .three_con .characters_detail .Detail .d_con dl dt h3.active {
+.three .three_con .characters_detail .right .Detail .d_con dl dt h3.active {
   transition: all 0.9s;
   transform: none;
 }
-.three .three_con .characters_detail .Detail .d_con dl dt h3 em {
+.three .three_con .characters_detail .right .Detail .d_con dl dt h3 em {
   display: inline-block;
   position: absolute;
   width: 0.14rem;
   height: 0.36rem;
 }
-.three .three_con .characters_detail .Detail .d_con dl dt h3 em.l {
+.three .three_con .characters_detail .right .Detail .d_con dl dt h3 em.l {
   left: 0;
   background: url(../../images/d_f_l.png) no-repeat;
   background-size: 100% 100%;
 }
-.three .three_con .characters_detail .Detail .d_con dl dt h3 em.r {
+.three .three_con .characters_detail .right .Detail .d_con dl dt h3 em.r {
   right: 0;
   background: url(../../images/d_f_r.png) no-repeat;
   background-size: 100% 100%;
 }
-.three .three_con .characters_detail .Detail .d_con dl dt h2 {
+.three .three_con .characters_detail .right .Detail .d_con dl dt h2 {
   font-size: 0.36rem;
   color: #df2d2d;
-  margin-top: 0;
   padding-bottom: 0;
+  margin-top: 0;
   transform-origin: center bottom;
   transform: scaleY(0);
 }
-.three .three_con .characters_detail .Detail .d_con dl dt h2.active {
+.three .three_con .characters_detail .right .Detail .d_con dl dt h2.active {
   transition: all 0.9s;
   transform: none;
 }
-.three .three_con .characters_detail .Detail .d_con dl dd {
+.three .three_con .characters_detail .right .Detail .d_con dl dd {
   font-family: '思源黑体';
   line-height: 0.375rem;
   font-size: 0.2rem;
@@ -498,41 +500,43 @@
   letter-spacing: 0.04rem;
   transform-origin: center bottom;
   transform: scaleY(0);
+  text-align: left;
+  pointer-events: none;
 }
-.three .three_con .characters_detail .Detail .d_con dl dd.active {
+.three .three_con .characters_detail .right .Detail .d_con dl dd.active {
   transition: all 0.9s;
   transform: none;
 }
-.three .three_con .characters_detail .Detail .d_con dl dd span:nth-child(1) {
+.three .three_con .characters_detail .right .Detail .d_con dl dd span:nth-child(1) {
   color: #df2d2d;
   font-size: 0.24rem;
 }
-.three .three_con .characters_detail .Detail .d_con ul {
+.three .three_con .characters_detail .right .Detail .d_con ul {
   display: flex;
   height: 1.27rem;
   position: absolute;
   left: 1.36rem;
   top: 5.8rem;
 }
-.three .three_con .characters_detail .Detail .d_con ul li {
+.three .three_con .characters_detail .right .Detail .d_con ul li {
   width: 1.3rem;
   height: 1.27rem;
   text-align: center;
   background: url(../../images/d_icon.png) no-repeat;
   background-size: 100% 100%;
 }
-.three .three_con .characters_detail .Detail .d_con ul li.active {
+.three .three_con .characters_detail .right .Detail .d_con ul li.active {
   background: url(../../images/d_icon_active.png) no-repeat;
   background-size: 100% 100%;
 }
-.three .three_con .characters_detail .Detail .d_con ul li:nth-child(2) {
+.three .three_con .characters_detail .right .Detail .d_con ul li:nth-child(2) {
   margin-left: 0.2rem;
 }
-.three .three_con .characters_detail .Detail .d_con ul li a {
+.three .three_con .characters_detail .right .Detail .d_con ul li a {
   width: 100%;
   height: 100%;
 }
-.three .three_con .characters_detail .Detail .d_con ul li a img {
+.three .three_con .characters_detail .right .Detail .d_con ul li a img {
   width: 0.83rem;
   height: 0.83rem;
 }

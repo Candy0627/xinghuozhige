@@ -3,6 +3,17 @@ html {
     overflow-y: auto;
 }
 
+input {
+    -webkit-tap-highlight-color: transparent;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* 去掉 input 默认的填充色 */
+input:-webkit-autofill {
+
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 #fullpage em {
     display: inline-block;
 }
@@ -772,23 +783,28 @@ html {
     height: 30px;
 }
 
+#fp-nav {
+    top: 15%;
+    right: 0.1rem !important;
+}
+
 #fp-nav ul li,
 .fp-slidesNav ul li {
     display: block;
     width: 1.7rem !important;
-    height: 30px !important;
-    margin: 7px;
+    height: .3rem !important;
+    /* margin: 7px; */
     position: relative;
-    margin-top: 29px;
+    margin-top: .2rem;
 }
 
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li a.active span {
-    height: 30px;
-    width: 70px;
+    /* height: 30px;
+    width: 70px; */
     margin: -10px 0 0 -10px;
     border-radius: inherit;
-    font-size: 24px;
+    font-size: .22rem;
     color: #000 !important;
     background: #fff;
 }
@@ -801,9 +817,9 @@ html {
     height: 30px;
     width: 70px;
     border: 0;
-    left: 20%;
+    left: 45%;
     top: 50%;
-    font-size: 24px;
+    font-size: .22rem;
     background: none;
     margin: -2px 0 0 -2px;
     color: #fff;
@@ -1158,7 +1174,8 @@ footer {
     text-indent: -.25rem;
     text-align: center;
 }
-#appoint_now .m_appoint_now a.select #select{
+
+#appoint_now .m_appoint_now a.select #select {
     width: 100%;
     height: 100%;
     display: inline-block;
@@ -1178,7 +1195,7 @@ footer {
 
 }
 
-#appoint_now .m_appoint_now a.select em.active{
+#appoint_now .m_appoint_now a.select em.active {
     transform: rotate(180deg);
 }
 
@@ -1196,12 +1213,17 @@ footer {
 #appoint_now .m_appoint_now .loginFb {
     position: absolute;
     z-index: 99999;
-    width: 4.05rem;
-    height: .64rem;
+    width: 4rem;
+    height: .61rem;
     display: block;
     cursor: pointer;
     left: 2.2rem;
     top: .05rem;
+    font-size: .325rem;
+    color: #fff;
+    text-decoration: none;
+    background: url(../../images/btn_fb.png) no-repeat;
+    background-size: 100% 100%;
 }
 
 #appoint_now .m_appoint_now ul.taiwan {
@@ -1291,3 +1313,4 @@ footer {
     z-index: 2;
     -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#e44d42), to(rgba(193, 32, 29, 0)));
 }
+
