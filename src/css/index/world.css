@@ -283,7 +283,6 @@
   width: 2.78rem;
   height: 2.06rem;
   top: 1rem;
-  left: 1rem;
   cursor: pointer;
   z-index: 99999;
 }
@@ -377,14 +376,12 @@
 }
 .three .three_con .characters_detail .right .Detail .img_tab {
   position: relative;
-  left: 0;
 }
 .three .three_con .characters_detail .right .Detail .d_con {
   width: 6.88rem;
   height: 6.64rem;
   position: absolute;
   top: 1.41rem;
-  right: 3.8rem;
   cursor: pointer;
 }
 .three .three_con .characters_detail .right .Detail .d_con .top_d {
@@ -413,6 +410,7 @@
   top: 0.77rem;
   background: url(../../images/d_voice.png) no-repeat;
   background-size: 100% 100%;
+  cursor: pointer;
 }
 .three .three_con .characters_detail .right .Detail .d_con .top_b {
   width: 5.48rem;

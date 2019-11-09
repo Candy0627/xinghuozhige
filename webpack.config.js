@@ -62,7 +62,7 @@ const webpackconfig = {
                 }
             },
             {
-                test: /\.(mp3)(\?.*)?$/,
+                test: /\.(wav)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
                     name: 'audios/[name].[ext]',

@@ -1,134 +1,6 @@
-/**
- * 第二屏预约奖励模块
- * 数字变化特效
- * 预约数字ajax
- * 预约进程变化
- */
-
-function magic_number(value, num) {
-    num.animate({
-        count: value
-    }, {
-        duration: 6000, //持续时间
-        step: function () {
-            num.text(Math.round(this.count));
-        }
-    })
-}
-$.get("https://admin.gamemorefun.net/welcome/get_appointment_number", function (res) {
-    var res = JSON.parse(res);
-    if (res && res.data) {
-        var n = res.data;
-        $('#number').text(n);
-        // magic_number(number, $('#number'));
-        appointProcess(n);
-    }
-})
-
-function appointProcess(n) {
-    // console.log('dsfhj', n);
-    if (n > 0 && n < 50000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(1) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(2) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(3) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
-
-        $('.two ul li:nth-child(1) .two_pic_img .corner').show();
-        $('.two ul li:nth-child(2) .two_pic_img .corner').show();
-        $('.two ul li:nth-child(3) .two_pic_img .corner').show();
-        $('.two ul li:nth-child(4) .two_pic_img .corner').show();
-
-        $('#process_ul').css({
-            'background': 'url(../../images/x0.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    } else if (n >= 50000 && n < 100000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(1) .two_title em').addClass('on');
-        $('.two ul li:nth-child(2) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(3) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
-
-        $('.two ul li:nth-child(1) .two_pic_img .corner').hide();
-        $('.two ul li:nth-child(2) .two_pic_img .corner').show();
-        $('.two ul li:nth-child(3) .two_pic_img .corner').show();
-        $('.two ul li:nth-child(4) .two_pic_img .corner').show();
+import fullpage from 'fullpage.js'
 
 
-        $('#process_ul').css({
-            'background': 'url(../../images/x1.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    } else if (n >= 100000 && n < 150000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(1) .two_title em').addClass('on');
-        $('.two ul li:nth-child(2) .two_title em').addClass('on');
-        $('.two ul li:nth-child(3) .two_title em').removeClass('on');
-        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
-
-
-        $('.two ul li:nth-child(1) .two_pic_img .corner').hide();
-        $('.two ul li:nth-child(2) .two_pic_img .corner').hide();
-        $('.two ul li:nth-child(3) .two_pic_img .corner').show();
-        $('.two ul li:nth-child(4) .two_pic_img .corner').show();
-
-
-        $('#process_ul').css({
-            'background': 'url(../../images/x2.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    } else if (n >= 150000 && n < 200000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').show().siblings('img').hide();
-        $('.two ul li:nth-child(1) .two_title em').addClass('on');
-        $('.two ul li:nth-child(2) .two_title em').addClass('on');
-        $('.two ul li:nth-child(3) .two_title em').addClass('on');
-        $('.two ul li:nth-child(4) .two_title em').removeClass('on');
-
-        $('.two ul li:nth-child(1) .two_pic_img .corner').hide();
-        $('.two ul li:nth-child(2) .two_pic_img .corner').hide();
-        $('.two ul li:nth-child(3) .two_pic_img .corner').hide();
-        $('.two ul li:nth-child(4) .two_pic_img .corner').show();
-
-
-        $('#process_ul').css({
-            'background': 'url(../../images/x3.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    } else if (n >= 200000) {
-        $('.two ul li:nth-child(1) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(2) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(3) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(4) .two_pic_img img:nth-of-type(1)').hide().siblings('img').show();
-        $('.two ul li:nth-child(1) .two_title em').addClass('on');
-        $('.two ul li:nth-child(2) .two_title em').addClass('on');
-        $('.two ul li:nth-child(3) .two_title em').addClass('on');
-        $('.two ul li:nth-child(4) .two_title em').addClass('on');
-
-        $('.two ul li:nth-child(1) .two_pic_img .corner').hide();
-        $('.two ul li:nth-child(2) .two_pic_img .corner').hide();
-        $('.two ul li:nth-child(3) .two_pic_img .corner').hide();
-        $('.two ul li:nth-child(4) .two_pic_img .corner').hide();
-
-
-        $('#process_ul').css({
-            'background': 'url(../../images/x4.png) no-repeat',
-            'background-size': '100% 100%'
-        });
-    }
-}
 
 /**
  * 第三屏预约逻辑模块
@@ -167,7 +39,7 @@ l.onclick = function () {
             });
             // 预约逻辑
         } else {
-            console.log('請沒有登錄facebook !');
+            console.log('您沒有登錄facebook !');
         }
     }, {
         scope: 'public_profile,email'
@@ -178,7 +50,7 @@ var fblogin = 'false';
 document.getElementById('submit').addEventListener('click', function () {
     if (fblogin == 'false') {
         console.log('fblogin的值',fblogin);
-        layer.msg('请先进行facebook登录');
+        layer.msg('請先進行facebook登錄');
     } else {
         var platform = '1';
         var engSimpol = '';
