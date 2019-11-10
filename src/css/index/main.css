@@ -401,10 +401,10 @@ input:-webkit-autofill {
     /* left: .2rem; */
     right: .4rem;
     display: block;
-    width: 2.85rem;
+    /* width: 2.85rem; */
     color: #ffffff;
     font-size: .935rem;
-    text-align: right;
+    text-align: center;
     border-bottom: 0.15rem solid #333;
     -webkit-border-image: url(../../images/note.png) 25 repeat;
     -o-border-image: url(../../images/note.png) 25 repeat;

@@ -47,18 +47,18 @@ import '../../images/x4.png'
  * 预约数字ajax
  * 预约进程变化
  */
-
+var number;
 $.get("https://admin.gamemorefun.net/welcome/get_appointment_number", function (res) {
     var res = JSON.parse(res);
     if (res && res.data) {
-        var number = res.data;
+        number = res.data;
         $('#number').lemCounter({
             value_to: number
         });
         appointProcess(number);
     }
 })
-// console.log('NUMBER',globals.sayHello());
+console.log('NUMBER大师傅的说法',number);
 var fullPageInstance = new fullpage('#fullpage', {
     navigation: 'true',
     navigationPosition: 'right',
@@ -69,16 +69,15 @@ var fullPageInstance = new fullpage('#fullpage', {
     onLeave: function (index, nextIndex, direction) {
         var i = index.index;
         var nextI = nextIndex.index;
-        // $('#number').lemCounter({
-        //     value_to: number
-        // });
+        $('#number').text('');
     },
     afterLoad: function (anchorLink, index) {
         var a = anchorLink.anchor;
         var i = index.index;
-        // $('#number').lemCounter({
-        //     value_to: number
-        // });
+        console.log('获取到值',number);
+        $('#number').lemCounter({
+            value_to: number
+        });
     },
     // 这个回调是在页面结构生成之后触发，这是要用来初始化其他插件
     afterRender: function () {

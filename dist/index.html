@@ -264,7 +264,64 @@
             right: 2.1rem !important;
             transition-delay: .7s;
         }
+        /* 轮播效果 */
+        .bg_add1{
+            transition: all 1s;
+            left: -3rem;
+            opacity: 0;
+        }
 
+        .active .bg_add1 {
+            opacity: 1;
+            left: 1rem !important;
+            transition-delay: .7s;
+        }
+        .bg_add2{
+            transition: all 1s;
+            left: -3rem;
+            opacity: 0;
+        }
+
+        .active .bg_add2 {
+            opacity: 1;
+            left: 0 !important;
+            transition-delay: .7s;
+        }
+        .bg_add3{
+            transition: all 1s;
+            right: -3rem;
+            opacity: 0;
+        }
+        
+        .active .bg_add3 {
+            opacity: 1;
+            right: 3.8rem !important;
+            transition-delay: .7s;
+        }
+
+        .bg_add4{
+            transition: all 1s;
+            left: -3rem;
+            opacity: 0;
+        }
+
+        .active .bg_add4 {
+            opacity: 1;
+            left: .6rem !important;
+            transition-delay: .7s;
+        }
+
+        .bg_add5{
+            transition: all 1s;
+            right: -3rem;
+            opacity: 0;
+        }
+
+        .active .bg_add5 {
+            opacity: 1;
+            right: .6rem !important;
+            transition-delay: .7s;
+        }
         /* .new_bg1{
             transition: all 1s;
             left: -3rem;
@@ -488,7 +545,7 @@
         <div class="section three">
             <div class="three_con" id="characters">
                 <div class="characters_detail">
-                    <ul class="left">
+                    <ul class="left bg_add1">
                         <li class="active0" id="fuzhu_l"></li>
                         <li id="fangyu_l"></li>
                         <li id="gongji_l"></li>
@@ -501,16 +558,20 @@
                                         <!-- 辅助 -->
                                         <div class="swiper-slide">
                                             <div class="Detail" id="swpier_fuzhu_detail">
-                                                <div class="img_tab">
-                                                    <img src="images/d3_xiunv1.png" alt="" id="fuzhu_first">
+                                                <div class="img_tab bg_add2 animated flipInX">
+                                                    <img src="images/d3_xiunv1.png" alt="" id="fuzhu_first" class="animated flipInX">
                                                     <img src="images/d3_xiunv2.png" alt="" style="display:none"
-                                                        id="fuzhu_two">
+                                                        id="fuzhu_two" class="animated flipInX">
                                                 </div>
 
-                                                <div class="d_con">
+                                                <div class="d_con bg_add3">
                                                     <em class="top_d"></em>
                                                     <em class="top_b"></em>
-                                                    <em class="top_audio"></em>
+                                                    <div class="top_audio">
+                                                        <audio>
+                                                            <source src='../images/audio/xipudunxiunv.wav' type="audio/wav">
+                                                        </audio>
+                                                    </div>
                                                     <dl>
                                                         <dt>
                                                             <h3><em class="l"></em>CV:<span id="d_cv">夏怜</span><em
@@ -562,16 +623,20 @@
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="Detail" id="swpier_fuzhu_detail">
-                                                <div class="img_tab">
-                                                    <img src="images/d1_lahaier1.png" alt="" id="fuzhu_first">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d1_lahaier1.png" alt="" id="fuzhu_first" class="animated flipInX">
                                                     <img src="images/d1_lahaier2.png" alt=""
-                                                        style="display:none" id="fuzhu_two">
+                                                        style="display:none" id="fuzhu_two" class="animated flipInX">
                                                 </div>
 
-                                                <div class="d_con">
+                                                <div class="d_con bg_add3">
                                                     <em class="top_d"></em>
                                                     <em class="top_b"></em>
-                                                    <em class="top_audio"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/lahaier.wav' type="audio/wav">
+                                                            </audio>
+                                                    </div>
                                                     <dl>
                                                         <dt>
                                                             <h3><em class="l"></em>CV:<span id="d_cv">悠木碧</span><em
@@ -624,16 +689,20 @@
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="Detail" id="swpier_fuzhu_detail">
-                                                <div class="img_tab">
-                                                    <img src="images/d2_niudun1.png" alt="" id="fuzhu_first">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d2_niudun1.png" alt="" id="fuzhu_first" class="animated flipInX">
                                                     <img src="images/d2_niudun2.png" alt=""
-                                                        style="display:none" id="fuzhu_two">
+                                                        style="display:none" id="fuzhu_two" class="animated flipInX">
                                                 </div>
 
-                                                <div class="d_con">
+                                                <div class="d_con bg_add3">
                                                     <em class="top_d"></em>
                                                     <em class="top_b"></em>
-                                                    <em class="top_audio"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/niudun.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
                                                     <dl>
                                                         <dt>
                                                             <h3><em class="l"></em>CV:<span id="d_cv">日高里菜</span><em
@@ -684,560 +753,611 @@
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
-                                                <div class="Detail" id="swpier_fuzhu_detail">
-                                                    <div class="img_tab">
-                                                        <img src="images/d4_kaisa1.png" alt="" id="fuzhu_first">
-                                                        <img src="images/d4_kaisa2.png" alt=""
-                                                            style="display:none" id="fuzhu_two">
-                                                    </div>
-    
-                                                    <div class="d_con">
-                                                        <em class="top_d"></em>
-                                                        <em class="top_b"></em>
-                                                        <em class="top_audio"></em>
-                                                        <dl>
-                                                            <dt>
-                                                                <h3><em class="l"></em>CV:<span id="d_cv">斎藤千和</span><em
-                                                                        class="r"></em></h3>
-                                                                <h2 class="text-gradient h2" data-text="凱撒" id='d_name'>
-                                                                        凱撒</h2>
-                                                            </dt>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="簡介">簡介:</span>
-                                                                <span id='d_info'>
-                                                                        以古羅馬共和國執政官尤裡烏斯凱撒的名字為代號的種火少女，樂觀開朗，愛笑，善於交際；因為善於和各種各樣的人打交道，並且能拉來投資，所以隱隱有援力從身上散發出來
-                                                                </span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
-                                                                    id="d_age">19</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="身高">身高:</span><span
-                                                                    id="d_height">170cm</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="性格">性格:</span><span
-                                                                    id="d_character">元氣</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient"
-                                                                    data-text="人生信条">人生信条:</span><span
-                                                                    id="d_motto">如果足夠努力，就會綻放出足夠的光芒。在光芒的指引下，我們都會繼續前進！</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="武器">武器:</span><span
-                                                                    id="d_weapon">羅馬式寬刃短劍；古羅馬軍團式鷹旗</span>
-                                                            </dd>
-                                                        </dl>
-                                                        <ul>
-                                                            <li class="active">
-                                                                <a href="#"><img src="images/d4_kaisa_icon1.png"
-                                                                        alt="" id="fuzhu_three"></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><img src="images/d4_kaisa_icon2.png"
-                                                                        alt="" id="fuzhu_four"></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-    
+                                            <div class="Detail" id="swpier_fuzhu_detail">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d4_kaisa1.png" alt="" id="fuzhu_first" class="animated flipInX">
+                                                    <img src="images/d4_kaisa2.png" alt="" style="display:none"
+                                                        id="fuzhu_two" class="animated flipInX">
                                                 </div>
+
+                                                <div class="d_con bg_add3">
+                                                    <em class="top_d"></em>
+                                                    <em class="top_b"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/kaisa.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
+                                                    <dl>
+                                                        <dt>
+                                                            <h3><em class="l"></em>CV:<span id="d_cv">斎藤千和</span><em
+                                                                    class="r"></em></h3>
+                                                            <h2 class="text-gradient h2" data-text="凱撒" id='d_name'>
+                                                                凱撒</h2>
+                                                        </dt>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                            <span id='d_info'>
+                                                                以古羅馬共和國執政官尤裡烏斯凱撒的名字為代號的種火少女，樂觀開朗，愛笑，善於交際；因為善於和各種各樣的人打交道，並且能拉來投資，所以隱隱有援力從身上散發出來
+                                                            </span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                                id="d_age">19</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="身高">身高:</span><span
+                                                                id="d_height">170cm</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                                id="d_character">元氣</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient"
+                                                                data-text="人生信条">人生信条:</span><span
+                                                                id="d_motto">如果足夠努力，就會綻放出足夠的光芒。在光芒的指引下，我們都會繼續前進！</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="武器">武器:</span><span
+                                                                id="d_weapon">羅馬式寬刃短劍；古羅馬軍團式鷹旗</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="#"><img src="images/d4_kaisa_icon1.png"
+                                                                    alt="" id="fuzhu_three"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img src="images/d4_kaisa_icon2.png"
+                                                                    alt="" id="fuzhu_four"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
                                         </div>
                                         <!-- 防御 -->
                                         <div class="swiper-slide">
-                                                <div class="Detail" id="swpier_fuzhu_detail">
-                                                    <div class="img_tab">
-                                                        <img src="images/d1_amengsen1.png" alt="" id="fuzhu_first">
-                                                        <img src="images/d1_amengsen2.png" alt=""
-                                                            style="display:none" id="fuzhu_two">
-                                                    </div>
-    
-                                                    <div class="d_con">
-                                                        <em class="top_d"></em>
-                                                        <em class="top_b"></em>
-                                                        <em class="top_audio"></em>
-                                                        <dl>
-                                                            <dt>
-                                                                <h3><em class="l"></em>CV:<span id="d_cv">上阪すみれ</span><em
-                                                                        class="r"></em></h3>
-                                                                <h2 class="text-gradient h2" data-text="阿蒙森" id='d_name'>
-                                                                        阿蒙森</h2>
-                                                            </dt>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="簡介">簡介:</span>
-                                                                <span id='d_info'>
-                                                                        以第一個到達南極點的探險家的名字命名的種火少女雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為。
-                                                                </span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
-                                                                    id="d_age">16</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="身高">身高:</span><span
-                                                                    id="d_height">155cm</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="性格">性格:</span><span
-                                                                    id="d_character">逞强 冷静</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient"
-                                                                    data-text="人生信条">人生信条:</span><span
-                                                                    id="d_motto">只要雪还在下…</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="武器">武器:</span><span
-                                                                    id="d_weapon">冰凍射線槍</span>
-                                                            </dd>
-                                                        </dl>
-                                                        <ul>
-                                                            <li class="active">
-                                                                <a href="#"><img src="images/d1_amengsen_icon1.png"
-                                                                        alt="" id="fuzhu_three"></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><img src="images/d1_amengsen_icon2.png"
-                                                                        alt="" id="fuzhu_four"></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-    
+                                            <div class="Detail" id="swpier_fuzhu_detail">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d1_amengsen1.png" alt=""
+                                                        id="fuzhu_first" class="animated flipInX">
+                                                    <img src="images/d1_amengsen2.png" alt=""
+                                                        style="display:none" id="fuzhu_two" class="animated flipInX">
                                                 </div>
+
+                                                <div class="d_con bg_add3">
+                                                    <em class="top_d"></em>
+                                                    <em class="top_b"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/amnegsen.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
+                                                    <dl>
+                                                        <dt>
+                                                            <h3><em class="l"></em>CV:<span id="d_cv">上阪すみれ</span><em
+                                                                    class="r"></em></h3>
+                                                            <h2 class="text-gradient h2" data-text="阿蒙森" id='d_name'>
+                                                                阿蒙森</h2>
+                                                        </dt>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                            <span id='d_info'>
+                                                                以第一個到達南極點的探險家的名字命名的種火少女雖然外表年齡偏小，言談舉止卻喜歡裝成熟，模仿大人的樣子，並且會嘲諷別人孩子氣的行為。
+                                                            </span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                                id="d_age">16</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="身高">身高:</span><span
+                                                                id="d_height">155cm</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                                id="d_character">逞强 冷静</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient"
+                                                                data-text="人生信条">人生信条:</span><span
+                                                                id="d_motto">只要雪还在下…</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="武器">武器:</span><span
+                                                                id="d_weapon">冰凍射線槍</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="#"><img
+                                                                    src="images/d1_amengsen_icon1.png" alt=""
+                                                                    id="fuzhu_three"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img
+                                                                    src="images/d1_amengsen_icon2.png" alt=""
+                                                                    id="fuzhu_four"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
                                         </div>
                                         <div class="swiper-slide">
-                                                <div class="Detail" id="swpier_fuzhu_detail">
-                                                    <div class="img_tab">
-                                                        <img src="images/d2_fangao1.png" alt="" id="fuzhu_first">
-                                                        <img src="images/d2_fangao2.png" alt=""
-                                                            style="display:none" id="fuzhu_two">
-                                                    </div>
-    
-                                                    <div class="d_con">
-                                                        <em class="top_d"></em>
-                                                        <em class="top_b"></em>
-                                                        <em class="top_audio"></em>
-                                                        <dl>
-                                                            <dt>
-                                                                <h3><em class="l"></em>CV:<span id="d_cv">夏怜</span><em
-                                                                        class="r"></em></h3>
-                                                                <h2 class="text-gradient h2" data-text="梵高" id='d_name'>
-                                                                        梵高</h2>
-                                                            </dt>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="簡介">簡介:</span>
-                                                                <span id='d_info'>
-                                                                        以著名立體主義畫家梵高的名字命名的種火少女電波系少女，擅長在立體空間中直接繪上色彩，通過色彩表達自己的感情，或者影響他人的感情。
-                                                                </span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
-                                                                    id="d_age">15</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="身高">身高:</span><span
-                                                                    id="d_height">155cm</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="性格">性格:</span><span
-                                                                    id="d_character">冷淡</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient"
-                                                                    data-text="人生信条">人生信条:</span><span
-                                                                    id="d_motto">要將世界重新染上希望的顏色</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="武器">武器:</span><span
-                                                                    id="d_weapon">電子調色板，全息筆刷</span>
-                                                            </dd>
-                                                        </dl>
-                                                        <ul>
-                                                            <li class="active">
-                                                                <a href="#"><img src="images/d2_fangao_icon1.png"
-                                                                        alt="" id="fuzhu_three"></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><img src="images/d2_fangao_icon2.png"
-                                                                        alt="" id="fuzhu_four"></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-    
+                                            <div class="Detail" id="swpier_fuzhu_detail">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d2_fangao1.png" alt="" id="fuzhu_first" class="animated flipInX">
+                                                    <img src="images/d2_fangao2.png" alt=""
+                                                        style="display:none" id="fuzhu_two" class="animated flipInX">
                                                 </div>
+
+                                                <div class="d_con bg_add3">
+                                                    <em class="top_d"></em>
+                                                    <em class="top_b"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/fangao.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
+                                                    <dl>
+                                                        <dt>
+                                                            <h3><em class="l"></em>CV:<span id="d_cv">夏怜</span><em
+                                                                    class="r"></em></h3>
+                                                            <h2 class="text-gradient h2" data-text="梵高" id='d_name'>
+                                                                梵高</h2>
+                                                        </dt>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                            <span id='d_info'>
+                                                                以著名立體主義畫家梵高的名字命名的種火少女電波系少女，擅長在立體空間中直接繪上色彩，通過色彩表達自己的感情，或者影響他人的感情。
+                                                            </span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                                id="d_age">15</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="身高">身高:</span><span
+                                                                id="d_height">155cm</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                                id="d_character">冷淡</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient"
+                                                                data-text="人生信条">人生信条:</span><span
+                                                                id="d_motto">要將世界重新染上希望的顏色</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="武器">武器:</span><span
+                                                                id="d_weapon">電子調色板，全息筆刷</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="#"><img src="images/d2_fangao_icon1.png"
+                                                                    alt="" id="fuzhu_three"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img src="images/d2_fangao_icon2.png"
+                                                                    alt="" id="fuzhu_four"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
                                         </div>
                                         <div class="swiper-slide">
-                                                <div class="Detail" id="swpier_fuzhu_detail">
-                                                    <div class="img_tab">
-                                                        <img src="images/d3_qigefulide1.png" alt="" id="fuzhu_first">
-                                                        <img src="images/d3_qigefulide2.png" alt=""
-                                                            style="display:none" id="fuzhu_two">
-                                                    </div>
-    
-                                                    <div class="d_con">
-                                                        <em class="top_d"></em>
-                                                        <em class="top_b"></em>
-                                                        <em class="top_audio"></em>
-                                                        <dl>
-                                                            <dt>
-                                                                <h3><em class="l"></em>CV:<span id="d_cv">白椛瞳</span><em
-                                                                        class="r"></em></h3>
-                                                                <h2 class="text-gradient h2" data-text="齊格弗里德" id='d_name'>
-                                                                        齊格弗里德</h2>
-                                                            </dt>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="簡介">簡介:</span>
-                                                                <span id='d_info'>
-                                                                        以北歐神話中著名的屠龍英雄齊格弗里德的名字命名的種火少女沉默寡言的少女騎士，感情淡漠，表情冷峻，沒事的時候會望著星空發呆。
-                                                                </span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
-                                                                    id="d_age">20</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="身高">身高:</span><span
-                                                                    id="d_height">185cm</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="性格">性格:</span><span
-                                                                    id="d_character">天然呆  冷淡</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient"
-                                                                    data-text="人生信条">人生信条:</span><span
-                                                                    id="d_motto">我不想傷害什麼，但我知道舉起這把劍的時候，我就已經不能回頭了。</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="武器">武器:</span><span
-                                                                    id="d_weapon">雙手大劍</span>
-                                                            </dd>
-                                                        </dl>
-                                                        <ul>
-                                                            <li class="active">
-                                                                <a href="#"><img src="images/d3_qigefulide_icon1.png"
-                                                                        alt="" id="fuzhu_three"></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><img src="images/d3_qigefulide_icon2.png"
-                                                                        alt="" id="fuzhu_four"></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-    
+                                            <div class="Detail" id="swpier_fuzhu_detail">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d3_qigefulide1.png" alt=""
+                                                        id="fuzhu_first" class="animated flipInX">
+                                                    <img src="images/d3_qigefulide2.png" alt=""
+                                                        style="display:none" id="fuzhu_two" class="animated flipInX">
                                                 </div>
+
+                                                <div class="d_con bg_add3">
+                                                    <em class="top_d"></em>
+                                                    <em class="top_b"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/qigefulide.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
+                                                    <dl>
+                                                        <dt>
+                                                            <h3><em class="l"></em>CV:<span id="d_cv">白椛瞳</span><em
+                                                                    class="r"></em></h3>
+                                                            <h2 class="text-gradient h2" data-text="齊格弗里德" id='d_name'>
+                                                                齊格弗里德</h2>
+                                                        </dt>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                            <span id='d_info'>
+                                                                以北歐神話中著名的屠龍英雄齊格弗里德的名字命名的種火少女沉默寡言的少女騎士，感情淡漠，表情冷峻，沒事的時候會望著星空發呆。
+                                                            </span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                                id="d_age">20</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="身高">身高:</span><span
+                                                                id="d_height">185cm</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                                id="d_character">天然呆 冷淡</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient"
+                                                                data-text="人生信条">人生信条:</span><span
+                                                                id="d_motto">我不想傷害什麼，但我知道舉起這把劍的時候，我就已經不能回頭了。</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="武器">武器:</span><span
+                                                                id="d_weapon">雙手大劍</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="#"><img
+                                                                    src="images/d3_qigefulide_icon1.png"
+                                                                    alt="" id="fuzhu_three"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img
+                                                                    src="images/d3_qigefulide_icon2.png"
+                                                                    alt="" id="fuzhu_four"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
                                         </div>
                                         <div class="swiper-slide">
-                                                <div class="Detail" id="swpier_fuzhu_detail">
-                                                    <div class="img_tab">
-                                                        <img src="images/d4_xide1.png" alt="" id="fuzhu_first">
-                                                        <img src="images/d4_xide2.png" alt=""
-                                                            style="display:none" id="fuzhu_two">
-                                                    </div>
-    
-                                                    <div class="d_con">
-                                                        <em class="top_d"></em>
-                                                        <em class="top_b"></em>
-                                                        <em class="top_audio"></em>
-                                                        <dl>
-                                                            <dt>
-                                                                <h3><em class="l"></em>CV:<span id="d_cv">斎藤千和</span><em
-                                                                        class="r"></em></h3>
-                                                                <h2 class="text-gradient h2" data-text="熙德" id='d_name'>
-                                                                        熙德</h2>
-                                                            </dt>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="簡介">簡介:</span>
-                                                                <span id='d_info'>
-                                                                        以西班牙著名的騎士英雄熙德的名字為代號的種火少女帥氣瀟灑的禦姐，擁有騎士的美德，卻不死板，正直的同時懂得變通，口才一流還有幽默感。
-                                                                </span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
-                                                                    id="d_age">19</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="身高">身高:</span><span
-                                                                    id="d_height">180cm</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="性格">性格:</span><span
-                                                                    id="d_character">绅士</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient"
-                                                                    data-text="人生信条">人生信条:</span><span
-                                                                    id="d_motto">嗯嗯，我的剑刃一直以来便是为了守护而存在。</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="武器">武器:</span><span
-                                                                    id="d_weapon">雙劍：左手“帆式”短劍提澤納（Tizona），右手西班牙籠手十字劍科拉達（Colada）</span>
-                                                            </dd>
-                                                        </dl>
-                                                        <ul>
-                                                            <li class="active">
-                                                                <a href="#"><img src="images/d4_xide_icon1.png"
-                                                                        alt="" id="fuzhu_three"></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><img src="images/d4_xide_icon2.png"
-                                                                        alt="" id="fuzhu_four"></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-    
+                                            <div class="Detail" id="swpier_fuzhu_detail">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d4_xide1.png" alt="" id="fuzhu_first" class="animated flipInX">
+                                                    <img src="images/d4_xide2.png" alt="" style="display:none"
+                                                        id="fuzhu_two" class="animated flipInX">
                                                 </div>
+
+                                                <div class="d_con bg_add3">
+                                                    <em class="top_d"></em>
+                                                    <em class="top_b"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/xide.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
+                                                    <dl>
+                                                        <dt>
+                                                            <h3><em class="l"></em>CV:<span id="d_cv">斎藤千和</span><em
+                                                                    class="r"></em></h3>
+                                                            <h2 class="text-gradient h2" data-text="熙德" id='d_name'>
+                                                                熙德</h2>
+                                                        </dt>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                            <span id='d_info'>
+                                                                以西班牙著名的騎士英雄熙德的名字為代號的種火少女帥氣瀟灑的禦姐，擁有騎士的美德，卻不死板，正直的同時懂得變通，口才一流還有幽默感。
+                                                            </span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                                id="d_age">19</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="身高">身高:</span><span
+                                                                id="d_height">180cm</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                                id="d_character">绅士</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient"
+                                                                data-text="人生信条">人生信条:</span><span
+                                                                id="d_motto">嗯嗯，我的剑刃一直以来便是为了守护而存在。</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="武器">武器:</span><span
+                                                                id="d_weapon">雙劍：左手“帆式”短劍提澤納（Tizona），右手西班牙籠手十字劍科拉達（Colada）</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="#"><img src="images/d4_xide_icon1.png"
+                                                                    alt="" id="fuzhu_three"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img src="images/d4_xide_icon2.png"
+                                                                    alt="" id="fuzhu_four"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
                                         </div>
                                         <!-- 攻击 -->
                                         <div class="swiper-slide">
-                                                <div class="Detail" id="swpier_fuzhu_detail">
-                                                    <div class="img_tab">
-                                                        <img src="images/d1_aiyinsitan1.png" alt="" id="fuzhu_first">
-                                                        <img src="images/d1_aiyinsitan2.png" alt=""
-                                                            style="display:none" id="fuzhu_two">
-                                                    </div>
-    
-                                                    <div class="d_con">
-                                                        <em class="top_d"></em>
-                                                        <em class="top_b"></em>
-                                                        <em class="top_audio"></em>
-                                                        <dl>
-                                                            <dt>
-                                                                <h3><em class="l"></em>CV:<span id="d_cv">小清水亜美</span><em
-                                                                        class="r"></em></h3>
-                                                                <h2 class="text-gradient h2" data-text="愛因斯坦" id='d_name'>
-                                                                        愛因斯坦</h2>
-                                                            </dt>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="簡介">簡介:</span>
-                                                                <span id='d_info'>
-                                                                        以偉大的物理學家愛因斯坦之名命名的種火少女，智商極高的科學天才，性格古靈精怪，活潑好動，愛捉弄人，是個非常有愛心，樂意幫助他人的好女孩。
-                                                                </span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
-                                                                    id="d_age">16</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="身高">身高:</span><span
-                                                                    id="d_height">160cm</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="性格">性格:</span><span
-                                                                    id="d_character">愛捉弄人 活潑 善良</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient"
-                                                                    data-text="人生信条">人生信条:</span><span
-                                                                    id="d_motto">動力嘛…辛辛苦苦一上午，然後是最喜歡的下午茶時間！這就夠了啦~</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="武器">武器:</span><span
-                                                                    id="d_weapon">核動力裝甲，質能轉換手套</span>
-                                                            </dd>
-                                                        </dl>
-                                                        <ul>
-                                                            <li class="active">
-                                                                <a href="#"><img src="images/d1_aiyinsitan_icon1.png"
-                                                                        alt="" id="fuzhu_three"></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><img src="images/d1_aiyinsitan_icon2.png"
-                                                                        alt="" id="fuzhu_four"></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-    
+                                            <div class="Detail" id="swpier_fuzhu_detail">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d1_aiyinsitan1.png" alt=""
+                                                        id="fuzhu_first" class="animated flipInX">
+                                                    <img src="images/d1_aiyinsitan2.png" alt=""
+                                                        style="display:none" id="fuzhu_two" class="animated flipInX">
                                                 </div>
+
+                                                <div class="d_con bg_add3">
+                                                    <em class="top_d"></em>
+                                                    <em class="top_b"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/aiyinsitan.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
+                                                    <dl>
+                                                        <dt>
+                                                            <h3><em class="l"></em>CV:<span id="d_cv">小清水亜美</span><em
+                                                                    class="r"></em></h3>
+                                                            <h2 class="text-gradient h2" data-text="愛因斯坦" id='d_name'>
+                                                                愛因斯坦</h2>
+                                                        </dt>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                            <span id='d_info'>
+                                                                以偉大的物理學家愛因斯坦之名命名的種火少女，智商極高的科學天才，性格古靈精怪，活潑好動，愛捉弄人，是個非常有愛心，樂意幫助他人的好女孩。
+                                                            </span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                                id="d_age">16</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="身高">身高:</span><span
+                                                                id="d_height">160cm</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                                id="d_character">愛捉弄人 活潑 善良</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient"
+                                                                data-text="人生信条">人生信条:</span><span
+                                                                id="d_motto">動力嘛…辛辛苦苦一上午，然後是最喜歡的下午茶時間！這就夠了啦~</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="武器">武器:</span><span
+                                                                id="d_weapon">核動力裝甲，質能轉換手套</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="#"><img
+                                                                    src="images/d1_aiyinsitan_icon1.png"
+                                                                    alt="" id="fuzhu_three"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img
+                                                                    src="images/d1_aiyinsitan_icon2.png"
+                                                                    alt="" id="fuzhu_four"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
                                         </div>
                                         <div class="swiper-slide">
-                                                <div class="Detail" id="swpier_fuzhu_detail">
-                                                    <div class="img_tab">
-                                                        <img src="images/d2_jialilve1.png" alt="" id="fuzhu_first">
-                                                        <img src="images/d2_jialilve2.png" alt=""
-                                                            style="display:none" id="fuzhu_two">
-                                                    </div>
-    
-                                                    <div class="d_con">
-                                                        <em class="top_d"></em>
-                                                        <em class="top_b"></em>
-                                                        <em class="top_audio"></em>
-                                                        <dl>
-                                                            <dt>
-                                                                <h3><em class="l"></em>CV:<span id="d_cv">金元寿子</span><em
-                                                                        class="r"></em></h3>
-                                                                <h2 class="text-gradient h2" data-text="伽利略" id='d_name'>
-                                                                        伽利略</h2>
-                                                            </dt>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="簡介">簡介:</span>
-                                                                <span id='d_info'>
-                                                                        以著名的天文學家伽利略的名字命名的種火少女，學識淵博，知識量豐富，善於觀察，徹底的行動派，同樣的錯誤絕不會再犯第二次。
-                                                                </span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
-                                                                    id="d_age">17</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="身高">身高:</span><span
-                                                                    id="d_height">170cm</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="性格">性格:</span><span
-                                                                    id="d_character">好奇，仔細</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient"
-                                                                    data-text="人生信条">人生信条:</span><span
-                                                                    id="d_motto">總有一天，我會復原星空讓人們都能感受到浩瀚的美麗。</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="武器">武器:</span><span
-                                                                    id="d_weapon">光線槍</span>
-                                                            </dd>
-                                                        </dl>
-                                                        <ul>
-                                                            <li class="active">
-                                                                <a href="#"><img src="images/d2_jialilve_icon1.png"
-                                                                        alt="" id="fuzhu_three"></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><img src="images/d2_jialilve_icon2.png"
-                                                                        alt="" id="fuzhu_four"></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-    
+                                            <div class="Detail" id="swpier_fuzhu_detail">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d2_jialilve1.png" alt=""
+                                                        id="fuzhu_first" class="animated flipInX">
+                                                    <img src="images/d2_jialilve2.png" alt=""
+                                                        style="display:none" id="fuzhu_two" class="animated flipInX">
                                                 </div>
+
+                                                <div class="d_con bg_add3">
+                                                    <em class="top_d"></em>
+                                                    <em class="top_b"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/jialilve.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
+                                                    <dl>
+                                                        <dt>
+                                                            <h3><em class="l"></em>CV:<span id="d_cv">金元寿子</span><em
+                                                                    class="r"></em></h3>
+                                                            <h2 class="text-gradient h2" data-text="伽利略" id='d_name'>
+                                                                伽利略</h2>
+                                                        </dt>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                            <span id='d_info'>
+                                                                以著名的天文學家伽利略的名字命名的種火少女，學識淵博，知識量豐富，善於觀察，徹底的行動派，同樣的錯誤絕不會再犯第二次。
+                                                            </span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                                id="d_age">17</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="身高">身高:</span><span
+                                                                id="d_height">170cm</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                                id="d_character">好奇，仔細</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient"
+                                                                data-text="人生信条">人生信条:</span><span
+                                                                id="d_motto">總有一天，我會復原星空讓人們都能感受到浩瀚的美麗。</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="武器">武器:</span><span
+                                                                id="d_weapon">光線槍</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="#"><img
+                                                                    src="images/d2_jialilve_icon1.png" alt=""
+                                                                    id="fuzhu_three"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img
+                                                                    src="images/d2_jialilve_icon2.png" alt=""
+                                                                    id="fuzhu_four"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
                                         </div>
                                         <div class="swiper-slide">
-                                                <div class="Detail" id="swpier_fuzhu_detail">
-                                                    <div class="img_tab">
-                                                        <img src="images/d3_dechuanjiakang1.png" alt="" id="fuzhu_first">
-                                                        <img src="images/d3_dechuanjiakang2.png" alt=""
-                                                            style="display:none" id="fuzhu_two">
-                                                    </div>
-    
-                                                    <div class="d_con">
-                                                        <em class="top_d"></em>
-                                                        <em class="top_b"></em>
-                                                        <em class="top_audio"></em>
-                                                        <dl>
-                                                            <dt>
-                                                                <h3><em class="l"></em>CV:<span id="d_cv">井上麻里奈</span><em
-                                                                        class="r"></em></h3>
-                                                                <h2 class="text-gradient h2" data-text="德川家康" id='d_name'>
-                                                                        德川家康</h2>
-                                                            </dt>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="簡介">簡介:</span>
-                                                                <span id='d_info'>
-                                                                        以日本戰國大名德川家康的名字為代號的種火少女，雙重人格。弱氣的蘿莉，說話輕聲輕氣，有些懦弱，帶上面具，就會變成另一種人格，爆發出不符合體格的怪力，解除武裝後就會後悔不已。
-                                                                </span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
-                                                                    id="d_age">17</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="身高">身高:</span><span
-                                                                    id="d_height">150cm</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="性格">性格:</span><span
-                                                                    id="d_character">懦弱善良/兇暴殘酷</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient"
-                                                                    data-text="人生信条">人生信条:</span><span
-                                                                    id="d_motto">收集所有古代刀劍</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="武器">武器:</span><span
-                                                                    id="d_weapon">妖刀村正，武士面具</span>
-                                                            </dd>
-                                                        </dl>
-                                                        <ul>
-                                                            <li class="active">
-                                                                <a href="#"><img src="images/d3_dechuanjiakang_icon1.png"
-                                                                        alt="" id="fuzhu_three"></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><img src="images/d3_dechuanjiakang_icon2.png"
-                                                                        alt="" id="fuzhu_four"></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-    
+                                            <div class="Detail" id="swpier_fuzhu_detail">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d3_dechuanjiakang1.png" alt=""
+                                                        id="fuzhu_first" class="animated flipInX">
+                                                    <img src="images/d3_dechuanjiakang2.png" alt=""
+                                                        style="display:none" id="fuzhu_two" class="animated flipInX">
                                                 </div>
+
+                                                <div class="d_con bg_add3">
+                                                    <em class="top_d"></em>
+                                                    <em class="top_b"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/dechuanjiakang.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
+                                                    <dl>
+                                                        <dt>
+                                                            <h3><em class="l"></em>CV:<span id="d_cv">井上麻里奈</span><em
+                                                                    class="r"></em></h3>
+                                                            <h2 class="text-gradient h2" data-text="德川家康" id='d_name'>
+                                                                德川家康</h2>
+                                                        </dt>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                            <span id='d_info'>
+                                                                以日本戰國大名德川家康的名字為代號的種火少女，雙重人格。弱氣的蘿莉，說話輕聲輕氣，有些懦弱，帶上面具，就會變成另一種人格，爆發出不符合體格的怪力，解除武裝後就會後悔不已。
+                                                            </span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                                id="d_age">17</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="身高">身高:</span><span
+                                                                id="d_height">150cm</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                                id="d_character">懦弱善良/兇暴殘酷</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient"
+                                                                data-text="人生信条">人生信条:</span><span
+                                                                id="d_motto">收集所有古代刀劍</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="武器">武器:</span><span
+                                                                id="d_weapon">妖刀村正，武士面具</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="#"><img
+                                                                    src="images/d3_dechuanjiakang_icon1.png"
+                                                                    alt="" id="fuzhu_three"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img
+                                                                    src="images/d3_dechuanjiakang_icon2.png"
+                                                                    alt="" id="fuzhu_four"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
                                         </div>
                                         <div class="swiper-slide">
-                                                <div class="Detail" id="swpier_fuzhu_detail">
-                                                    <div class="img_tab">
-                                                        <img src="images/d4_napolun1.png" alt="" id="fuzhu_first">
-                                                        <img src="images/d4_napolun2.png" alt=""
-                                                            style="display:none" id="fuzhu_two">
-                                                    </div>
-    
-                                                    <div class="d_con">
-                                                        <em class="top_d"></em>
-                                                        <em class="top_b"></em>
-                                                        <em class="top_audio"></em>
-                                                        <dl>
-                                                            <dt>
-                                                                <h3><em class="l"></em>CV:<span id="d_cv">日高里菜</span><em
-                                                                        class="r"></em></h3>
-                                                                <h2 class="text-gradient h2" data-text="拿破崙" id='d_name'>
-                                                                        拿破崙</h2>
-                                                            </dt>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="簡介">簡介:</span>
-                                                                <span id='d_info'>
-                                                                        以法蘭西皇帝拿破崙的名字為代號的種火少女，嬌小軟萌蘿莉一枚，愛吃甜食，尤其討厭別人說她小（身高意義上），被說小的時候會憤怒爆發，不過也只是用粉拳給別人按摩罷了。
-                                                                </span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="年龄">年龄:</span><span
-                                                                    id="d_age">15</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="身高">身高:</span><span
-                                                                    id="d_height">140cm</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="性格">性格:</span><span
-                                                                    id="d_character">認真</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient"
-                                                                    data-text="人生信条">人生信条:</span><span
-                                                                    id="d_motto">煙花祭，在之前是存在的吧？嗯嗯，我想要去征服看看…</span>
-                                                            </dd>
-                                                            <dd>
-                                                                <span class="text-gradient" data-text="武器">武器:</span><span
-                                                                    id="d_weapon">？？？</span>
-                                                            </dd>
-                                                        </dl>
-                                                        <ul>
-                                                            <li class="active">
-                                                                <a href="#"><img src="images/d4_napolun_icon1.png"
-                                                                        alt="" id="fuzhu_three"></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><img src="images/d4_napolun_icon2.png"
-                                                                        alt="" id="fuzhu_four"></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-    
+                                            <div class="Detail" id="swpier_fuzhu_detail">
+                                                <div class="img_tab bg_add2">
+                                                    <img src="images/d4_napolun1.png" alt="" id="fuzhu_first" class="animated flipInX">
+                                                    <img src="images/d4_napolun2.png" alt=""
+                                                        style="display:none" id="fuzhu_two" class="animated flipInX">
                                                 </div>
+
+                                                <div class="d_con bg_add3">
+                                                    <em class="top_d"></em>
+                                                    <em class="top_b"></em>
+                                                    <div class="top_audio">
+                                                            <audio>
+                                                                <source src='../images/audio/napolun.wav' type="audio/wav">
+                                                            </audio>
+                                                        </div>
+                                                    <dl>
+                                                        <dt>
+                                                            <h3><em class="l"></em>CV:<span id="d_cv">日高里菜</span><em
+                                                                    class="r"></em></h3>
+                                                            <h2 class="text-gradient h2" data-text="拿破崙" id='d_name'>
+                                                                拿破崙</h2>
+                                                        </dt>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="簡介">簡介:</span>
+                                                            <span id='d_info'>
+                                                                以法蘭西皇帝拿破崙的名字為代號的種火少女，嬌小軟萌蘿莉一枚，愛吃甜食，尤其討厭別人說她小（身高意義上），被說小的時候會憤怒爆發，不過也只是用粉拳給別人按摩罷了。
+                                                            </span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="年龄">年龄:</span><span
+                                                                id="d_age">15</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="身高">身高:</span><span
+                                                                id="d_height">140cm</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="性格">性格:</span><span
+                                                                id="d_character">認真</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient"
+                                                                data-text="人生信条">人生信条:</span><span
+                                                                id="d_motto">煙花祭，在之前是存在的吧？嗯嗯，我想要去征服看看…</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <span class="text-gradient" data-text="武器">武器:</span><span
+                                                                id="d_weapon">？？？</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="#"><img src="images/d4_napolun_icon1.png"
+                                                                    alt="" id="fuzhu_three"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><img src="images/d4_napolun_icon2.png"
+                                                                    alt="" id="fuzhu_four"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- Add Arrows -->
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next bg_add5"></div>
+                                    <div class="swiper-button-prev bg_add4"></div>
                                 </div>
                             </div>
                         </div>
@@ -1248,6 +1368,34 @@
 
 
         <div class="section four pageone">
+            <div class="wpMain">
+                <div class="wpLayer wpLayer1" style="animation-delay: 0s;">
+                </div>
+                <div class="wpLayer wpLayer2" style="animation-delay: .75s;">
+                </div>
+                <div class="wpLayer wpLayer3" style="animation-delay: 1.5s;">
+                </div>
+                <div class="wpLayer wpLayer4" style="animation-delay: 2.25s;">
+                </div>
+                <div class="wpCore">
+                </div>
+                <div class="wpTips">神啟公司</div>
+            </div>
+
+            <div class="wpMain yellow">
+                <div class="wpLayer wpLayer1" style="animation-delay: 0s;">
+                </div>
+                <div class="wpLayer wpLayer2" style="animation-delay: .75s;">
+                </div>
+                <div class="wpLayer wpLayer3" style="animation-delay: 1.5s;">
+                </div>
+                <div class="wpLayer wpLayer4" style="animation-delay: 2.25s;">
+                </div>
+                <div class="wpCore">
+                </div>
+                <div class="wpTips">安全區</div>
+            </div>
+
             <ul id="four_ul">
                 <li class="page-role bg4_1">
                     <img src="images/world-bg.jpg" alt="" class="nav_img3">
@@ -1256,7 +1404,7 @@
                     </div>
                     <div class="txt">
                         <span class="name">月源石</span>
-                        <span class="eng">- Moon source stone -</span>
+                        <span class="eng">- MOON SOURCE STONE -</span>
                     </div>
                 </li>
                 <li class="page-role bg4_2">
@@ -1276,7 +1424,7 @@
                     </div>
                     <div class="txt">
                         <span class="name">神啟公司</span>
-                        <span class="eng">- Kethubhim -</span>
+                        <span class="eng">- KETHUBHIM -</span>
                     </div>
                 </li>
                 <li class="page-role bg4_4">
@@ -1286,7 +1434,7 @@
                     </div>
                     <div class="txt">
                         <span class="name">喪尸</span>
-                        <span class="eng">- Zombies -</span>
+                        <span class="eng">- ZOMBIES -</span>
                     </div>
                 </li>
                 <li class="page-role bg4_5">
@@ -1296,7 +1444,7 @@
                     </div>
                     <div class="txt">
                         <span class="name">安全區</span>
-                        <span class="eng">- Safety zone -</span>
+                        <span class="eng">- SAFETY ZONE -</span>
                     </div>
                 </li>
             </ul>
@@ -1441,7 +1589,7 @@
             <i name="close"></i>
             <div class="world_con">
                 <div class="left">
-                    <img src="xxxHTMLLINKxxx0.49877927695331080.15940015169521793xxx" alt="" id="w_img">
+                    <img src="xxxHTMLLINKxxx0.43887571438017690.9285629803607796xxx" alt="" id="w_img">
                 </div>
                 <div class="right">
                     <h2 id="w_h2">神啟公司</h2>
@@ -1454,13 +1602,13 @@
     <!-- 资料大图弹出框 -->
     <div id="data_pop" class="data_pop" style="display: none;">
         <div class="tip-box">
-            <img src="xxxHTMLLINKxxx0.45179120562821560.09104698349078144xxx" alt="" class="zl" id="data_img">
+            <img src="xxxHTMLLINKxxx0.149977849033060550.27715664006180685xxx" alt="" class="zl" id="data_img">
             <i name="close"></i>
         </div>
     </div>
 
     <script>
-        
+
     </script>
 <script type="text/javascript" src="js/index.js"></script></body>
 
