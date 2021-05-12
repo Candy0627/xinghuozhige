@@ -44,6 +44,6 @@
     "fullpage.js": "^3.0.7",
     "jquery": "^2.1.1",
     "prettier": "^1.12.1",
-    "swiper": "^5.2.0"
+    "swiper": "^6.5.1"
   }
 }
