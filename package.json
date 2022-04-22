@@ -41,7 +41,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "core-js": "^3.2.1",
-    "fullpage.js": "^3.0.7",
+    "fullpage.js": "^4.0.5",
     "jquery": "^2.1.1",
     "prettier": "^1.12.1",
     "swiper": "^5.2.0"
